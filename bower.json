@@ -1,0 +1,15 @@
+{
+  "name": "Skinny CMS - Laravel",
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "jquery-requestAnimationFrame": "^0.1.2",
+    "nanoscroller": "^0.8.7",
+    "Materialize": "materialize#^0.97.6",
+    "Sortable": "^1.4.2",
+    "code-prettify": "*",
+    "font-awesome": "fontawesome#^4.6.3",
+    "Ionicons": "ionicons#^2.0.1",
+    "html5shiv": "^3.7.3",
+    "jquery-jsonview": "^1.2.3"
+  }
+}
