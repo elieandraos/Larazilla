@@ -56,6 +56,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::get('/post-types/{postTypeSlug}/panels/{panelId}/edit', ['uses' => 'PanelController@edit', 'as' => 'admin.post-types.panels.edit']);
   Route::post('/post-types/{postTypeSlug}/panels/{panelId}/update', ['uses' => 'PanelController@update', 'as' => 'admin.post-types.panels.update']);
   Route::post('/panels/{panelId}/delete', ['uses' => 'PanelController@delete', 'as' => 'admin.post-types.panels.delete']);
+  
   //post types panels components
   Route::get('/post-types/{postTypeSlug}/panels/{panelId}/components', ['uses' => 'ComponentController@index', 'as' => 'admin.post-types.panels.components']);
   Route::get('/post-types/{postTypeSlug}/panels/{panelId}/components/create', ['uses' => 'ComponentController@create', 'as' => 'admin.post-types.panels.components.create']);
@@ -64,7 +65,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::post('/post-types/{postTypeSlug}/panels/{panelId}/components/{componentId}/update', ['uses' => 'ComponentController@update', 'as' => 'admin.post-types.panels.components.update']);
   Route::post('/components/{componentId}/delete', ['uses' => 'ComponentController@delete', 'as' => 'admin.post-types.panels.components.delete']);
 
-
   //posts
   Route::get('/posts/{postTypeSlug}', ['uses' => 'PostController@index', 'as' => 'admin.posts']);
   Route::get('/posts/{postTypeSlug}/create', ['uses' => 'PostController@create', 'as' => 'admin.posts.create']);
@@ -72,6 +72,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::get('/posts/{postTypeSlug}/{postId}/edit', ['uses' => 'PostController@edit', 'as' => 'admin.posts.edit']);
   Route::post('/posts/{postTypeSlug}/{postId}/update', ['uses' => 'PostController@update', 'as' => 'admin.posts.update']);
   Route::post('/posts/{postId}/delete', ['uses' => 'PostController@delete', 'as' => 'admin.posts.delete']);
+
+  //dropzone
+  Route::post('/dropzone/upload', ['uses' => 'DropzoneController@upload', 'as' => 'admin.dropzone.upload']);
 
 
 });

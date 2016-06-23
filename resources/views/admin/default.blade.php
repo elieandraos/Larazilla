@@ -36,6 +36,28 @@
         p.label { font-size: 0.8rem;color:#9e9e9e;margin-bottom: 5px;}
         .json-info .collapsible { box-shadow: none !important; border: none !important; }
         div.jsonview { font-size: 0.9rem }
+        .card .content { overflow: hidden;}
+
+        .dropzone
+        {
+            text-align: left;
+            padding: 15px;
+            min-height: 220px;
+        }
+        .dz-preview 
+        {
+            display: inline-block;
+            width: auto;
+            margin: 20px;
+        }
+        a.dz-remove, a.media-remove 
+        {
+            color: #c02638;
+            font-size: 11px;
+            display: block;
+            margin-top: 5px;
+            text-align: center;
+        }
     </style>
 
     <!--[if lt IE 9]>
@@ -70,6 +92,7 @@
     <script type="text/javascript" src="/vendor/materialize/bin/materialize.js"></script>
     <script type="text/javascript" src="/vendor/Sortable/Sortable.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-jsonview/dist/jquery.jsonview.js"></script>
+    <script type="text/javascript" src="/vendor/dropzone/dist/min/dropzone.min.js"></script>
  
 
     <!-- Main -->

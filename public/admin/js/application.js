@@ -6,6 +6,7 @@ var app = function() {
         initAddRules();
         initAddConversions();
         initjsonView();
+        initDropzone();
     };
 
     //handle remote form submission
@@ -68,13 +69,54 @@ var app = function() {
             
     }
 
+    var initDropzone = function()
+    {
+
+        if(!$("#post-uploads").length)
+            return;
+        
+        updateDzOrder();
+
+        //Dropzone.autoDiscover = false;
+        currentDropzone = new Dropzone ("#post-uploads",{ 
+            url: "/admin/dropzone/upload",
+            autoProcessQueue: true, //uploads will be processed on drop 
+            acceptedFiles: 'image/*',
+            addRemoveLinks: true,
+            maxFilesize: 4, //in MB
+            previewTemplate: document.querySelector('#preview-template').innerHTML,
+            dictDefaultMessage: '',
+            dictRemoveFile: 'Delete',
+            dictCancelUpload: 'Uploading...',
+            thumbnailWidth: 80,
+            thumbnailHeight: 80
+        });
+
+       // currentDropzone = $('#post-uploads').get(0).dropzone;
+
+        currentDropzone.on("sending", function(file, xhr, formData) {
+            var csrftoken = $("body").find('input[name="_token"]').val();
+            formData.append('_token', csrftoken);
+        });
+
+        currentDropzone.on("uploadprogress",function(file,progress,bytesSent){
+            filePreview = file.previewElement;
+            //$(filePreview).find(".dz-upload").css('width',progress + '%');
+        });
+
+        currentDropzone.on("success", function(file, response) {
+            filePreview = file.previewElement;
+            $(filePreview).find('.dz-file').val( response.filename);
+            updateDzOrder();
+        });
+    }
+
     //return functions
     return {
         init: init
     };
 }();
 
-//Load global functions
 $(document).ready(function() {
     app.init();
 });
@@ -85,7 +127,7 @@ $(document).ready(function() {
  * Custom function outside the app scope *
  *****************************************/
 
-//init click button to submit remote forms
+
 function submitRemoteForm(elem){
     $(elem).closest("form.remote-form").submit();
 };
@@ -95,29 +137,14 @@ function removeTableRow(response, form)
     $(form).closest('tr').fadeOut(750);
 }
 
-
-
-/*******************************
- * Nested Categories Functions *
- *******************************/
-
-function removeCategory(response, form)
+function updateDzOrder()
 {
-    $(form).closest('li').fadeOut(750);
+    if( $("#post-uploads .dz-preview").length )
+    {
+        $("#post-uploads .dz-preview").each(function(index){
+            $(this).find('.dz-order').val(index);
+       })
+    }
 }
 
-function sortCategories(e)
-{
-   var str = window.JSON.stringify($('#nestable').nestable('serialize'));
-   var request_url = $("#sort-url").val();
- 
-   $.ajax({
-        url: request_url,
-        type: "POST",
-        data: { "json_string" : str},
-        success: function(data){
-            // ...
-        }
-    })
-}
 
