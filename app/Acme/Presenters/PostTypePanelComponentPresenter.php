@@ -26,11 +26,20 @@ class PostTypePanelComponentPresenter extends Presenter
             }
             else
                 $media = null;
+
+            if($componentTypePresenter == "AjaxUploader")
+            {
+                $collection = $this->settings()->get("collection");
+                $dropzoneMedias = $post->getMediaByCustomProperties( [ 'key' => $this->meta_key, 'locale' => $locale], $collection, true);
+            }
+            else
+                $dropzoneMedias = null;
         }
         else
         {
             $postMeta = null;
             $media = null;
+            $dropzoneMedias = null;
         }
 
         return View::make('admin.components.presenters.'.$componentTypePresenter, [
@@ -39,6 +48,7 @@ class PostTypePanelComponentPresenter extends Presenter
             'post' => $post,
             'postMeta' => $postMeta,
             'media' => $media,
+            'dropzoneMedias' => $dropzoneMedias,
         	'name' => $name,
         	'id' => $id,
             'form_method' => $form_method,

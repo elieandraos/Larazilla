@@ -58,6 +58,7 @@
             margin-top: 5px;
             text-align: center;
         }
+        .dropzone .dz-message { display: none;}
     </style>
 
     <!--[if lt IE 9]>

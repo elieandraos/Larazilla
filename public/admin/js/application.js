@@ -72,43 +72,39 @@ var app = function() {
     var initDropzone = function()
     {
 
-        if(!$("#post-uploads").length)
+        if(!$(".post-uploads").length)
             return;
         
         updateDzOrder();
+        var dropzones = new Array();
 
-        //Dropzone.autoDiscover = false;
-        currentDropzone = new Dropzone ("#post-uploads",{ 
-            url: "/admin/dropzone/upload",
-            autoProcessQueue: true, //uploads will be processed on drop 
-            acceptedFiles: 'image/*',
-            addRemoveLinks: true,
-            maxFilesize: 4, //in MB
-            previewTemplate: document.querySelector('#preview-template').innerHTML,
-            dictDefaultMessage: '',
-            dictRemoveFile: 'Delete',
-            dictCancelUpload: 'Uploading...',
-            thumbnailWidth: 80,
-            thumbnailHeight: 80
-        });
+        $(".post-uploads").each(function(){
+            id = $(this).attr('id');
+            dropzones[id] = new Dropzone ("#" + id,{ 
+                url: "/admin/dropzone/upload",
+                autoProcessQueue: true, //uploads will be processed on drop 
+                acceptedFiles: 'image/*',
+                addRemoveLinks: true,
+                maxFilesize: 4, //in MB
+                previewTemplate: document.querySelector('#preview-'+id).innerHTML,
+                dictDefaultMessage: '',
+                dictRemoveFile: 'Delete',
+                dictCancelUpload: 'Uploading...',
+                thumbnailWidth: 80,
+                thumbnailHeight: 80
+            });
 
-       // currentDropzone = $('#post-uploads').get(0).dropzone;
+            dropzones[id].on("sending", function(file, xhr, formData) {
+                var csrftoken = $("body").find('input[name="_token"]').val();
+                formData.append('_token', csrftoken);
+            });
 
-        currentDropzone.on("sending", function(file, xhr, formData) {
-            var csrftoken = $("body").find('input[name="_token"]').val();
-            formData.append('_token', csrftoken);
-        });
-
-        currentDropzone.on("uploadprogress",function(file,progress,bytesSent){
-            filePreview = file.previewElement;
-            //$(filePreview).find(".dz-upload").css('width',progress + '%');
-        });
-
-        currentDropzone.on("success", function(file, response) {
-            filePreview = file.previewElement;
-            $(filePreview).find('.dz-file').val( response.filename);
-            updateDzOrder();
-        });
+            dropzones[id].on("success", function(file, response) {
+                filePreview = file.previewElement;
+                $(filePreview).find('.dz-file').val( response.filename);
+                updateDzOrder();
+            });
+        })
     }
 
     //return functions
@@ -139,11 +135,14 @@ function removeTableRow(response, form)
 
 function updateDzOrder()
 {
-    if( $("#post-uploads .dz-preview").length )
+    if( $(".post-uploads").length )
     {
-        $("#post-uploads .dz-preview").each(function(index){
-            $(this).find('.dz-order').val(index);
-       })
+        $(".post-uploads").each(function(){
+            id = $(this).attr('id');
+            $("#" + id + " .dz-preview").each(function(index){
+                $(this).find('.dz-order').val(index);
+            });
+        });
     }
 }
 

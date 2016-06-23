@@ -95,6 +95,21 @@ class UpdatePostMetaValues
    
                 $meta_input[$locale] = ['value' => $component->settings()->get('collection')];   
             }
+            //DROPZONE MULTIPLE UPLOAD
+            elseif(is_array($meta_value) && in_array('dz_file', array_keys($meta_value)))
+            {
+                foreach($meta_value['dz_file'] as $key => $file_path)
+                {
+                    if(trim($file_path))
+                    {
+                        $order = $meta_value['dz_order'][$key];
+                        $media = $post->addMedia($file_path)
+                                    ->withCustomProperties(['key' => $meta_key, 'locale' => $locale, 'order' => $order])
+                                    ->toCollection($component->settings()->get('collection'));
+                    }
+                }
+                $meta_input[$locale] = ['value' => $component->settings()->get('collection')];
+            }
             //CHECKBOXES/RADIOS ARRAY VALUES
             elseif(is_array($meta_value))
             {

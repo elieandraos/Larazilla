@@ -100,6 +100,14 @@ class Post extends Model implements HasMediaConversions
         $this->addMediaConversion('adminThumb')
              ->setManipulations(['w' => 48, 'h' => 48])
              ->performOnCollections('*');
+
+        $this->addMediaConversion('dropzoneThumb')
+             ->setManipulations(['w' => 80, 'h' => 80])
+             ->performOnCollections('*');  
+
+        $this->addMediaConversion('socialMediaThumb')
+             ->setManipulations(['w' => 128, 'h' => 128])
+             ->performOnCollections('*');             
     }
 
 
@@ -110,7 +118,7 @@ class Post extends Model implements HasMediaConversions
      * @param type|string $collection 
      * @return type
      */
-    public function getMediaByCustomProperties($properties , $collection = 'images')
+    public function getMediaByCustomProperties($properties , $collection = 'images', $all = false)
     {
         $medias = $this->getMedia($collection);
         if(count($medias))
@@ -123,8 +131,10 @@ class Post extends Model implements HasMediaConversions
                 });
             }
             
-            if($medias->count())
+            if($medias->count() && !$all)
                 return $medias->first();
+            elseif($medias->count() && $all)
+                return $medias;
             else
                 return null;
         }

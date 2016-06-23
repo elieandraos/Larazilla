@@ -2,13 +2,28 @@
 
 {!! csrf_field() !!}
 
-<div id="post-uploads" class="dropzone">
+<div id="{!! $component->html_id !!}-{!! $locale !!}" class="dropzone post-uploads">
+	
+	@if(count($dropzoneMedias))
+        @foreach($dropzoneMedias as $key => $mediaItem)
+            <div class="dz-preview dz-file-preview" id="{!! $key !!}">
+                <div class="dz-details">
+                    <img src="{!!  $mediaItem->getURL('dropzoneThumb') !!}" />
+                    
+                    <input type="hidden" name="{!! $name !!}[dz_file][]"  class="dz-file"   /> <!-- path of file -->
+            		<input type="hidden" name="{!! $name !!}[dz_order][]"  class="dz-order"  /><!-- order of file -->
+                </div>
+                <a class="media-remove" href="#" data-media-id="{!! $mediaItem->id !!}">Delete</a>
+            </div>
+        @endforeach
+
+    @endif
 
 </div>
 	
 
 <!-- dropzone pewview template: http://www.dropzonejs.com/#layout  -->
-<div id="preview-template" style="display: none;">
+<div id="preview-{!! $component->html_id !!}-{!! $locale !!}" style="display: none;">
     <div class="dz-preview dz-file-preview">
         <div class="dz-details">
             <img data-dz-thumbnail />
