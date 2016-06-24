@@ -11,19 +11,6 @@
 |
 */
 
-use App\Models\Post;
-use App\Models\PostMeta;
-
-//$post = Post::find(9);
-//dd($post->postMetas[0]->key);
-/*
-$meta = new PostMeta;
-$meta->key = "foo";
-$meta->value = "bar";
-
-$post->postMetas()->save($meta);
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -75,6 +62,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
 
   //dropzone
   Route::post('/dropzone/upload', ['uses' => 'DropzoneController@upload', 'as' => 'admin.dropzone.upload']);
+  Route::post('/dropzone/delete', ['uses' => 'DropzoneController@delete', 'as' => 'admin.dropzone.delete']);
 
 
 });

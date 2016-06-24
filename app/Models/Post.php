@@ -134,35 +134,16 @@ class Post extends Model implements HasMediaConversions
             if($medias->count() && !$all)
                 return $medias->first();
             elseif($medias->count() && $all)
-                return $medias;
+            {
+                return $medias->sortBy(function($item) {
+                    return $item->getCustomProperty('order');
+                });
+            }
             else
                 return null;
         }
         
         return null;
     }
-
-
-    /*
-{
-    "media": {
-        "conversions": [{
-            "name": "featuredImage",
-            "manipulations": {
-                "w": "620",
-                "h": "480"
-            },
-            "collection": "player"
-        }, {
-            "name": "gridImage",
-            "manipulations": {
-                "w": "200",
-                "h": "140"
-            },
-            "collection": "player"
-        }]
-    }
-}
-*/
 
 }

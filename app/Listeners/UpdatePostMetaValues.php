@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Models\PostMeta;
 use App\Models\Post;
 use App\Models\PostTypePanelComponent;
+use Spatie\MediaLibrary\Media;
 use Request;
 
 class UpdatePostMetaValues
@@ -81,7 +82,7 @@ class UpdatePostMetaValues
                     $media->delete();
             }
 
-            //UPLOADED FILES
+            //UPLOADED FILE
             if(is_object($meta_value) && get_class($meta_value) == "Illuminate\Http\UploadedFile")
             {
                 $file = $input['meta'][$meta_key][$locale];
@@ -96,16 +97,34 @@ class UpdatePostMetaValues
                 $meta_input[$locale] = ['value' => $component->settings()->get('collection')];   
             }
             //DROPZONE MULTIPLE UPLOAD
-            elseif(is_array($meta_value) && in_array('dz_file', array_keys($meta_value)))
+            elseif(is_array($meta_value) && in_array('dz_order', array_keys($meta_value)))
             {
-                foreach($meta_value['dz_file'] as $key => $file_path)
+                
+                foreach($meta_value['dz_order'] as $key => $order)
                 {
-                    if(trim($file_path))
+                    if(trim($order))
                     {
-                        $order = $meta_value['dz_order'][$key];
-                        $media = $post->addMedia($file_path)
-                                    ->withCustomProperties(['key' => $meta_key, 'locale' => $locale, 'order' => $order])
-                                    ->toCollection($component->settings()->get('collection'));
+                        $file_path = $meta_value['dz_file'][$key];
+                        
+                        if(isset($meta_value['dz_media_id']))
+                            $media_id = $meta_value['dz_media_id'][$key];
+                        else
+                            $media_id = null;
+                        
+                        //create newly added media
+                        if(trim($file_path))
+                        {
+                            $media = $post->addMedia($file_path)
+                                     ->withCustomProperties(['key' => $meta_key, 'locale' => $locale, 'order' => $order])
+                                     ->toCollection($component->settings()->get('collection'));
+                        }
+                        //update existing media's order
+                        if(trim($media_id))
+                        {
+                            $media = Media::find($media_id);
+                            $media->setCustomProperty('order', $order);
+                            $media->save();
+                        }
                     }
                 }
                 $meta_input[$locale] = ['value' => $component->settings()->get('collection')];

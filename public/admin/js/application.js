@@ -80,7 +80,9 @@ var app = function() {
 
         $(".post-uploads").each(function(){
             id = $(this).attr('id');
-            dropzones[id] = new Dropzone ("#" + id,{ 
+            dom_id = $("#" + id);
+
+            dropzones[id] = new Dropzone ("#" + id, { 
                 url: "/admin/dropzone/upload",
                 autoProcessQueue: true, //uploads will be processed on drop 
                 acceptedFiles: 'image/*',
@@ -88,7 +90,7 @@ var app = function() {
                 maxFilesize: 4, //in MB
                 previewTemplate: document.querySelector('#preview-'+id).innerHTML,
                 dictDefaultMessage: '',
-                dictRemoveFile: 'Delete',
+                dictRemoveFile: '', //overrided in complete event
                 dictCancelUpload: 'Uploading...',
                 thumbnailWidth: 80,
                 thumbnailHeight: 80
@@ -104,6 +106,45 @@ var app = function() {
                 $(filePreview).find('.dz-file').val( response.filename);
                 updateDzOrder();
             });
+
+            dropzones[id].on("complete", function(file) {
+                filePreview = file.previewElement;
+                $(filePreview).find('.dz-remove').html('<i class="fa fa-trash-o" aria-hidden="true"></i>');
+            });
+
+            $(dom_id).sortable({
+                items:'.dz-preview',
+                cursor: 'move',
+                opacity: 0.5,
+                containment: dom_id,
+                distance: 20,
+                tolerance: 'pointer',
+                update: function (event, ui) {
+                   //var data = $(dom_id).sortable('toArray').toString()
+                   updateDzOrder();
+                }
+            });
+
+        })
+
+
+        $(".media-remove").click(function(){
+            media_id = $(this).data('media-id');
+            csrftoken = $("body").find('input[name="_token"]').val();
+            elem = $(this);
+
+            $.ajax({
+                method: 'POST',
+                url: "/admin/dropzone/delete",
+                data: {id: media_id, _token: csrftoken } ,
+                success: function(response){
+                    if(response.success == true)
+                        elem.closest('.dz-file-preview').remove();
+                    else
+                        alert(response.error);
+                }
+            })
+            return false;
         })
     }
 
@@ -140,7 +181,7 @@ function updateDzOrder()
         $(".post-uploads").each(function(){
             id = $(this).attr('id');
             $("#" + id + " .dz-preview").each(function(index){
-                $(this).find('.dz-order').val(index);
+                $(this).find('.dz-order').val( (index+1));
             });
         });
     }

@@ -6,9 +6,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Response;
+use Spatie\MediaLibrary\Media;
 
 class DropzoneController extends Controller
 {
+
+    /**
+     * Upload a file when added to the dropzone 
+     * 
+     * @param Request $request 
+     * @return type
+     */
     public function upload(Request $request)
     {
     	$input = $request->all();
@@ -27,5 +35,28 @@ class DropzoneController extends Controller
         }
 
         return Response::json('Server Error', 400);
+    }
+
+
+    /**
+     * Delete a media file from the media library
+     * 
+     * @param Request $request 
+     * @return type
+     */
+    public function delete(Request $request)
+    {
+        $input = $request->all();
+        $media = Media::find($input['id']);
+        
+        if($media)
+        {
+            $media->delete();
+            return Response::json(['success' => true], 200);
+        }
+        else
+        {
+            return Response::json(['success' => false, 'error' => 'Media not found.'], 200);
+        }
     }
 }

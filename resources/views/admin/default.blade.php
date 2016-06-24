@@ -94,6 +94,7 @@
     <script type="text/javascript" src="/vendor/Sortable/Sortable.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-jsonview/dist/jquery.jsonview.js"></script>
     <script type="text/javascript" src="/vendor/dropzone/dist/min/dropzone.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery-ui-sortable/jquery-ui-sortable.min.js"></script>
  
 
     <!-- Main -->

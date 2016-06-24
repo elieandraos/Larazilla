@@ -11,9 +11,10 @@
                     <img src="{!!  $mediaItem->getURL('dropzoneThumb') !!}" />
                     
                     <input type="hidden" name="{!! $name !!}[dz_file][]"  class="dz-file"   /> <!-- path of file -->
-            		<input type="hidden" name="{!! $name !!}[dz_order][]"  class="dz-order"  /><!-- order of file -->
+                    <input type="hidden" name="{!! $name !!}[dz_order][]"  class="dz-order"  /><!-- order of file -->
+            		<input type="hidden" name="{!! $name !!}[dz_media_id][]" value="{!! $mediaItem->id !!}"   /><!-- media_id  -->
                 </div>
-                <a class="media-remove" href="#" data-media-id="{!! $mediaItem->id !!}">Delete</a>
+                <a class="media-remove" href="#" data-media-id="{!! $mediaItem->id !!}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
             </div>
         @endforeach
 
