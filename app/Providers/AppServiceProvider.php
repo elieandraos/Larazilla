@@ -32,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
             'App\Acme\Repositories\PostRepositoryInterface',
             'App\Acme\Repositories\PostRepository'
         );
+
+        $this->app->bind(
+            'App\Acme\Repositories\CategoryRepositoryInterface',
+            'App\Acme\Repositories\CategoryRepository'
+        );
     }
 }

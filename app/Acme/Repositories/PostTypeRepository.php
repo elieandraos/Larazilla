@@ -41,7 +41,7 @@ class PostTypeRepository extends DbRepository implements PostTypeRepositoryInter
 	 */
 	public function find($id)
 	{
-		return postType::findOrFail($id);
+		return PostType::findOrFail($id);
 	}
 
 

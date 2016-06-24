@@ -6,6 +6,7 @@ use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Models\PostType;
 use App\Models\Post;
+use App\Models\Category;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -38,12 +39,8 @@ class RouteServiceProvider extends ServiceProvider
             return Post::findOrFail($value);
         });
 
-        $router->model('panelId', 'App\Models\PostTypePanel', function($value){
-            return Post::findOrFail($value);
-        });
-
-        $router->model('componentId', 'App\Models\PostTypePanelComponent', function($value){
-            return Post::findOrFail($value);
+        $router->model('categoryId', 'App\Models\Category', function($value){
+            return Category::findOrFail($value);
         });
     }
 

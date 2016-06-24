@@ -64,6 +64,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::post('/dropzone/upload', ['uses' => 'DropzoneController@upload', 'as' => 'admin.dropzone.upload']);
   Route::post('/dropzone/delete', ['uses' => 'DropzoneController@delete', 'as' => 'admin.dropzone.delete']);
 
+  //categories
+  Route::get('/categories', ['uses' => 'CategoryController@index', 'as' => 'admin.categories']);
+  Route::get('/categories/create', ['uses' => 'CategoryController@create', 'as' => 'admin.categories.create']);
+  Route::post('/categories/store', ['uses' => 'CategoryController@store', 'as' => 'admin.categories.store']);
+  Route::get('/categories/{categoryId}/edit', ['uses' => 'CategoryController@edit', 'as' => 'admin.categories.edit']);
+  Route::post('/categories/{categoryId}/update', ['uses' => 'CategoryController@update', 'as' => 'admin.categories.update']);
+  Route::post('/categories/{categoryId}/delete', ['uses' => 'CategoryController@delete', 'as' => 'admin.categories.delete']);
+
 
 });
 
