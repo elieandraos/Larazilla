@@ -8,7 +8,8 @@ interface CategoryRepositoryInterface
 	public function update($input, $category);
 	public function find($id);
 	public function delete($category);
-	public function all();
+	public function getAll();
+	public function getRoots();
 }
 
 ?>

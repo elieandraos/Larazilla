@@ -7,6 +7,7 @@ var app = function() {
         initAddConversions();
         initjsonView();
         initDropzone();
+        initNestedCategories();
     };
 
     //handle remote form submission
@@ -120,7 +121,6 @@ var app = function() {
                 distance: 20,
                 tolerance: 'pointer',
                 update: function (event, ui) {
-                   //var data = $(dom_id).sortable('toArray').toString()
                    updateDzOrder();
                 }
             });
@@ -148,6 +148,43 @@ var app = function() {
         })
     }
 
+
+    var initNestedCategories = function()
+    {
+        if($("#nestable").length)
+        {
+            var updateCategoriesJsonOutput = function(e)
+            {
+                var list   = e.length ? e : $(e.target),
+                    output = list.data('output');
+                if (window.JSON) {
+                    output.val(window.JSON.stringify(list.nestable('serialize')));
+                } else {
+                    output.val('JSON browser support required.');
+                }
+            };
+
+            $('#nestable').nestable({ group: 1 }).on('change', updateCategoriesJsonOutput);
+            updateCategoriesJsonOutput($('#nestable').data('output', $('#nestable-output')));
+
+            $("#categories-save-order").click(function(e){
+                var csrftoken = $("body").find('input[name="_token"]').val();
+                var str = $('#nestable-output').val();
+                
+                $.ajax({
+                    url: '/admin/categories/sort',
+                    type: "POST",
+                    data: { "json_string" : str,  _token: csrftoken },
+                    success: function(data){
+                        Materialize.toast("Category order Updated.", 3000);
+                    }
+                })
+
+            });
+
+        }   
+    }
+
     //return functions
     return {
         init: init
@@ -156,6 +193,7 @@ var app = function() {
 
 $(document).ready(function() {
     app.init();
+
 });
 
 
@@ -186,5 +224,4 @@ function updateDzOrder()
         });
     }
 }
-
 

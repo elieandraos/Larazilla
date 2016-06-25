@@ -1,7 +1,5 @@
 <p class="label"> {!! $component->label !!}</p>
 
-{!! csrf_field() !!}
-
 <div id="{!! $component->html_id !!}-{!! $locale !!}" class="dropzone post-uploads">
 	
 	@if(count($dropzoneMedias))

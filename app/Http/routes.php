@@ -71,6 +71,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::get('/categories/{categoryId}/edit', ['uses' => 'CategoryController@edit', 'as' => 'admin.categories.edit']);
   Route::post('/categories/{categoryId}/update', ['uses' => 'CategoryController@update', 'as' => 'admin.categories.update']);
   Route::post('/categories/{categoryId}/delete', ['uses' => 'CategoryController@delete', 'as' => 'admin.categories.delete']);
+  Route::post('/categories/sort', ['uses' => 'CategoryController@sort', 'as' => 'admin.categories.sort']);
 
 
 });

@@ -5,13 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use \Dimsav\Translatable\Translatable;
 use Kalnoy\Nestedset\Node;
+use Laracasts\Presenter\PresentableTrait;
 
-class Category extends Model
+class Category extends Node
 {
-    use Translatable;
+    use Translatable, PresentableTrait;
     
     protected $table = "categories";
     protected $fillable = ['title', 'description', 'slug', 'category_id'];
+    protected $presenter = 'App\Acme\Presenters\CategoryPresenter';
 
     public $translatedAttributes = ['title', 'description'];
     public $translationModel = 'App\Models\CategoryTranslation';
@@ -32,4 +34,16 @@ class Category extends Model
         }
         return $this;
     }
+
+
+    /**
+     * a method to get the children by order
+     * @param type $categories 
+     * @return type
+     */ 
+    public function getChildren()
+    {
+        return $this->children()->orderBy('_lft')->get();
+    }
+    
 }

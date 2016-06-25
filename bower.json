@@ -12,6 +12,7 @@
     "html5shiv": "^3.7.3",
     "jquery-jsonview": "^1.2.3",
     "dropzone": "^4.3.0",
-    "jquery-ui-sortable": "sortable-jquery-ui#*"
+    "jquery-ui-sortable": "sortable-jquery-ui#*",
+    "jquery.nestable": "*"
   }
 }

@@ -60,10 +60,23 @@ class CategoryRepository extends DbRepository implements CategoryRepositoryInter
 	 * 
 	 * @return type
 	 */
-	public function all()
+	public function getAll()
 	{
 		return Category::all();
 	}
+
+
+	/**
+	 * Get Categories that are roots
+	 * 
+	 * @return type
+	 */
+	public function getRoots()
+	{
+		return Category::defaultOrder()->whereParentId(null)->get();
+	}
+
+
 }
 
 

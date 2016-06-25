@@ -5,26 +5,20 @@
 @include('admin.navs.breadcrumb')
 
 <div class="card-panel">
-	<table class="table">
-	  <thead>
-	    <tr>
-	      <th>Title</th>
-	      <th>Parent Name</th>
-	      <th>Action</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-	    @foreach($categories as $category)
-			<tr>
-				<td>{!! $category->title !!}</td>
-				<td></td>
-				<td>
-					@include('admin.categories.partials.actions', ["category" => $category])
-				</td>
-			</tr>
-		@endforeach
-	  </tbody>
-	</table>
+	@if($categories->count())
+		
+		<textarea id="nestable-output" class="hidden" ></textarea>
+		
+		<div class="dd" id="nestable">
+	        <ol class="dd-list">
+				@foreach($categories as $category)
+					{!! $category->present()->nestedListRow() !!}
+				@endforeach
+			</ol>
+		</div>
+		<br/>
+		<button class="btn" id="categories-save-order"> Save Order <i class="mdi-content-send right"></i> </button>
+	@endif
 </div>
 
 

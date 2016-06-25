@@ -14,7 +14,6 @@ class CategoryController extends Controller
 {
     protected $categoryRepos;
 
-
     public function __construct(CategoryRepositoryInterface $categoryRepos)
     {
     	$this->categoryRepos = $categoryRepos;
@@ -34,8 +33,9 @@ class CategoryController extends Controller
      * @return type
      */
     public function index()
-    {
-    	$categories = $this->categoryRepos->all();
+    {    	
+    	$categories = $this->categoryRepos->getRoots();
+    	
         array_push($this->breadcrumb['links'], ['title' => 'List']);
         $this->breadcrumb['link_icon'] = route('admin.categories.create');
     	return view('admin.categories.index', ['categories' => $categories, 'breadcrumb' => $this->breadcrumb]);
@@ -116,5 +116,18 @@ class CategoryController extends Controller
     {
     	$category->delete();
     }
+
+    /**
+	 * Sort the categories
+	 * @return type
+	 */
+	public function sort(Request $request)
+	{
+		$input = $request->all();
+		$json = $input['json_string'];
+		$categories = json_decode($json, true);
+		Category::rebuildTree($categories);
+		
+	}
 
 }

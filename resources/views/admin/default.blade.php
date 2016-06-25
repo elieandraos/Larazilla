@@ -8,7 +8,7 @@
 
     <title>Skinny Dashboard</title>
 
-    <!-- <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'> -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
  
     <!-- bower -->
     <link rel="stylesheet" type="text/css" href="/vendor/nanoscroller/bin/css/nanoscroller.css" />
@@ -59,6 +59,8 @@
             text-align: center;
         }
         .dropzone .dz-message { display: none;}
+        .dd3-content .btn-group { float: right;}
+        .dd3-content .btn-group .btn-flat{ float: right; padding: 0 0.75rem;}
     </style>
 
     <!--[if lt IE 9]>
@@ -71,7 +73,8 @@
 
 </head>
 <body>
-
+    {!! csrf_field() !!}
+    
     @include('admin.navs.top')
 	@include('admin.navs.aside')
 	
@@ -95,6 +98,7 @@
     <script type="text/javascript" src="/vendor/jquery-jsonview/dist/jquery.jsonview.js"></script>
     <script type="text/javascript" src="/vendor/dropzone/dist/min/dropzone.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-ui-sortable/jquery-ui-sortable.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.nestable/jquery.nestable.js"></script>
  
 
     <!-- Main -->
