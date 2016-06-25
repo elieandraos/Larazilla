@@ -7,6 +7,7 @@ use \Dimsav\Translatable\Translatable;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 use App\Models\PostType;
+use Carbon\Carbon;
 
 
 
@@ -15,7 +16,7 @@ class Post extends Model implements HasMediaConversions
     use Translatable, HasMediaTrait;
 
     protected $table = 'posts';
-    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'post_type_id'];
+    protected $fillable = ['title', 'slug', 'excerpt', 'body', 'publish_date', 'post_type_id'];
     
     public $translatedAttributes = ['title', 'excerpt', 'body'];
     public $translationModel = 'App\Models\PostTranslation';
@@ -50,6 +51,17 @@ class Post extends Model implements HasMediaConversions
         return $this->hasMany('App\Models\PostMeta');
     }
 
+
+    /**
+     * Represnt the publish_date in different format
+     * 
+     * @param type $value 
+     * @return type
+     */
+    public function getPublishDateAttribute($value)
+    {
+        return Carbon::parse($value)->format('d F, Y');
+    }
 
     /**
      * Method that loads the translations to the model attributes

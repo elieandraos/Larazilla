@@ -38,7 +38,18 @@
         div.jsonview { font-size: 0.9rem }
         .card-panel .title {     width: 100%; padding: 10px .2rem;margin-bottom: 10px;}
         .card-panel .title h5 i { margin-right: .3rem;margin-top: -2px;}
-        .card-panel { margin: 0; padding-top: 0; }        
+        .card-panel { margin: 0; padding-top: 0; } 
+        footer {
+            border-top: none;
+            background: #F9F9F9;
+        } 
+        span.hint { 
+            font-size: 11px;
+            margin-top: -10px;
+            display: block;
+            font-style: italic;
+            color: #b3b3b3;
+        }      
         .dropzone
         {
             text-align: left;

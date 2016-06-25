@@ -63,9 +63,14 @@
 				{!! Form::select(
 					'category_id[]', 
 					[ '-1' => 'Select Category'] + $categories, 
-					$post->categories()->lists('category_id')->toArray(), 
+					(isset($post))?$post->categories()->lists('category_id')->toArray():null, 
 					['multiple' => 'multiple' ]
 				)!!}
+				
+				<div class="input-field" style="margin-top:30px;"> 
+				 	{!! Form::date("publish_date", null, ['class' => 'datepicker']) !!}
+				 	<label for="input_date">Date</label> 
+				</div>
 		</div>
 
 		<!-- Custom Post Type Panels -->

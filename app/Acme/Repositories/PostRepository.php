@@ -1,9 +1,11 @@
 <?php 
 
 namespace App\Acme\Repositories; 
+
 use App\Models\PostType;
 use App\Models\Post;
 use App\Models\PostMeta;
+use Carbon\Carbon;
 
 class PostRepository extends DbRepository implements PostRepositoryInterface 
 {
@@ -17,6 +19,8 @@ class PostRepository extends DbRepository implements PostRepositoryInterface
 	public function create($input, $postType)
 	{
 		$input['post_type_id'] = $postType->id;
+		$input['publish_date'] = Carbon::parse($input['publish_date'])->format('Y-m-d');
+
 		$post = Post::create($input);
 
 		if(isset($input['category_id']))
@@ -40,7 +44,9 @@ class PostRepository extends DbRepository implements PostRepositoryInterface
 			$post->categories()->sync($input['category_id']);
 		else
 			$post->categories()->detach();
-
+		
+		$input['publish_date'] = Carbon::parse($input['publish_date'])->format('Y-m-d');
+		
 		return $post->update($input);
 	}
 

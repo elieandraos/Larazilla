@@ -90,6 +90,7 @@ class PostController extends Controller
         }
 
     	$input['slug'] = str_slug($input[$this->default_locale]['title']); //TODO: switch this to form input
+
         $post = $this->postRepos->create($input, $postType);
         Event::fire(new PostIsSaved($post, $input));
         Flash::success($postType->singular_name.' was created successfully.');

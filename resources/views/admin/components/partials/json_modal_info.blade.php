@@ -4,7 +4,7 @@
 			<li class="tab col s3"><a class="active" href="#content-dropdown">Dropdown</a></li>
 			<li class="tab col s3"><a href="#content-checkbox">Checkbox</a></li>  
       <li class="tab col s3"><a href="#content-radio">Radio</a></li>  
-			<li class="tab col s3"><a href="#content-image">Image</a></li>  
+			<li class="tab col s3"><a href="#content-file-upload">File Upload</a></li>  
   		</ul> 
 
   		<div id="content-dropdown" class="col s12 json-info">
@@ -100,7 +100,7 @@
 			</code>
 </div>
 
-<div id="content-dropdown" class="col s12 json-info">
+<div id="content-file-upload" class="col s12 json-info">
   <code class="hidden">
       {
           "collection": "player"

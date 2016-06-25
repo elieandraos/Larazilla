@@ -43,6 +43,7 @@
 			<div class="input-field"> 
 				{!! Form::text('html_id', null, ['class' => 'validate', 'id' => 'html_id']) !!}
 				{!! Form::label('html_id', 'HTML Id') !!}
+				<span class="hint">required for the multiple file upload</span>
 			</div>
 			
 				<div class="input-field"> 

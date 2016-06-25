@@ -1,4 +1,5 @@
-var app = function() {
+var app = function() 
+{ 
 
     var init = function() {
 
@@ -8,6 +9,7 @@ var app = function() {
         initjsonView();
         initDropzone();
         initNestedCategories();
+        initDateDefaultValue();
     };
 
     //handle remote form submission
@@ -47,7 +49,7 @@ var app = function() {
         $("body").on('click', '.delete-rule', function(){
             $(this).closest('.row').remove();
         })
-    }
+    };
 
     //add/remove converions for post types
     var initAddConversions = function()
@@ -59,7 +61,7 @@ var app = function() {
         $("body").on('click', '.delete-conversion', function(){
             $(this).closest('.row').remove();
         })
-    }
+    };
 
     var initjsonView = function() 
     {
@@ -68,7 +70,7 @@ var app = function() {
             $(this).JSONView(json);    
         })
             
-    }
+    };
 
     var initDropzone = function()
     {
@@ -146,7 +148,7 @@ var app = function() {
             })
             return false;
         })
-    }
+    };
 
 
     var initNestedCategories = function()
@@ -181,9 +183,29 @@ var app = function() {
                 })
 
             });
+        }
+    };   
 
-        }   
-    }
+    var initDateDefaultValue = function()
+    {
+        $(".datepicker").each(function(){
+            
+            if( !$(this).val())
+            {
+                var today = new Date();
+                var day = today.getDate();
+                var month = today.toLocaleString("en-us", { month: "long" });
+                var year = today.getFullYear();
+
+                if(day<10) { day ='0'+ day } 
+                today = day +' ' + month + ', '+ year;
+
+                $(this).val(today);
+            }
+        });
+    };
+
+    
 
     //return functions
     return {
