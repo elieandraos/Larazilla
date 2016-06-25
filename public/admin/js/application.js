@@ -212,6 +212,11 @@ function removeTableRow(response, form)
     $(form).closest('tr').fadeOut(750);
 }
 
+function removeListRow(response, form)
+{
+    $(form).closest('li').fadeOut(750);
+}
+
 function updateDzOrder()
 {
     if( $(".post-uploads").length )

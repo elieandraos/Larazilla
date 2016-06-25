@@ -2,12 +2,12 @@
 	<!-- Large Column -->
 	<div class="col m6 s12">
 
-		<div class="card">
+		<div class="card-panel">
 			<div class="title">
 				<h5><i class="fa fa-cogs"></i> Required Info</h5>
 			</div>
 
-			<div class="content">
+		
 				
   				<div class="input-field"> 
 					{!! Form::text('label', null, ['class' => 'validate', 'id' => 'label']) !!}
@@ -27,44 +27,42 @@
 				<button class="btn" type="submit" name="action"> Submit <i class="mdi-content-send right"></i> </button>
 		  			
 		  		
-			</div> <!-- .card .content -->
-		</div> <!-- .card -->
+		
+		</div> <!-- .card-panel -->
 	</div>
 
 		<!-- Large Column -->
 	<div class="col m6 s12">
 
-		<div class="card">
+		<div class="card-panel">
 			<div class="title">
 				<h5><i class="fa fa-cogs"></i> Additional Info</h5>
 			</div>
 
-			<div class="content">
 				
-  				<div class="input-field"> 
-					{!! Form::text('html_id', null, ['class' => 'validate', 'id' => 'html_id']) !!}
-					{!! Form::label('html_id', 'HTML Id') !!}
-				</div>
-				
-  				<div class="input-field"> 
-					{!! Form::text('css_class', null, ['class' => 'validate', 'id' => 'css_class']) !!}
-					{!! Form::label('css_class', 'CSS Class') !!}
-				</div>
-
+			<div class="input-field"> 
+				{!! Form::text('html_id', null, ['class' => 'validate', 'id' => 'html_id']) !!}
+				{!! Form::label('html_id', 'HTML Id') !!}
+			</div>
+			
 				<div class="input-field"> 
-					{!! Form::textarea('options', (isset($component) && $component->id)?$component->present()->options_json:'', ['class' => 'materialize-textarea', 'id' => 'json-options']) !!}
-					{!! Form::label('options', 'Options') !!}
-				</div>
+				{!! Form::text('css_class', null, ['class' => 'validate', 'id' => 'css_class']) !!}
+				{!! Form::label('css_class', 'CSS Class') !!}
+			</div>
 
-				<blockquote> 
-					<p> 
-						See json options samples for different components types. <br> 
-						<small><a href="#json-options-modal" class="modal-trigger">
-						options configuration</a></small> 
-					</p> 
-				</blockquote>
+			<div class="input-field"> 
+				{!! Form::textarea('options', (isset($component) && $component->id)?$component->present()->options_json:'', ['class' => 'materialize-textarea', 'id' => 'json-options']) !!}
+				{!! Form::label('options', 'Options') !!}
+			</div>
+
+			<blockquote> 
+				<p> 
+					See json options samples for different components types. <br> 
+					<small><a href="#json-options-modal" class="modal-trigger">
+					options configuration</a></small> 
+				</p> 
+			</blockquote>
 			  		
-			</div> <!-- .card .content -->
 		</div> <!-- .card -->
 	</div>
 </div>

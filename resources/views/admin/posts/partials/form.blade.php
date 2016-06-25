@@ -2,12 +2,12 @@
 	<!-- Normal Column -->
 	<div class="col m7 s12">
 
-		<div class="card">
+		<div class="card-panel">
 			<div class="title">
 				<h5><i class="fa fa-database"></i> Content</h5>
 			</div>
 
-			<div class="content">
+			
 				<ul class="tabs"> 
 		  			@foreach($locales as $locale)
 		  				<li class="tab col s3">
@@ -37,7 +37,6 @@
 						</div>
 		  			</div> 
 		  		@endforeach
-			</div> <!-- .card .content -->
 		</div> <!-- .card -->
 		
 		<!-- Custom Post Type Panels -->
@@ -51,6 +50,24 @@
 
 	<!-- Side Column -->
 	<div class="col m5 s12">
+			
+		<div class="card-panel">
+				<div class="title"><h5><i class="fa fa-paper-plane-o"></i> Publish</h5></div>
+
+				<div style="text-align:right">
+					<button class="btn" type="submit" name="action"> Submit <i class="mdi-content-send right"></i> </button>
+				</div>
+				
+				<p class="label"> Categories</p>
+				
+				{!! Form::select(
+					'category_id[]', 
+					$categories, 
+					null, 
+					['multiple' => 'multiple' ]
+				)!!}
+		</div>
+
 		<!-- Custom Post Type Panels -->
 		@if($sidePanels->count())
 			@foreach($sidePanels as $panel)

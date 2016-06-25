@@ -8,7 +8,7 @@
 	@if($categories->count())
 		
 		<textarea id="nestable-output" class="hidden" ></textarea>
-		
+		<h5><p>Drag and drop categories to change their orders</p></h5>
 		<div class="dd" id="nestable">
 	        <ol class="dd-list">
 				@foreach($categories as $category)

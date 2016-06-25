@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use App\Models\PostType;
+use App\Models\PostTypePanel;
+use App\Models\PostTypePanelComponent;
 use App\Models\Post;
 use App\Models\Category;
 
@@ -41,6 +43,14 @@ class RouteServiceProvider extends ServiceProvider
 
         $router->model('categoryId', 'App\Models\Category', function($value){
             return Category::findOrFail($value);
+        });
+
+        $router->model('panelId', 'App\Models\PostTypePanel', function($value){
+             return PostTypePanel::findOrFail($value);
+        });
+ 
+        $router->model('componentId', 'App\Models\PostTypePanelComponent', function($value){
+             return PostTypePanelComponent::findOrFail($value);
         });
     }
 

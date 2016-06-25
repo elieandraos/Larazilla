@@ -14,7 +14,7 @@
 		<p>This action will remove the category (and its posts) permanently.</p> 
 	</div> 
 	<div class="modal-footer"> 
-		{!! Form::open(['route' => ['admin.categories.delete', $category->id], 'data-remote' => true, 'data-callback' => 'removeTableRow' ]) !!}
+		{!! Form::open(['route' => ['admin.categories.delete', $category->id], 'data-remote' => true, 'data-callback' => 'removeListRow' ]) !!}
 			<a href="#!" class="modal-action modal-close waves-effect btn red">Cancel</a> 
 			<a href="#!" class="modal-action modal-close waves-effect btn light-green submit-btn">Confirm</a> 
 		{!! Form::close() !!}

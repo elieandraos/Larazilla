@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\PostType;
 use App\Models\Post;
+use App\Models\Category;
 use App\Acme\Repositories\PostRepositoryInterface;
 use App\Events\PostIsSaved;
 use Validator;
@@ -24,6 +25,7 @@ class PostController extends Controller
     	$this->locales = config('translatable.locales');
     	$this->default_locale = config('translatable.fallback_locale');
     	$this->postRepos = $postRepos;
+        $this->categories = Category::all()->lists('title', 'id')->toArray();
     }
 
 
@@ -64,7 +66,7 @@ class PostController extends Controller
         $normalPanels = $postType->panels()->position('normal')->get();
         $sidePanels = $postType->panels()->position('side')->get();
         
-    	return view('admin.posts.create', ['postType' => $postType, 'post' => null, 'locales' => $this->locales, 'normalPanels' => $normalPanels , 'sidePanels' => $sidePanels, 'breadcrumb' => $breadcrumb]);
+    	return view('admin.posts.create', ['postType' => $postType, 'post' => null, 'locales' => $this->locales, 'categories' => $this->categories, 'normalPanels' => $normalPanels , 'sidePanels' => $sidePanels, 'breadcrumb' => $breadcrumb]);
     }
 
 
@@ -118,7 +120,7 @@ class PostController extends Controller
         $post = $post->addAllTranslations();
 
         //dd($post->postMetas->toArray());
-        return view('admin.posts.edit', ['postType' => $postType, 'post' => $post, 'locales' => $this->locales, 'normalPanels' => $normalPanels , 'sidePanels' => $sidePanels, 'breadcrumb' => $breadcrumb]);
+        return view('admin.posts.edit', ['postType' => $postType, 'post' => $post, 'locales' => $this->locales, 'categories' => $this->categories, 'normalPanels' => $normalPanels , 'sidePanels' => $sidePanels, 'breadcrumb' => $breadcrumb]);
     }
 
 

@@ -36,8 +36,9 @@
         p.label { font-size: 0.8rem;color:#9e9e9e;margin-bottom: 5px;}
         .json-info .collapsible { box-shadow: none !important; border: none !important; }
         div.jsonview { font-size: 0.9rem }
-        .card .content { overflow: hidden;}
-
+        .card-panel .title {     width: 100%; padding: 10px .2rem;margin-bottom: 10px;}
+        .card-panel .title h5 i { margin-right: .3rem;margin-top: -2px;}
+        .card-panel { margin: 0; padding-top: 0; }        
         .dropzone
         {
             text-align: left;
