@@ -15,11 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/design', function () {
-    return view('admin.design');
-});
 
 Route::auth();
+
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin' ], function () {
 

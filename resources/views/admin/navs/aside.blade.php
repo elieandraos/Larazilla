@@ -66,7 +66,7 @@
                     </li>
 
                     <li>
-                        <a href="/admin/posts/galleries" class=" waves-effect waves-blue"> <i class="fa fa fa-video-camera"></i> 
+                        <a href="/admin/posts/videos" class=" waves-effect waves-blue"> <i class="fa fa fa-video-camera"></i> 
                             Videos
                         </a>
                     </li>

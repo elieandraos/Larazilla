@@ -11,8 +11,8 @@ return [
     |
     */
     'locales' => [
-        'en',
-        'ar'
+        'ar',
+        'en'
     ],
 
     /*
@@ -50,7 +50,7 @@ return [
     | $useTranslationFallback when defined
     |
     */
-    'use_fallback' => false,
+    'use_fallback' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -62,7 +62,7 @@ return [
     | set it to false.
     |
     */
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'ar',
 
     /*
     |--------------------------------------------------------------------------
