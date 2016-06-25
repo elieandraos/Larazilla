@@ -21,6 +21,14 @@ class Category extends Node
 
 
     /**
+     * The posts that belongs to the category.
+     */
+    public function posts()
+    {
+        return $this->belongsToMany('App\Models\Post');
+    }
+
+    /**
      * Method that loads the translations to the model attributes
      * when using Form::model() 
      * 

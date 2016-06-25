@@ -31,7 +31,7 @@
 
                 <ul>
                     <li class="yay-user-info">
-                        <a href="page-profile.html">
+                        <a href="#">
                             <img src="/admin/assets/_con/images/user.png" alt="John Doe" class="circle">
                             <h3 class="yay-user-info-name">{!! Auth::user()->name !!}</h3>
                             <div class="yay-user-location">

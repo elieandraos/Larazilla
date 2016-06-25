@@ -62,8 +62,8 @@
 				
 				{!! Form::select(
 					'category_id[]', 
-					$categories, 
-					null, 
+					[ '-1' => 'Select Category'] + $categories, 
+					$post->categories()->lists('category_id')->toArray(), 
 					['multiple' => 'multiple' ]
 				)!!}
 		</div>

@@ -32,6 +32,15 @@ class Post extends Model implements HasMediaConversions
 
 
     /**
+     * The categories that belongs to the post.
+     */
+    public function categories()
+    {
+        return $this->belongsToMany('App\Models\Category');
+    }
+
+
+    /**
      * the metas that belongs to the post
      * 
      * @return type

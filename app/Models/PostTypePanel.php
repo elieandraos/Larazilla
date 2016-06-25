@@ -35,7 +35,7 @@ class PostTypePanel extends Model
         return $this->hasMany('App\Models\PostTypePanelComponent');
     }
 
-
+    
     /**
      * Local model scope to query panel by position 
      * 

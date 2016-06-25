@@ -90,7 +90,6 @@ class PostController extends Controller
         }
 
     	$input['slug'] = str_slug($input[$this->default_locale]['title']); //TODO: switch this to form input
-        
         $post = $this->postRepos->create($input, $postType);
         Event::fire(new PostIsSaved($post, $input));
         Flash::success($postType->singular_name.' was created successfully.');
@@ -118,7 +117,6 @@ class PostController extends Controller
         $sidePanels = $postType->panels()->position('side')->get();
         //bind the translated attribute to the post model
         $post = $post->addAllTranslations();
-
         //dd($post->postMetas->toArray());
         return view('admin.posts.edit', ['postType' => $postType, 'post' => $post, 'locales' => $this->locales, 'categories' => $this->categories, 'normalPanels' => $normalPanels , 'sidePanels' => $sidePanels, 'breadcrumb' => $breadcrumb]);
     }

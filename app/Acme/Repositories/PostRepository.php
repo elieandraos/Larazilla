@@ -18,6 +18,11 @@ class PostRepository extends DbRepository implements PostRepositoryInterface
 	{
 		$input['post_type_id'] = $postType->id;
 		$post = Post::create($input);
+
+		if(isset($input['category_id']))
+			$post->categories()->sync($input['category_id']);
+		else
+			$post->categories()->detach();
 		
 		return $post;
 	}
@@ -31,6 +36,11 @@ class PostRepository extends DbRepository implements PostRepositoryInterface
 	 */
 	public function update($input, $post, $postType)
 	{
+		if(isset($input['category_id']))
+			$post->categories()->sync($input['category_id']);
+		else
+			$post->categories()->detach();
+
 		return $post->update($input);
 	}
 
