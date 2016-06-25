@@ -45,10 +45,33 @@
 							<i class="fa fa-dashboard"></i> Dashboard
                         </a>
                     </li>
+                    <li class="label">Media Center</li>
+                    
+                    <li>
+                        <a href="/admin/posts/news" class=" waves-effect waves-blue"> <i class="fa fa-bullhorn"></i> 
+                            News
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/admin/posts/interviews" class=" waves-effect waves-blue"> <i class="fa fa-microphone"></i> 
+                            Interviews
+                        </a>
+                    </li>
 
-                    <li class="label">Menu</li>
+                    <li>
+                        <a href="/admin/posts/galleries" class=" waves-effect waves-blue"> <i class="fa fa-camera-retro"></i> 
+                            Galleries
+                        </a>
+                    </li>
 
-                 
+                    <li>
+                        <a href="/admin/posts/galleries" class=" waves-effect waves-blue"> <i class="fa fa fa-video-camera"></i> 
+                            Videos
+                        </a>
+                    </li>
+
+                    <li class="label">Content</li>
 
                     <li>
                         <a href="widgets.html" class=" waves-effect waves-blue"> <i class="fa fa-magic"></i> Widgets </a>
@@ -56,32 +79,10 @@
                     </li>
 
                     <li>
-                        <a href="layouts.html" class=" waves-effect waves-blue"> <i class="mdi mdi-av-web"></i> Layouts
-                            <span class="badge new">new</span>
+                        <a href="/admin/categories" class=" waves-effect waves-blue"> <i class="fa fa-sitemap"></i> 
+                            Categories
                         </a>
-
                     </li>
-
-                    <li class="label">Elements</li>
-
-                    <li> <!-- use class='open' to toggle it -->
-                        <a href="css-alerts.html" class="yay-sub-toggle waves-effect waves-blue"> <i class="fa fa-css3"></i> CSS
-                            <span class="yay-collapse-icon mdi-navigation-expand-more"></span>
-                        </a>
-                        <ul>
-
-                            <li>
-                                <a href="css-alerts.html" class=" waves-effect waves-blue"> <i class="mdi-alert-warning"></i> Alerts </a>
-
-                            </li>
-
-                            <li>
-                                <a href="css-badges.html" class=" waves-effect waves-blue"> <i class="mdi-action-stars"></i> Badges </a>
-
-                            </li>
-                        </ul>
-                    </li>
-
 
                 </ul>
 

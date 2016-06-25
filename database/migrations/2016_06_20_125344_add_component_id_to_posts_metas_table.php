@@ -31,6 +31,7 @@ class AddComponentIdToPostsMetasTable extends Migration
     public function down()
     {
         Schema::table('posts_metas', function (Blueprint $table) {
+            $table->dropUnique('posts_metas_component_id_foreign');
             $table->dropColumn('component_id');
         });
     }

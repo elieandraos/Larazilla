@@ -47,7 +47,7 @@ class ComponentTypeTableSeeder extends DatabaseSeeder
         PostTypePanelComponentType::create([
             "name" => "Single File Upload",
             "caption" => "HTML file input",
-            "presenter_name" => "Radio"
+            "presenter_name" => "Image"
         ]);
 
         PostTypePanelComponentType::create([

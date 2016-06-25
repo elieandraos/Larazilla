@@ -32,8 +32,8 @@ class AddComponentTypeIdToComponentsTable extends Migration
     {
         Schema::table('posts_types_panels_components', function (Blueprint $table) {
             $table->string('type'); 
+            $table->dropUnique('posts_types_panels_components_component_type_id_foreign');
             $table->dropColumn('component_type_id');
-
         });
     }
 }

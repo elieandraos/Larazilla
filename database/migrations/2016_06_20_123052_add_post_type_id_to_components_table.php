@@ -30,7 +30,9 @@ class AddPostTypeIdToComponentsTable extends Migration
     public function down()
     {
         Schema::table('posts_types_panels_components', function (Blueprint $table) {
+            $table->dropUnique('posts_types_panels_components_post_type_id_foreign');
             $table->dropColumn('post_type_id');
+
         });
     }
 }
