@@ -13,7 +13,7 @@
     <!-- bower -->
     <link rel="stylesheet" type="text/css" href="/vendor/nanoscroller/bin/css/nanoscroller.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="/vendor/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/Ionicons/css/ionicons.min.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/jquery-jsonview/dist/jquery.jsonview.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
@@ -105,7 +105,7 @@
     <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-requestAnimationFrame/dist/jquery.requestAnimationFrame.min.js"></script>
     <script type="text/javascript" src="/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js"></script>
-    <script type="text/javascript" src="/vendor/materialize/bin/materialize.js"></script>
+    <script type="text/javascript" src="/vendor/Materialize/bin/materialize.js"></script>
     <script type="text/javascript" src="/vendor/Sortable/Sortable.min.js"></script>
     <script type="text/javascript" src="/vendor/jquery-jsonview/dist/jquery.jsonview.js"></script>
     <script type="text/javascript" src="/vendor/dropzone/dist/min/dropzone.min.js"></script>
