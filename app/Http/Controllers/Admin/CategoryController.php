@@ -63,7 +63,7 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
     	$input = $request->all();
-    	$input['slug'] = str_slug($input[$this->default_locale]['title']); //TODO: switch this to form input
+    	$input['slug'] = str_slug($input['en']['title']); //TODO: switch this to form input
 
     	$this->categoryRepos->create($input);
     	Flash::success('Category was created successfully.');
@@ -98,7 +98,7 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
     	$input = $request->all();
-    	$input['slug'] = str_slug($input[$this->default_locale]['title']); //TODO: switch this to form input
+    	$input['slug'] = str_slug($input['en']['title']); //TODO: switch this to form input
 
         $this->categoryRepos->update($input, $category);
         Flash::success('Category was updated successfully.');

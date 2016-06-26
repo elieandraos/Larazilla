@@ -7,7 +7,6 @@
 				<h5><i class="fa fa-database"></i> Content</h5>
 			</div>
 
-			
 				<ul class="tabs"> 
 		  			@foreach($locales as $locale)
 		  				<li class="tab col s3">
@@ -57,16 +56,17 @@
 				<div style="text-align:right">
 					<button class="btn" type="submit" name="action"> Submit <i class="mdi-content-send right"></i> </button>
 				</div>
-				
-				<p class="label"> Categories</p>
-				
-				{!! Form::select(
-					'category_id[]', 
-					[ '-1' => 'Select Category'] + $categories, 
-					(isset($post))?$post->categories()->lists('category_id')->toArray():null, 
-					['multiple' => 'multiple' ]
-				)!!}
-				
+				<div class="@if(in_array( 'categories', $postType->settings()->get('hiddenFields'))) hidden @endif">
+					<p class="label"> Categories</p>
+					
+					{!! Form::select(
+						'category_id[]', 
+						[ '-1' => 'Select Category'] + $categories, 
+						(isset($post))?$post->categories()->lists('category_id')->toArray():null, 
+						['multiple' => 'multiple' ]
+					)!!}
+				</div>
+
 				<div class="input-field" style="margin-top:30px;"> 
 				 	{!! Form::date("publish_date", null, ['class' => 'datepicker']) !!}
 				 	<label for="input_date">Date</label> 

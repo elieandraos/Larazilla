@@ -40,16 +40,19 @@
                         </a>
                     </li>
 
+                    <li class="label">Official</li>
+
                     <li>
-						<a href="/admin/dashboard" class="yay-sub-toggle waves-effect waves-blue"> 
-							<i class="fa fa-dashboard"></i> Dashboard
+                        <a href="/admin/posts/articles" class=" waves-effect waves-blue"> <i class="fa fa-pencil"></i> 
+                            Articles
                         </a>
                     </li>
+
                     <li class="label">Media Center</li>
                     
                     <li>
-                        <a href="/admin/posts/news" class=" waves-effect waves-blue"> <i class="fa fa-bullhorn"></i> 
-                            News
+                        <a href="/admin/posts/newspapers" class=" waves-effect waves-blue"> <i class="fa fa-bullhorn"></i> 
+                            Newspapers
                         </a>
                     </li>
                     
@@ -71,18 +74,20 @@
                         </a>
                     </li>
 
-                    <li class="label">Content</li>
+                    <li class="label">Others</li>
 
                     <li>
-                        <a href="widgets.html" class=" waves-effect waves-blue"> <i class="fa fa-magic"></i> Widgets </a>
-
+                        <a href="/admin/posts/sliders" class=" waves-effect waves-blue"> <i class="fa fa-sliders"></i> 
+                            Sliders
+                        </a>
                     </li>
 
-                    <li>
+                     <li>
                         <a href="/admin/categories" class=" waves-effect waves-blue"> <i class="fa fa-sitemap"></i> 
                             Categories
                         </a>
                     </li>
+                     
 
                 </ul>
 

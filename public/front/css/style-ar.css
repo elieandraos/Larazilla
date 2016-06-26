@@ -1,0 +1,65 @@
+body 
+{
+	font-family: 'DinarLight';
+	font-size: 13px;
+	line-height: 1;
+}
+a.logo
+{
+	font-family: 'DinarMedium';
+    font-size: 32px;
+    color: #1d1d1b;
+    padding-top: 20px;
+    display: block;
+    padding-bottom: 15px;
+    width: 140px;
+}
+
+/**************
+*   TOP MENU  * 
+***************/
+ul.top-menu li a
+{
+	color: #203352;
+    font-family: 'DinarLight';
+    font-size: 20px;
+    display: block;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding-bottom: 23px;
+    padding-top: 25px;
+    border-bottom: 3px solid transparent;
+}
+ul.top-menu li a:hover, ul.top-menu li a.active
+{
+	border-bottom: 3px solid #c62026;
+	color: #c62026;
+}
+/**************
+*   SLIDER  * 
+***************/
+p.slide-title
+{
+    color:#FFF;
+    font-family: 'DinarMedium';
+    font-size: 28px;
+}
+a.btn-slider,a.btn-slider:hover,a.btn-slider:active
+{
+    font-family: 'DinarMedium';
+}
+.carousel-indicators {
+    right: -20px;
+    top: 50%;
+    margin: 0;   
+
+}
+.carousel-indicators li 
+{
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+
+

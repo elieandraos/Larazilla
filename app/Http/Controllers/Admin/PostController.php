@@ -89,7 +89,7 @@ class PostController extends Controller
                 return redirect( route('admin.posts.create', $postType->slug))->withErrors($validator)->withInput();
         }
 
-    	$input['slug'] = str_slug($input[$this->default_locale]['title']); //TODO: switch this to form input
+    	$input['slug'] = str_slug($input['en']['title']); //TODO: switch this to form input
 
         $post = $this->postRepos->create($input, $postType);
         Event::fire(new PostIsSaved($post, $input));
@@ -143,6 +143,7 @@ class PostController extends Controller
                 return redirect( route('admin.posts.edit', [$postType->slug, $post->id]))->withErrors($validator)->withInput();
         }
         
+        $input['slug'] = str_slug($input['en']['title']); //TODO: switch this to form input
         $this->postRepos->update($input, $post, $postType);
         Event::fire(new PostIsSaved($post, $input));
         Flash::success($postType->singular_name.' was updated successfully.');

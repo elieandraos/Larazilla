@@ -92,6 +92,20 @@ class Post extends Model implements HasMediaConversions
 
 
     /**
+     * Get the post meta value (not the meta object) by key
+     * 
+     * @param type $meta_key 
+     * @return type
+     */
+    public function getMetaValue($meta_key)
+    {
+        $meta = $this->getPostMeta($meta_key);
+        return $meta->value;
+
+    }
+
+
+    /**
      * Media Conversions
      * 
      * @return type

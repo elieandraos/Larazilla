@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
 Route::auth();
 
-
+Route::group(['prefix' => '', 'middleware' => [], 'namespace' => 'Front' ], function () {
+  Route::get('/', ['uses' => 'HomeController@index']);
+});
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin' ], function () {
 
@@ -34,6 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::get('/post-types/{postTypeSlug}/settings', ['uses' => 'PostTypeController@settings', 'as' => 'admin.post-types.settings']);
   Route::post('/post-types/{postTypeSlug}/settings/store', ['uses' => 'PostTypeController@storeSettings', 'as' => 'admin.post-types.settings.store']);
   Route::post('/post-types/{postTypeSlug}/conversions/store', ['uses' => 'PostTypeController@storeConversions', 'as' => 'admin.post-types.conversions.store']);
+  Route::post('/post-types/{postTypeSlug}/hidden-fields/store', ['uses' => 'PostTypeController@storeHiddenFields', 'as' => 'admin.post-types.hidden-fields.store']);
 
   //post types panels
   Route::get('/post-types/{postTypeSlug}/panels', ['uses' => 'PanelController@index', 'as' => 'admin.post-types.panels']);

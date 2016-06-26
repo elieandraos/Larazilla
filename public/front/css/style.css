@@ -1,0 +1,67 @@
+body
+{
+	background-color: #F9F9F9;
+}
+a:hover 
+{
+	text-decoration: none;
+}
+a.btn-slider,a.btn-slider:hover,a.btn-slider:active
+{
+	background-color: #c62026;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 25px;
+    color:#FFF;
+}
+/**************
+*	TOP MENU  * 
+***************/
+a.logo
+{
+	border-bottom: 3px solid #c62026;
+}
+.header-container
+{
+	height: 70px;
+	background-image: url('/front/images/bg-white-transparent.png');
+	background-repeat: repeat;
+	position: relative;
+	width: 100%;
+}
+ul.top-menu
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+ul.top-menu li
+{
+	display: inline-block;
+}
+
+
+/**************
+*	CAROUSEL  * 
+***************/
+.carousel 
+{
+  height: 480px;
+}
+.carousel-caption 
+{
+  z-index: 10;
+}
+.carousel .item 
+{
+  height: 480px;
+  background-color: #777;
+}
+.carousel-inner > .item > img 
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 480px;
+}

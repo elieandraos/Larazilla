@@ -123,14 +123,15 @@ class PostTypeController extends Controller
     {
         $validator = $postType->settings()->get('validator');
         $conversions = $postType->settings()->get('media.conversions');
-       
+        $hiddenFields = $postType->settings()->get('hiddenFields');
+    
         $post = new Post;
         $attributes = $post->getFillable();
 
         array_push($this->breadcrumb['links'], ['title' => $postType->singular_name]);
         array_push($this->breadcrumb['links'], ['title' => 'Settings']);
 
-        return view('admin.post_types.settings', ['postType' => $postType, 'validator' => $validator, 'conversions' => $conversions, 'fields' => $attributes, 'breadcrumb' => $this->breadcrumb]);
+        return view('admin.post_types.settings', ['postType' => $postType, 'validator' => $validator, 'conversions' => $conversions, 'hiddenFields' => $hiddenFields, 'breadcrumb' => $this->breadcrumb]);
     }
 
 
@@ -195,6 +196,22 @@ class PostTypeController extends Controller
         Flash::success('Conversions were updated successfully.');
         return redirect( route('admin.post-types'));
     }
+
+
+    public function storeHiddenFields(Request $request, PostType $postType)
+    {
+        $input = $request->all();
+        $fields = [];
+
+        if(isset($input['fields']))
+        {
+            $fields = $input['fields'];
+        }
+        $postType->settings()->set('hiddenFields' , $fields);
+        Flash::success('Hidden fields were updated successfully.');
+        return redirect( route('admin.post-types'));
+    }
+
 
     /**
      * Lists the post type panels
