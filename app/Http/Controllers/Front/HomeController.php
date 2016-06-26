@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Post;
 use App\Models\PostType;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
@@ -23,13 +24,17 @@ class HomeController extends Controller
     	$slides = $slider_post_type->posts;
 
     	//articles that has category: latest-news
+        $category = Category::where('slug', '=', 'latest-news')->first();
     	$articles_post_type = PostType::where('slug', '=', 'articles')->with('posts')->first();
-    	$slug = 'latest-news';
-    	$articles = $articles_post_type->posts()->whereHas('categories', function($q) use ($slug){
-    		 $q->where('slug', 'like', $slug);
+    	$articles = $articles_post_type->posts()->whereHas('categories', function($q) use ($category){
+    		 $q->where('slug', 'like', $category->slug);
     	})->with('categories')->take(6)->orderBy('publish_date', 'DESC')->get();
 
-        return view('front.home.index', ['slides' => $slides]);
+        return view('front.home.index', [
+            'slides' => $slides, 
+            'categoryTitle' => $category->title,
+            'articles' => $articles
+        ]);
     }
 
 

@@ -2,7 +2,23 @@
 
 @section('content')
 
-@include('front.home.slider')
+	<!-- Blider -->
+	@include('front.home.slider')
 
-<h1 class="title"></h1>
+	<div class="container">
+		<!-- Block Title -->
+		@include('front.common.block-title', ['title' => $categoryTitle])
+
+		<div class="row">
+			<div class="col-md-9">
+				@include('front.home.latest_news')	
+			</div>
+			<div class="col-md-3">
+				<a class="twitter-timeline" href="https://twitter.com/SalamTammam" data-tweet-limit=5 data-chrome="noheader">
+					{!! trans('messages.tweets') !!}
+				</a> 
+				<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+			</div>
+		</div>
+	</div>
 @stop

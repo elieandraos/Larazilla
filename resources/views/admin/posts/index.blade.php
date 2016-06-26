@@ -20,7 +20,7 @@
 	    @foreach($posts as $post)
 			<tr>
 				<td>{!! $post->title !!}</td>
-				<td>{!! implode(", ", $post->categories->lists('title')->toArray())!!}</td>
+				<td>{!! implode(" , ", $post->categories->lists('title')->toArray())!!}</td>
 				<td>{!! Carbon\Carbon::parse($post->publish_date)->format('d F, Y')!!}</td>
 				<td>
 					@include('admin.posts.partials.actions', ["postType" => $postType, "post" => $post])

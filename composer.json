@@ -12,7 +12,8 @@
         "laravelcollective/html": "~5.2",
         "laracasts/presenter": "0.2.*",
         "spatie/laravel-medialibrary": "~3.17",
-        "kalnoy/nestedset": "^4.1"
+        "kalnoy/nestedset": "^4.1",
+        "laravelrus/localized-carbon": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

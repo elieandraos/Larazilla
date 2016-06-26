@@ -162,7 +162,8 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Spatie\MediaLibrary\MediaLibraryServiceProvider::class
+        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+        Laravelrus\LocalizedCarbon\LocalizedCarbonServiceProvider::class
     ],
 
     /*
@@ -211,7 +212,8 @@ return [
         'Flash' => Laracasts\Flash\Flash::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
-        'BootForm' => AdamWathan\BootForms\Facades\BootForm::class
+        'LocalizedCarbon'   => Laravelrus\LocalizedCarbon\LocalizedCarbon::class,
+        'DiffFormatter'     => Laravelrus\LocalizedCarbon\DiffFactoryFacade::class
 
     ],
 

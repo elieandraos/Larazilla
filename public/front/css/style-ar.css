@@ -1,17 +1,17 @@
 body 
 {
 	font-family: 'DinarLight';
-	font-size: 13px;
-	line-height: 1;
+    font-size: 14px;
+    line-height: 18px;
 }
 a.logo
 {
 	font-family: 'DinarMedium';
     font-size: 32px;
     color: #1d1d1b;
-    padding-top: 20px;
+    padding-top: 25px;
     display: block;
-    padding-bottom: 15px;
+    padding-bottom: 24px;
     width: 140px;
 }
 
@@ -26,7 +26,7 @@ ul.top-menu li a
     display: block;
     margin-right: 15px;
     margin-left: 15px;
-    padding-bottom: 23px;
+    padding-bottom: 24px;
     padding-top: 25px;
     border-bottom: 3px solid transparent;
 }
@@ -51,7 +51,8 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 .carousel-indicators {
     right: -20px;
     top: 50%;
-    margin: 0;   
+    margin: 0;
+    width: 10%;   
 
 }
 .carousel-indicators li 
@@ -59,6 +60,37 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
     display: block;
     margin-bottom: 5px;
 }
+
+/*******************
+*   HEADER TITLES  * 
+********************/
+.header-title h1
+{
+    text-align: center;
+    font-family: 'DinarMedium';
+    font-size: 36px;
+}
+
+/*******************
+*   GRID LISTING   * 
+********************/
+.grid-details
+{
+    padding-right: 20px;
+}
+.grid-details h5
+{
+    font-family: 'DinarMedium'; 
+    font-size: 19px;
+    color:#000;
+}
+.grid-details .date
+{
+    font-family: 'DinarLight'; 
+    font-size: 14px;
+    color: #c62026;
+}
+
 
 
 

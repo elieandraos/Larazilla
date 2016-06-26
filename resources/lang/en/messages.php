@@ -7,7 +7,8 @@ return [
 	'officialLife' => 'Official Life',
 	'mediaCenter' => 'Media Center',
 	'contactUs' => 'Contact US',
-	'more'	=> 'More'
+	'more'	=> 'More',
+	'tweets' => 'Tweets'
 
 ];
 

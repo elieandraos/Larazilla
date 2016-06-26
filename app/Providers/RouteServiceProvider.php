@@ -45,6 +45,10 @@ class RouteServiceProvider extends ServiceProvider
             return Category::findOrFail($value);
         });
 
+        $router->model('categorySlug', 'App\Models\Category', function($value){
+            return  Category::where('slug', $value)->first();
+        });
+
         $router->model('panelId', 'App\Models\PostTypePanel', function($value){
              return PostTypePanel::findOrFail($value);
         });

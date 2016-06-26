@@ -15,6 +15,7 @@ Route::auth();
 
 Route::group(['prefix' => '', 'middleware' => [], 'namespace' => 'Front' ], function () {
   Route::get('/', ['uses' => 'HomeController@index']);
+  Route::get('/official/{postTypeSlug}/category/{categorySlug}', ['uses' => 'OfficialLifeController@index', 'as' => 'official.category']);
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Admin' ], function () {

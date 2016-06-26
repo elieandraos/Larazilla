@@ -7,7 +7,8 @@ return [
 	'officialLife' => 'الحياة الرسمية',
 	'mediaCenter' => 'المركز الإعلامي',
 	'contactUs' => 'توصل معنا',
-	'more'	=> 'المزيد'
+	'more'	=> 'المزيد',
+	'tweets' => 'تغريدات'
 
 ];
 
