@@ -1,0 +1,28 @@
+{
+  "name": "jquery-ui-sortable",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sudiptpa/jqueryui-sortable",
+  "authors": [
+    "Sujip Thapa > sudiptpa@gmail.com>"
+  ],
+  "description": "jQuery UI Sortable",
+  "main": ["./jquery-ui-sortable.min.js","./jquery-ui-sortable.js"],
+  "keywords": [
+    "jQuery",
+    "UI",
+    "Sortable"
+  ],
+  "license": "MIT",
+  "ignore": [
+    ".gitignore",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  },
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/sudiptpa/jqueryui-sortable.git"
+},
+"private" : false
+}
