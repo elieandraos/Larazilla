@@ -29,7 +29,7 @@ class HomeController extends Controller
     	$articles = $articles_post_type->posts()->whereHas('categories', function($q) use ($category){
     		 $q->where('slug', 'like', $category->slug);
     	})->with('categories')->take(6)->orderBy('publish_date', 'DESC')->get();
-
+        
         return view('front.home.index', [
             'slides' => $slides, 
             'categoryTitle' => $category->title,

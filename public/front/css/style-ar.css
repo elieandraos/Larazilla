@@ -68,20 +68,20 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
     text-align: center;
     font-family: 'DinarMedium';
-    font-size: 36px;
+    font-size: 28px;
 }
 
-/*******************
-*   GRID LISTING   * 
-********************/
+/***************************
+*   GRID LISTING HOMEPAGE  * 
+****************************/
 .grid-details
 {
-    padding-right: 20px;
+    padding-left: 30px;
 }
 .grid-details h5
 {
     font-family: 'DinarMedium'; 
-    font-size: 19px;
+    font-size: 20px;
     color:#000;
 }
 .grid-details .date
@@ -89,6 +89,24 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
     font-family: 'DinarLight'; 
     font-size: 14px;
     color: #c62026;
+}
+
+
+/****************************
+*   GRID LISTING 2 COLUMNS  * 
+****************************/
+.grid-row-two-col.grid-row .grid-details h5
+{
+    font-size: 16px;
+}
+.info-stripe span.date
+{
+    padding-right: 10px;
+    font-family: 'DinarMedium';
+}
+.info-stripe a.more
+{
+    left: 0;
 }
 
 

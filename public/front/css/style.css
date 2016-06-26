@@ -101,9 +101,9 @@ div.header-title
 	border-bottom: 1px solid #ddd;
 	margin: 0;
 }
-/******************
-*	GRID LISTING  * 
-*******************/
+/***************************
+*	GRID LISTING HOMEPAGE  * 
+****************************/
 .grid-row
 {
 	background-color:#FFF;
@@ -123,6 +123,67 @@ div.header-title
 	margin-top: 15px;
 }
 
+/****************************
+*	GRID LISTING 2 COLUMNS  * 
+****************************/
+.grid-row-two-col.grid-row .grid-image img
+{
+	height: 140px;
+}
+
+.info-stripe
+{
+	width: 100%;
+	height: 40px;
+	position: relative;
+	color: #c62026;
+	background-color: #203352;
+}
+
+.info-stripe span.date
+{
+	display: block;
+	padding-top: 10px;
+}
+
+.info-stripe a.more
+{
+	height: 100%;
+	width: auto;
+	display: block;
+	padding: 10px 15px;
+	background-color: #c62026;
+	color: #FFF;
+	position: absolute;
+	top: 0;
+}
+
+/******************
+*	BUTTONS MENU  * 
+*******************/
+div.button-menu
+{
+	text-align: center;
+	margin-bottom: 30px;
+	height: 40px;
+}
+
+.button-link
+{
+	width: auto;
+	padding: 10px 20px;
+	background-color: #FFF;
+	border: 1px solid #eee;
+	color: #000;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.button-link:hover, .button-link.active
+{
+	background-color: #c62026;
+	color:#FFF;
+}
 
 
 
