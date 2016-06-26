@@ -5,6 +5,9 @@
 			{!! trans('messages.officialLife') !!} 
 		</a>
 	</li>
-	<li> <a href="/"> {!! trans('messages.mediaCenter') !!} </a></li>
-	<li> <a href="/"> {!! trans('messages.contactUs') !!} </a></li>
+<li> 
+		<a href="/mediacenter/newspapers" class="@if(Request::is('*mediacenter*')) active @endif"> 
+			{!! trans('messages.mediaCenter') !!} 
+		</a>
+	</li>	<li> <a href="/"> {!! trans('messages.contactUs') !!} </a></li>
 </ul>

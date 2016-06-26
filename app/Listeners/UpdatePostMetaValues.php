@@ -99,14 +99,13 @@ class UpdatePostMetaValues
             //DROPZONE MULTIPLE UPLOAD
             elseif(is_array($meta_value) && in_array('dz_order', array_keys($meta_value)))
             {
-                
                 foreach($meta_value['dz_order'] as $key => $order)
                 {
                     if(trim($order))
                     {
                         $file_path = $meta_value['dz_file'][$key];
                         
-                        if(isset($meta_value['dz_media_id']))
+                        if(isset($meta_value['dz_media_id']) && isset($meta_value['dz_media_id'][$key]))
                             $media_id = $meta_value['dz_media_id'][$key];
                         else
                             $media_id = null;

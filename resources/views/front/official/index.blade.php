@@ -18,6 +18,9 @@
 						</a>
 					@endforeach
 				</div>
+
+				@include('front.common.breadcrumb', ['breadcrumb' => $breadcrumb])
+
 			</div>
 		</div>
 

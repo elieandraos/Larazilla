@@ -33,7 +33,9 @@ class HomeController extends Controller
         return view('front.home.index', [
             'slides' => $slides, 
             'categoryTitle' => $category->title,
-            'articles' => $articles
+            'articles' => $articles,
+            'current_category' => $category,
+            'postType' => $articles_post_type
         ]);
     }
 

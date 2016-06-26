@@ -21,12 +21,26 @@ class OfficialLifeController extends Controller
 
     	$rootCategory = Category::where('slug', '=', 'official-life')->first();
     	$categories = $rootCategory->descendants()->defaultOrder()->get();
+        $breadcrumb = [ trans('messages.officialLife'), $category->title];
 
     	return view('front.official.index', [
             'articles' => $articles, 
             'title' => trans('messages.officialLife'),
             'categories'	=> $categories,
-            'postTypeSlug' => $postType->slug
+            'current_category' => $category,
+            'postTypeSlug' => $postType->slug,
+            'breadcrumb' => $breadcrumb
+        ]);
+    }
+
+
+    public function show(PostType $postType, Category $category, Post $post)
+    {
+        $breadcrumb = [ trans('messages.officialLife'), $category->title, $post->title];
+
+        return view('front.official.show', [
+            'post' => $post,
+            'breadcrumb' => $breadcrumb
         ]);
     }
 }

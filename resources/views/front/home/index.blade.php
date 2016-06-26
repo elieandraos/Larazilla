@@ -10,10 +10,10 @@
 		@include('front.common.block-title', ['title' => $categoryTitle])
 
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-8">
 				@include('front.home.latest_news')	
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-4">
 				<a class="twitter-timeline" href="https://twitter.com/SalamTammam" data-tweet-limit=5 data-chrome="noheader">
 					{!! trans('messages.tweets') !!}
 				</a> 

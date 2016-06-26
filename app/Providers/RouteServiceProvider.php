@@ -41,6 +41,10 @@ class RouteServiceProvider extends ServiceProvider
             return Post::findOrFail($value);
         });
 
+        $router->model('postSlug', 'App\Models\Post', function($value){
+            return Post::where('slug', $value)->first();
+        });
+
         $router->model('categoryId', 'App\Models\Category', function($value){
             return Category::findOrFail($value);
         });

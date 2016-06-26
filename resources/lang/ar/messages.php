@@ -8,8 +8,11 @@ return [
 	'mediaCenter' => 'المركز الإعلامي',
 	'contactUs' => 'توصل معنا',
 	'more'	=> 'المزيد',
-	'tweets' => 'تغريدات'
-
+	'tweets' => 'تغريدات',
+	'videos' => 'فيديو',
+	'galleries' => 'صور رسمية',
+	'interviews' => 'مقابلات',
+	'newspapers' => 'في الصحف'
 ];
 
 ?>

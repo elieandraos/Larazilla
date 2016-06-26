@@ -2,7 +2,7 @@ body
 {
 	font-family: 'DinarLight';
     font-size: 14px;
-    line-height: 18px;
+    line-height: 20px;
 }
 a.logo
 {
@@ -68,7 +68,7 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
     text-align: center;
     font-family: 'DinarMedium';
-    font-size: 28px;
+    font-size: 27px;
 }
 
 /***************************
@@ -99,16 +99,50 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
     font-size: 16px;
 }
-.info-stripe span.date
+.info-stripe  span.date
 {
     padding-right: 10px;
     font-family: 'DinarMedium';
 }
-.info-stripe a.more
+.info-stripe .more
 {
     left: 0;
 }
 
+/****************************
+*   GRID LISTING 4 COLUMNS  * 
+****************************/
+.grid-row-four-col.grid-row .info-stripe span.date
+{
+    padding-right: 0;
+    font-family: 'DinarMedium';
+    font-size: 12px;
+}
+.grid-row-four-col.grid-row .info-stripe p
+{
+    color:#FFF;
+    font-size: 14px;
+}
+
+/******************
+*   POST CONTENT  * 
+*******************/
+div.breadcrumbs
+{
+    color: #bebebe;
+    font-family: 'DinarMedium';
+    font-size: 15px;
+}
+.post-content .post-body
+{
+    padding-left: 40px;
+}
+.post-content h5
+{
+    font-family: 'DinarMedium';
+    font-size: 20px;
+    color: #000;
+}
 
 
 

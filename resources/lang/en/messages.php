@@ -8,8 +8,11 @@ return [
 	'mediaCenter' => 'Media Center',
 	'contactUs' => 'Contact US',
 	'more'	=> 'More',
-	'tweets' => 'Tweets'
-
+	'tweets' => 'Tweets',
+	'videos' => 'Videos',
+	'galleries' => 'Galleries',
+	'interviews' => 'Interviews',
+	'newspapers' => 'Newspapers'
 ];
 
 ?>
