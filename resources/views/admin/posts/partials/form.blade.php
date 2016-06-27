@@ -1,7 +1,6 @@
 <div class="row">
 	<!-- Normal Column -->
 	<div class="col m7 s12">
-
 		<div class="card-panel">
 			<div class="title">
 				<h5><i class="fa fa-database"></i> Content</h5>

@@ -40,6 +40,14 @@
                         </a>
                     </li>
 
+                    <li class="label">Personal</li>
+
+                    <li>
+                        <a href="/admin/posts/timeline-events" class=" waves-effect waves-blue"> <i class="fa fa-calendar-check-o"></i> 
+                            Timeline Events
+                        </a>
+                    </li>
+
                     <li class="label">Official</li>
 
                     <li>

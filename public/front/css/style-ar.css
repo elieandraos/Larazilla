@@ -149,6 +149,14 @@ div.breadcrumbs
     margin-left: 10px;
 }
 
-
+/***********
+ TIMELINE  *
+ ***********/
+ h4.timeline-title
+ {
+    font-family: 'DinarMedium';
+    font-size: 20px;
+    color: #000;
+ }
 
 

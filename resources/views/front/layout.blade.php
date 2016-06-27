@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/lightgallery/dist/css/lightgallery.min.css" />
     <link rel="stylesheet" type="text/css" href="/front/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/front/css/timeline.css">
 
     @if(Lang::getLocale() == "en")
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
