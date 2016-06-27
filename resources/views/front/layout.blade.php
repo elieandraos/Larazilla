@@ -46,11 +46,22 @@
     <script type="text/javascript" src="/vendor/lightgallery/dist/js/lightgallery-all.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('#aniimated-thumbnials').lightGallery({
-                thumbnail:false,
-                animateThumb: false,
-                showThumbByDefault: false
-            }); 
+            if($('#aniimated-thumbnials').length)
+                $('#aniimated-thumbnials').lightGallery({
+                    thumbnail:false,
+                    animateThumb: false,
+                    showThumbByDefault: false,
+                    download: false,
+                    counter: false,
+                    zoom: false
+                }); 
+
+            if($("#video-gallery").length)
+                $('#video-gallery').lightGallery({
+                    download: false,
+                    counter: false,
+                    zoom: false
+                }); 
         })
     </script>
 </body>
