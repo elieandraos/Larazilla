@@ -4,6 +4,12 @@
 		<div class="col-md-3">
 			<div class="grid-row grid-row-four-col">
 				<div class="row">
+					@if(Request::is('*mediacenter*'))
+						<a href="{!! route('mediacenter.show', [$postTypeSlug, $post->slug]) !!}">
+					@elseif(Request::is('*official*'))
+						<a href="{!! route('official.category.show', [$postTypeSlug, $current_category->slug, $post->slug]) !!}">
+					@endif
+
 					<div class="col-md-12 grid-image">
 						<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}" />
 						<div class="info-stripe">
@@ -13,6 +19,9 @@
 							<p>{!! $post->title !!}</p>
 						</div>
 					</div>
+
+					</a>
+					
 				</div>
 			</div> 
 		</div>

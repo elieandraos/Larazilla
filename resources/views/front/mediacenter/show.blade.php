@@ -16,6 +16,8 @@
 					<div class="col-md-5 post-body">
 						<h5>{!! $post->title !!}</h5>
 						<div>{!! $post->body !!}</div>
+
+						@include('front.mediacenter.gallery', ['post' => $post])
 					</div>
 				</div>
 			</div>

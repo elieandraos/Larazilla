@@ -248,6 +248,13 @@ div.breadcrumbs .active
 {
 	font-size: 14px;
 }
+.gallery-thumb
+{
+	width: 120px;
+	height: auto;
+	display: inline-block;
+	margin-bottom: 10px;
+}
 
 
 

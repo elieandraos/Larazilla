@@ -100,7 +100,10 @@ class Post extends Model implements HasMediaConversions
     public function getMetaValue($meta_key)
     {
         $meta = $this->getPostMeta($meta_key);
-        return $meta->value;
+        if($meta)
+            return $meta->value;
+
+        return null;
 
     }
 

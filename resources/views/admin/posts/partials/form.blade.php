@@ -23,16 +23,20 @@
 							@if ($errors->has($locale.'.title')) <p class="form-error">{{ $errors->first($locale.'.title') }}</p> @endif
 						</div>
 
-						<div class="input-field"> 
-							{!! Form::textarea($locale.'[excerpt]', null, ['class' => 'materialize-textarea', 'id' => $locale.'[excerpt]']) !!}
-							{!! Form::label($locale.'[excerpt]', 'Excerpt') !!}
-							@if ($errors->has($locale.'.excerpt')) <p class="form-error">{{ $errors->first($locale.'.excerpt') }}</p> @endif
+						<div class="@if(in_array( 'excerpt', $postType->settings()->get('hiddenFields'))) hidden @endif">
+							<div class="input-field"> 
+								{!! Form::textarea($locale.'[excerpt]', null, ['class' => 'materialize-textarea', 'id' => $locale.'[excerpt]']) !!}
+								{!! Form::label($locale.'[excerpt]', 'Excerpt') !!}
+								@if ($errors->has($locale.'.excerpt')) <p class="form-error">{{ $errors->first($locale.'.excerpt') }}</p> @endif
+							</div>
 						</div>
 
-						<div class="input-field"> 
-							{!! Form::textarea($locale.'[body]', null, ['class' => 'materialize-textarea', 'id' => $locale.'[body]']) !!}
-							{!! Form::label($locale.'[body]', 'Content') !!}
-							@if ($errors->has($locale.'.body')) <p class="form-error">{{ $errors->first($locale.'.body') }}</p> @endif
+						<div class="@if(in_array( 'body', $postType->settings()->get('hiddenFields'))) hidden @endif">
+							<div class="input-field"> 
+								{!! Form::textarea($locale.'[body]', null, ['class' => 'materialize-textarea', 'id' => $locale.'[body]']) !!}
+								{!! Form::label($locale.'[body]', 'Content') !!}
+								@if ($errors->has($locale.'.body')) <p class="form-error">{{ $errors->first($locale.'.body') }}</p> @endif
+							</div>
 						</div>
 		  			</div> 
 		  		@endforeach

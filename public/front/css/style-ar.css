@@ -43,6 +43,7 @@ p.slide-title
     color:#FFF;
     font-family: 'DinarMedium';
     font-size: 28px;
+    margin-bottom: 30px;
 }
 a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
@@ -142,6 +143,10 @@ div.breadcrumbs
     font-family: 'DinarMedium';
     font-size: 20px;
     color: #000;
+}
+.gallery-thumb
+{
+    margin-left: 10px;
 }
 
 

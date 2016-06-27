@@ -7,6 +7,7 @@
     <meta name="author" content="Elie Andraos">
 
     <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/vendor/lightgallery/dist/css/lightgallery.min.css" />
     <link rel="stylesheet" type="text/css" href="/front/css/style.css">
 
     @if(Lang::getLocale() == "en")
@@ -42,5 +43,15 @@
 
     <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/vendor/lightgallery/dist/js/lightgallery-all.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#aniimated-thumbnials').lightGallery({
+                thumbnail:false,
+                animateThumb: false,
+                showThumbByDefault: false
+            }); 
+        })
+    </script>
 </body>
 </body>
