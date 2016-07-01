@@ -12,7 +12,9 @@ return [
 	'videos' => 'فيديو',
 	'galleries' => 'صور رسمية',
 	'interviews' => 'مقابلات',
-	'newspapers' => 'في الصحف'
+	'newspapers' => 'في الصحف',
+	'sitemap'	=> 'خريطة الموقع',
+	'home'	 => 'الرئيسية'
 ];
 
 ?>

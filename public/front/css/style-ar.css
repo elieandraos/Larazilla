@@ -168,3 +168,31 @@ div.breadcrumbs
  }
 
 
+ /*********
+  FOOTER  *
+ *********/
+ .footer-container h3.title
+ {
+    font-family: "DinarMedium";
+    font-size: 22px;
+ }
+ ul.footer-list li 
+ {
+    font-family: "DinarMedium";
+    font-size: 14px;
+    margin-bottom: 5px;
+ }
+ul.footer-list li a.active, ul.footer-list li a:hover
+{
+    color: #c62026;
+}
+
+ul.footer-list.social li a img 
+{
+    width: 30px;
+    margin-right: 10px;
+}
+
+
+
+

@@ -12,7 +12,9 @@ return [
 	'videos' => 'Videos',
 	'galleries' => 'Galleries',
 	'interviews' => 'Interviews',
-	'newspapers' => 'Newspapers'
+	'newspapers' => 'Newspapers',
+	'sitemap'	=> 'Site Map',
+	'home'		=> 'Home'
 ];
 
 ?>
