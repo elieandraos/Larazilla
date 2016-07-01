@@ -13,12 +13,26 @@
 				        <li class="@if($key % 2 == 1) timeline-inverted @endif">
 							<div class="timeline-badge">{!! $post->getMetaValue('year') !!}</div>
 							<div class="timeline-panel">
-								<div class="timeline-heading">
-								  <h4 class="timeline-title">{!! $post->title !!}</h4>
-								</div>
-								<div class="timeline-body">
-								  <p>{!! $post->body !!}
-								</div>
+								<table>
+									<tr>
+										@if($key % 2 == 1) <!-- swap the image/content -->
+											<td class="timeline-panel-body">
+												<h4 class="timeline-title">{!! $post->title !!}</h4>
+									  			<p>{!! $post->body !!}
+											</td>
+											<td class="timeline-panel-image">
+												<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}" />
+											</td>
+										@else
+											<td class="timeline-panel-image">
+												<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}" />
+											</td>
+											<td class="timeline-panel-body">
+												<h4 class="timeline-title">{!! $post->title !!}</h4>
+									  			<p>{!! $post->body !!}
+											</td>
+										@endif
+								</table>  
 							</div>
 				        </li>
 			        @endforeach

@@ -47,6 +47,20 @@ ul.top-menu li
 	display: inline-block;
 }
 
+/**************
+*	SWITCHER  * 
+***************/
+.lang-switcher
+{
+    width: 120px;
+    height: 40px;
+    top: 25px;
+    position: absolute;
+}
+.lang-switcher img 
+{
+	width: 40px;
+}
 
 /**************
 *	CAROUSEL  * 

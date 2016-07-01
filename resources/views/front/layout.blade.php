@@ -35,6 +35,10 @@
                 </div>
                 <div class="col-md-8">
                     @include('front.header.top-menu')
+                    <div class="lang-switcher">
+                        <a href="?locale=en"><img src="/front/images/eng.png" /></a>
+                        <a href="?locale=ar"><img src="/front/images/ar.png" /></a>
+                    </div>
                 </div>
             </div>
         </div>

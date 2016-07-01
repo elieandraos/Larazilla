@@ -35,6 +35,14 @@ ul.top-menu li a:hover, ul.top-menu li a.active
 	border-bottom: 3px solid #c62026;
 	color: #c62026;
 }
+.lang-switcher
+{
+    left: 0;
+}
+.lang-switcher img 
+{
+    margin-right: 10px;
+}
 /**************
 *   SLIDER  * 
 ***************/
