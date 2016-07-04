@@ -19,7 +19,7 @@ return [
 	'email'		=> 'Email',
 	'message'	=> 'Message',
 	'submit'	=> 'Submit',
-	'timeline-events' => 'Timeline'
+	'timeline-events' => 'Timeline',
 	'albums'  => 'Photo Albums'
 ];
 

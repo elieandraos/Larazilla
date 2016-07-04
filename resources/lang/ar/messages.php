@@ -20,7 +20,7 @@ return [
 	'message' => 'الرسالة',
 	'submit'	=> 'أرسل',
 	'timeline-events' => 'السيرة الذاتية',
-	'albums' =>   'معرض الصور'
+	'albums' =>  'معرض الصور'
 ];
 
 ?>
