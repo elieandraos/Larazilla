@@ -19,7 +19,7 @@ class PersonalLifeController extends Controller
     	$posts = $postType->posts()->orderBy('publish_date', 'ASC')->get();
         $postSlugs = ['timeline-events', 'albums'];
 
-        $breadcrumb = [ trans('messages.personalLife'), 'Timeline'];
+        $breadcrumb = [ trans('messages.personalLife'), trans('messages.albums')];
 
         if($postType->slug == "timeline-events")
             return view('front.personal.timeline', [
