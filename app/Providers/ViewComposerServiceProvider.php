@@ -15,6 +15,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         $this->composeFooter();
         $this->composeMenuPersonal();
+        $this->composeMenuOffical();
     }
 
     /**
@@ -49,5 +50,16 @@ class ViewComposerServiceProvider extends ServiceProvider
     private function composeMenuPersonal()
     {
         view()->composer('front.header.personal_life', 'App\Acme\Composers\MenuComposer@personal');
+    }
+
+         /**
+     * Mega Menu Personal Life section
+     * Returns personal life articles
+     * 
+     * @return type
+     */
+    private function composeMenuOffical()
+    {
+        view()->composer('front.header.official_life', 'App\Acme\Composers\MenuComposer@official');
     }
 }

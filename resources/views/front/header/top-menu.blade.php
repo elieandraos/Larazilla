@@ -11,6 +11,10 @@
 		<a href="/official/articles/category/latest-news" class="dropdown-toggle @if(Request::is('*official*')) active @endif" > 
 			{!! trans('messages.officialLife') !!} 
 		</a>
+		<ul class="dropdown-menu mega-dropdown-menu row">
+            @include('front.header.official_life')
+        </ul>
+
 	</li>
 	<li> 
 		<a href="/mediacenter/newspapers" class="@if(Request::is('*mediacenter*')) active @endif"> 

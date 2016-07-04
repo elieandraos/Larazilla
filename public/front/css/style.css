@@ -428,6 +428,7 @@ div.contact-btn
 {
 	width: 160px !important;
 	height: auto;
+	max-height: 140px !important;
 }
 
 .dropdown-menu .article .content h4

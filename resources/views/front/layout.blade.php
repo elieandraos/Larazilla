@@ -90,14 +90,17 @@
 
             $(".toggle-menu .button-link").click(function(){
                 
-                $("span.button-link").each(function(){
+                _li = $(this).closest('li.mega-dropdown');
+
+                 $(_li).find("span.button-link").each(function(){
                     $(this).removeClass('active');
                 })
 
                 $(this).addClass('active');
                 
                 var id = "#" + $(this).data('container');
-                $(".dropdown-menu-item").each(function(){
+
+                $(_li).find(".dropdown-menu-item").each(function(){
                     $(this).removeClass('visible').addClass('hidden');
                 });
                 $(id).removeClass('hidden').addClass('visible');
