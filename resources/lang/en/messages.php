@@ -14,7 +14,12 @@ return [
 	'interviews' => 'Interviews',
 	'newspapers' => 'Newspapers',
 	'sitemap'	=> 'Site Map',
-	'home'		=> 'Home'
+	'home'		=> 'Home',
+	'fullName'  => 'Full Name',
+	'email'		=> 'Email',
+	'message'	=> 'Message',
+	'submit'	=> 'Submit',
+	'timeline-events' => 'Timeline'
 ];
 
 ?>

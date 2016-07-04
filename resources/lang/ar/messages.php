@@ -6,7 +6,7 @@ return [
 	'personalLife' => 'الحياة الشخصية',
 	'officialLife' => 'الحياة الرسمية',
 	'mediaCenter' => 'المركز الإعلامي',
-	'contactUs' => 'توصل معنا',
+	'contactUs' => 'تواصل معنا',
 	'more'	=> 'المزيد',
 	'tweets' => 'تغريدات',
 	'videos' => 'فيديو',
@@ -14,7 +14,12 @@ return [
 	'interviews' => 'مقابلات',
 	'newspapers' => 'في الصحف',
 	'sitemap'	=> 'خريطة الموقع',
-	'home'	 => 'الرئيسية'
+	'home'	 => 'الرئيسية',
+	'fullName' => 'الإسم الكامل',
+	'email' => 'البريد الالكتروني',
+	'message' => 'الرسالة',
+	'submit'	=> 'أرسل',
+	'timeline-events' => 'السيرة الذاتية'
 ];
 
 ?>

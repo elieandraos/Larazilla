@@ -211,8 +211,9 @@
     padding-right: 10px;
 }
 
- .timeline  > li.timeline-inverted  > .timeline-badge
- {
+.timeline  > li.timeline-inverted  > .timeline-badge
+{
     text-indent: 40px;
     font-weight: bold;
- }
+}
+

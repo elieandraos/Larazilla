@@ -32,6 +32,10 @@
 									  			<p>{!! $post->excerpt !!}
 											</td>
 										@endif
+										<tr>
+											<td colspan="2" class="readmore-td">
+												<a href="{!! route('personal.show', [$postType->slug, $post->slug]) !!}" class="button-link active readmore">{!! trans('messages.more') !!}</a>
+											</td>
 								</table>  
 							</div>
 				        </li>

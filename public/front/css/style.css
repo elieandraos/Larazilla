@@ -9,6 +9,14 @@ a:hover
 {
 	text-decoration: none;
 }
+a.btn-normal,a.btn-normal:hover,a.btn-normal:active
+{
+	background-color: #c62026;
+    border: none;
+    padding: 5px 30px;
+    color:#FFF;
+}
+
 a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
 	background-color: #c62026;
@@ -20,6 +28,10 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 .no-page-title
 {
 	margin-top: 60px;
+}
+.readmore-td
+{
+	padding-top: 10px;
 }
 /**************
 *	TOP MENU  * 
@@ -307,6 +319,7 @@ div.breadcrumbs .active
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
+    margin-top: 60px;
  }
 
  .footer-container h3.title
@@ -329,6 +342,33 @@ div.breadcrumbs .active
  	color: #FFF;
  }
 
+
+ /**************
+  * CONTACT    * 
+  **************/
+.contact-group label
+{
+	display: block;
+  	margin-bottom: 10px;
+  	color: #203352;
+}
+
+.contact-group .txt 
+{
+	border: 1px solid #dedede;
+	padding: 7px;
+	width: 100%;
+	outline: none;
+	margin-bottom: 30px;
+}
+.contact-group textarea 
+{
+	min-height: 133px;
+}
+div.contact-btn 
+{
+	padding-top: 80px;
+}
 
 
 

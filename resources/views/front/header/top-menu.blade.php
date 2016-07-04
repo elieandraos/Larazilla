@@ -13,6 +13,6 @@
 		</a>
 	</li>	
 	<li>
-		 <a href="/"> {!! trans('messages.contactUs') !!} </a>
+		 <a href="/contact" class="@if(Request::is('*contact*')) active @endif"> {!! trans('messages.contactUs') !!} </a>
 	</li>
 </ul>

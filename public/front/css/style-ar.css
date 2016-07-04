@@ -53,7 +53,8 @@ p.slide-title
     font-size: 28px;
     margin-bottom: 30px;
 }
-a.btn-slider,a.btn-slider:hover,a.btn-slider:active
+a.btn-slider,a.btn-slider:hover,a.btn-slider:active,
+a.btn-normal,a.btn-normal:hover,a.btn-normal:active
 {
     font-family: 'DinarMedium';
 }
@@ -167,6 +168,13 @@ div.breadcrumbs
     color: #000;
  }
 
+.timeline .readmore
+{
+    position: absolute;
+    bottom: 0;
+    left: -30px;   
+}
+
 
  /*********
   FOOTER  *
@@ -192,6 +200,16 @@ ul.footer-list.social li a img
     width: 30px;
     margin-right: 10px;
 }
+
+
+/***********
+ * CONTACT *
+ ***********/
+ .contact-group label
+ {
+    font-family: "DinarMedium";
+    font-size: 14px;
+ }
 
 
 

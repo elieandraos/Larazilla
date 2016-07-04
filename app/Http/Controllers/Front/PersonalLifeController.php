@@ -22,7 +22,19 @@ class PersonalLifeController extends Controller
 
     	return view('front.personal.timeline', [
             'posts' => $events, 
+            'postType' => $postType,
             'title' => trans('messages.personalLife'),
+            'breadcrumb' => $breadcrumb
+        ]);
+    }
+
+
+    public function show(PostType $postType, Post $post)
+    {
+        $breadcrumb = [ trans('messages.personalLife'), trans('messages.'.$postType->slug), $post->title];
+
+        return view('front.mediacenter.show', [
+            'post' => $post,
             'breadcrumb' => $breadcrumb
         ]);
     }
