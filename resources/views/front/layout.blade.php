@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/front/css/timeline.css">
 
     @if(Lang::getLocale() == "en")
-        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="/front/css/style-en.css">
     @else
         <link rel="stylesheet" type="text/css" href="/front/fonts/arabicfaces.css">
@@ -21,7 +21,7 @@
     @endif
     
 
-    <title>Tamam Salam</title>
+    <title>Tammam Salam</title>
     
 </head>
 <body>	

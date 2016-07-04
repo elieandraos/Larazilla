@@ -114,8 +114,8 @@ div.carousel-gradient
 div.header-title
 {
 	height: 40px;
-	margin-top: 30px;
-	margin-bottom: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 .header-title h1
 {
@@ -247,7 +247,7 @@ div.button-menu
 *******************/
 div.breadcrumbs
 {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 div.breadcrumbs .sep
 {

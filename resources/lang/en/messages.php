@@ -2,11 +2,11 @@
 
 return [
 	//header
-	'logo' => 'Tamam Salam',
+	'logo' => 'Tammam Salam',
 	'personalLife' => 'Personal Life',
 	'officialLife' => 'Official Life',
 	'mediaCenter' => 'Media Center',
-	'contactUs' => 'Contact US',
+	'contactUs' => 'Contact Us',
 	'more'	=> 'More',
 	'tweets' => 'Tweets',
 	'videos' => 'Videos',
