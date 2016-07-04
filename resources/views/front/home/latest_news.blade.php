@@ -11,11 +11,14 @@
 							</div>
 						</a>
 						<div class="col-md-7 grid-details">
-							<h5>{!! $article->title !!}</h5>
-							<span class="date">		
-								{!! LocalizedCarbon::instance(Carbon\Carbon::parse($article->publish_date))->formatLocalized('%d %f %Y') !!}
-							</span>
-							<div class="excerpt">{!! $article->excerpt !!}</div>
+							<a href="{!! route('official.category.show', [$postType->slug, $current_category->slug, $article->slug]) !!}">
+
+								<h5>{!! $article->title !!}</h5>
+								<span class="date">		
+									{!! LocalizedCarbon::instance(Carbon\Carbon::parse($article->publish_date))->formatLocalized('%d %f %Y') !!}
+								</span>
+								<div class="excerpt">{!! $article->excerpt !!}</div>
+							</a>
 						</div>	
 					</div>
 				</div> 

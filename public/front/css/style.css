@@ -148,9 +148,10 @@ div.header-title
 {
 	margin-bottom: 5px;
 }
-.grid-details .excerpt
+.grid-details a .excerpt 
 {
-	margin-top: 15px;
+    margin-top: 15px;
+    color: #a1a1a1;
 }
 
 /****************************
