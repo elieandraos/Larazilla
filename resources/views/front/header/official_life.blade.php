@@ -22,14 +22,16 @@
 					<span class="date">		
 						{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
 					</span>
-					<p style="color:#FFF">{!! $post->title !!}</p>
+					<p style="color:#FFF">{!! substr($post->title, 0, 70)."..." !!}</p>
 				</div>
 			</div>
 		</li>
 	@endforeach
 
 	<li class="col-sm-2">
-		<a class="button-link active" href="{!! url('personal/albums') !!}">{!! trans('messages.more') !!}</a>
+		<a class="button-link active" href="{!! route('official.category', [$postType->slug, $category->slug]) !!}">
+			{!! trans('messages.more') !!}
+		</a>
 	</li>
 </div>
 

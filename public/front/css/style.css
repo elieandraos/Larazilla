@@ -388,7 +388,7 @@ div.contact-btn
 
  /* MEGAMENU STYLE
 -------------------------------------------------- */
-.dropdown:hover .dropdown-menu {
+div.home .dropdown:hover .dropdown-menu {
 	display: block;
 }
 
@@ -450,7 +450,7 @@ div.contact-btn
     border: none;
     color: #FFF;
     text-align: center;
-    padding: 3px;
+    padding: 10px 5px;
     margin-top: 45%;
 }
 div.toggle-menu

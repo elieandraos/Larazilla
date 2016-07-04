@@ -33,6 +33,6 @@ class MenuComposer
     		})->take(2)->orderBy('publish_date', 'DESC')->get();
 		}
 		
-		$view->with('posts', $posts)->with('categories', $categories);
+		$view->with('posts', $posts)->with('categories', $categories)->with('postType', $postType);
 	}
 }
