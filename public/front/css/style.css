@@ -33,6 +33,10 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
 	padding-top: 10px;
 }
+.visible
+{
+	display: block;
+}
 /**************
 *	TOP MENU  * 
 ***************/
@@ -397,18 +401,72 @@ div.contact-btn
 }
 
 .mega-dropdown {
-  position: relative !important;
+  position: static !important;
   width: auto;
 }
 
 .mega-dropdown-menu {
   padding: 20px 0px;
-  width: auto;
+  width: 100%;
   box-shadow: none;
   -webkit-box-shadow: none;
   border: none;
   border-radius: 0;
 }
 
+.dropdown-menu .article 
+{
+	background-color: #FFF;
+}
+
+.dropdown-menu .article .content
+{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.dropdown-menu .article img
+{
+	width: 160px !important;
+	height: auto;
+}
+
+.dropdown-menu .article .content h4
+{
+	color: #000;
+	font-weight: 700;
+}
+
+.dropdown-menu .article .content p
+{
+	font-size: 12px;
+	color: #333;
+}
+.navbar-nav>li>.dropdown-menu li a.button-link,
+.navbar-nav>li>.dropdown-menu li .button-menu a.button-link
+
+{
+	background-color: #c62026;
+    border: none;
+    color: #FFF;
+    text-align: center;
+    padding: 3px;
+    margin-top: 45%;
+}
+div.toggle-menu
+{
+	margin-bottom: 20px;
+}
+
+div.toggle-menu span 
+{
+	border: none;
+	cursor: pointer;
+}
+
+.navbar-nav>li>.dropdown-menu li .info-stripe
+{
+	height: 60px;
+	text-align: center;
+}
 
 

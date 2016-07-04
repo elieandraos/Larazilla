@@ -29,10 +29,10 @@
     <div class="container-fluid header-container @if(Route::is('home')) home @endif">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <a class="logo" href="/">{!! trans('messages.logo') !!}</a>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     @include('front.header.top-menu')
                     <div class="lang-switcher">
                         <a href="?locale=en"><img src="/front/images/eng.png" /></a>
@@ -88,10 +88,22 @@
                     zoom: false
                 }); 
 
-            $(document).on('click', '.mega-dropdown', function(e) {
-                e.stopPropagation()
-            })
+            $(".toggle-menu .button-link").click(function(){
+                
+                $("span.button-link").each(function(){
+                    $(this).removeClass('active');
+                })
 
+                $(this).addClass('active');
+                
+                var id = "#" + $(this).data('container');
+                $(".dropdown-menu-item").each(function(){
+                    $(this).removeClass('visible').addClass('hidden');
+                });
+                $(id).removeClass('hidden').addClass('visible');
+
+            })
+  
         })
     </script>
 </body>

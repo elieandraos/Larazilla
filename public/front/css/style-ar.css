@@ -215,5 +215,12 @@ ul.footer-list.social li a img
  }
 
 
+/**************
+ *  MEGA MENU *
+ **************/
+.navbar-nav>li>.dropdown-menu li
+{
+    float: right;
+}
 
 

@@ -221,4 +221,12 @@ ul.footer-list.social li a img
     text-indent: -80px;
  }
 
+ /**************
+ *  MEGA MENU *
+ **************/
+.navbar-nav>li>.dropdown-menu li
+{
+    float: left;
+}
+
 
