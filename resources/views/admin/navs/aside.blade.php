@@ -48,6 +48,14 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="/admin/posts/albums" class=" waves-effect waves-blue"> <i class="fa fa-camera-retro"></i> 
+                            Family Albums
+                        </a>
+                    </li>
+
+                    
+
                     <li class="label">Official</li>
 
                     <li>

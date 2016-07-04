@@ -25,9 +25,8 @@
     
 </head>
 <body>	
-
     <!-- header -->
-    <div class="container-fluid header-container">
+    <div class="container-fluid header-container @if(Route::is('home')) home @endif">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -88,6 +87,11 @@
                     counter: false,
                     zoom: false
                 }); 
+
+            $(document).on('click', '.mega-dropdown', function(e) {
+                e.stopPropagation()
+            })
+
         })
     </script>
 </body>
