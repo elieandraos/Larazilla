@@ -8,6 +8,8 @@
 						<a href="{!! route('mediacenter.show', [$postTypeSlug, $post->slug]) !!}">
 					@elseif(Request::is('*official*'))
 						<a href="{!! route('official.category.show', [$postTypeSlug, $current_category->slug, $post->slug]) !!}">
+					@elseif(Request::is('*personal*'))
+						<a href="{!! route('personal.show', [$postTypeSlug, $post->slug]) !!}">	
 					@endif
 
 					<div class="col-md-12 grid-image">

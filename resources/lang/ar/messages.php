@@ -19,7 +19,8 @@ return [
 	'email' => 'البريد الالكتروني',
 	'message' => 'الرسالة',
 	'submit'	=> 'أرسل',
-	'timeline-events' => 'السيرة الذاتية'
+	'timeline-events' => 'السيرة الذاتية',
+	'albums' =>   'معرض الصور'
 ];
 
 ?>

@@ -20,6 +20,7 @@ return [
 	'message'	=> 'Message',
 	'submit'	=> 'Submit',
 	'timeline-events' => 'Timeline'
+	'albums'  => 'Photo Albums'
 ];
 
 ?>

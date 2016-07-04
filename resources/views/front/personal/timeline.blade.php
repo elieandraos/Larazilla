@@ -8,6 +8,21 @@
 
 		<div class="row">
 			<div class="col-md-12">
+				<div class="button-menu">
+					@foreach($postSlugs as $slug)
+						<a 
+							class='button-link @if(Request::is("*personal*$slug")) active @endif'
+							href="{!! route('personal', [$slug]) !!}"
+							/>
+							{!! trans('messages.'.$slug) !!}
+						</a>
+					@endforeach 
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
 				<ul class="timeline">
 					@foreach($posts as $key => $post)
 				        <li class="@if($key % 2 == 1) timeline-inverted @endif">

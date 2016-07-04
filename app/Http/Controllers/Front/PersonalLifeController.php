@@ -16,16 +16,30 @@ class PersonalLifeController extends Controller
     public function index(PostType $postType)
     {
     	
-    	$events = $postType->posts()->orderBy('publish_date', 'ASC')->get();
+    	$posts = $postType->posts()->orderBy('publish_date', 'ASC')->get();
+        $postSlugs = ['timeline-events', 'albums'];
 
         $breadcrumb = [ trans('messages.personalLife'), 'Timeline'];
 
-    	return view('front.personal.timeline', [
-            'posts' => $events, 
-            'postType' => $postType,
-            'title' => trans('messages.personalLife'),
-            'breadcrumb' => $breadcrumb
-        ]);
+        if($postType->slug == "timeline-events")
+            return view('front.personal.timeline', [
+                'posts' => $posts, 
+                'postType' => $postType,
+                'postSlugs' => $postSlugs,
+                'postTypeSlug' => $postType->slug,
+                'title' => trans('messages.personalLife'),
+                'breadcrumb' => $breadcrumb
+            ]);
+        else
+            return view('front.personal.index', [
+                'posts' => $posts, 
+                'postType' => $postType,
+                'postSlugs' => $postSlugs,
+                'postTypeSlug' => $postType->slug,
+                'title' => trans('messages.personalLife'),
+                'breadcrumb' => $breadcrumb
+            ]);
+        	
     }
 
 
