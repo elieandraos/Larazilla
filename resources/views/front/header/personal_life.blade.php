@@ -17,6 +17,7 @@
 		<li class="col-sm-5">
 			<div class="article">
 				<div class="row">
+						<a class="article-link" href="{!! route('personal.show', [$postType->slug, $post->slug]) !!}">
 						<div class="col-md-6">
 							<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}" />
 						</div>
@@ -24,6 +25,7 @@
 							<h4>{!! $post->title !!}</h4>
 							<p>{!! $post->excerpt !!}</p>
 						</div>
+						</a>
 				</div>
 			</div>
 		</li>
@@ -39,13 +41,15 @@
 	@foreach($menuLatestPersonalAlbums as $post)
 		<li class="col-sm-4">
 			<div class="article">
-				<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}"  style="width:100% !important"/>
-				<div class="info-stripe">
-					<span class="date">		
-						{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
-					</span>
-					<p style="color:#FFF">{!! $post->title !!}</p>
-				</div>
+				<a class="article-link" href="{!! route('personal.show', [$postType->slug, $post->slug]) !!}">
+					<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}"  style="width:100% !important"/>
+					<div class="info-stripe">
+						<span class="date">		
+							{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
+						</span>
+						<p style="color:#FFF">{!! $post->title !!}</p>
+					</div>
+				</a>
 			</div>
 		</li>
 	@endforeach

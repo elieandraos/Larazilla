@@ -17,13 +17,15 @@
 	@foreach($posts[$i] as $post)
 		<li class="col-sm-4">
 			<div class="article">
-				<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}"  style="width:100% !important"/>
-				<div class="info-stripe">
-					<span class="date">		
-						{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
-					</span>
-					<p style="color:#FFF">{!! substr($post->title, 0, 70)."..." !!}</p>
-				</div>
+				<a class="article-link" href="{!! route('official.category.show', [$postType->slug, $category->slug, $post->slug]) !!}">
+					<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}"  style="width:100% !important"/>
+					<div class="info-stripe">
+						<span class="date">		
+							{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
+						</span>
+						<p style="color:#FFF">{!! substr($post->title, 0, 70)."..." !!}</p>
+					</div>
+				</a>
 			</div>
 		</li>
 	@endforeach

@@ -15,7 +15,7 @@ class MenuComposer
 		$albums =  PostType::where('slug', '=', 'albums')->first();
 		$albumsPosts = $albums->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
 
-		$view->with('menuLatestPersonalArticles', $posts)->with( 'menuLatestPersonalAlbums', $albumsPosts);
+		$view->with('menuLatestPersonalArticles', $posts)->with( 'menuLatestPersonalAlbums', $albumsPosts)->with('postType', $postType);
 	}
 
 

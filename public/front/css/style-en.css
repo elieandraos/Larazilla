@@ -8,12 +8,12 @@ body
 a.logo
 {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 29px;
     color: #1d1d1b;
-    padding-top: 25px;
+    padding-top: 13px;
     display: block;
-    padding-bottom: 24px;
-    width: 180px;
+    padding-bottom: 32px;
+    width: 205px;
 }
 
 /**************
@@ -22,14 +22,14 @@ a.logo
 ul.top-menu li a
 {
 	color: #203352;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     display: block;
     margin-right: 15px;
     margin-left: 15px;
     padding: 0; 
-    padding-bottom: 24px;
-    padding-top: 23px;
+    padding-bottom: 32px;
+    padding-top: 20px;
     border-bottom: 3px solid transparent;
 }
 ul.top-menu li a:hover, ul.top-menu li a.active,

@@ -3,7 +3,7 @@
 		<a href="/personal/timeline-events" class="dropdown-toggle @if(Request::is('*personal*')) active @endif"> {!! trans('messages.personalLife') !!} </a>
 		
 		<ul class="dropdown-menu mega-dropdown-menu row">
-            @include('front.header.personal_life')
+            @include('front.header.personal_life') 
         </ul>
 
 	</li>
