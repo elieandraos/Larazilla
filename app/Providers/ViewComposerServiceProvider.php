@@ -37,7 +37,7 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     private function composeFooter()
     {
-        view()->composer('front.footer.personal_life', 'App\Acme\Composers\FooterComposer@compose');
+        view()->composer('front.footer.sitemap', 'App\Acme\Composers\FooterComposer@compose');
     }
 
 

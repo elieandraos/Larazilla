@@ -37,6 +37,10 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
 	display: block;
 }
+.push-menu
+{
+	display: none;
+}
 /**************
 *	TOP MENU  * 
 ***************/
@@ -553,6 +557,14 @@ div.toggle-menu span
 	{
 		margin-left: 3px;
     	margin-right: 5px;
+	}
+	.push-menu
+	{
+	    position: absolute;
+	    top: -60px;
+	    left: -15px;
+	    display: block;
+	    cursor: pointer;
 	}
 	
 }

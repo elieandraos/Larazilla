@@ -33,7 +33,7 @@
                     <a class="logo" href="/">{!! trans('messages.logo') !!}</a>
                 </div>
                 <div class="col-md-9">
-                    <button class="push-menu menu-left">Toggle Left Menu</button>
+                    <img class="push-menu menu-left" src="/front/images/burger.png" style="width: 64px" />
 
                     @include('front.header.top-menu')
                     <div class="lang-switcher">
@@ -53,17 +53,13 @@
      <div class="container-fluid footer-container">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <h3 class="title"> {!! trans('messages.sitemap') !!}</h3>
                     @include('front.footer.sitemap')
                 </div>
                 <div class="col-md-4">
                     <h3 class="title"> {!! trans('messages.contactUs') !!}</h3>
                     @include('front.footer.social')
-                </div>
-                <div class="col-md-4">
-                    <h3 class="title"> {!! trans('messages.personalLife') !!}</h3>
-                    @include('front.footer.personal_life')
                 </div>
             </div>
         </div>

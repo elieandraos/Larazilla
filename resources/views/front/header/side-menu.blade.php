@@ -1,20 +1,22 @@
 <!-- body has the class "cbp-spmenu-push" -->
 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
-	<h3>Menu</h3>
-	<a href="#">Celery seakale</a>
-	<a href="#">Dulse daikon</a>
-	<a href="#">Zucchini garlic</a>
-	<a href="#">Catsear azuki bean</a>
-	<a href="#">Dandelion bunya</a>
-	<a href="#">Rutabaga</a>
+	<a href="/personal/timeline-events" class="dropdown-toggle @if(Request::is('*personal*')) active @endif"> {!! trans('messages.personalLife') !!} </a>
+	<a href="/official/articles/category/latest-news" class="dropdown-toggle @if(Request::is('*official*')) active @endif" > 
+		{!! trans('messages.officialLife') !!} 
+	</a>
+	<a href="/mediacenter/newspapers" class="@if(Request::is('*mediacenter*')) active @endif"> 
+		{!! trans('messages.mediaCenter') !!} 
+	</a>
+	<a href="/contact" class="@if(Request::is('*contact*')) active @endif"> {!! trans('messages.contactUs') !!} </a>
 </nav>
 
 
 <style>
 /* General styles for all menus */
 .cbp-spmenu {
-	background: #47a3da;
+	background: #203352;
 	position: fixed;
+	padding-top: 50px;
 }
 
 .cbp-spmenu h3 {
@@ -34,7 +36,7 @@
 }
 
 .cbp-spmenu a:hover {
-	background: #258ecd;
+	background: #3b94d9;
 }
 
 .cbp-spmenu a:active {
@@ -52,7 +54,7 @@
 }
 
 .cbp-spmenu-vertical a {
-	border-bottom: 1px solid #258ecd;
+	border-bottom: 1px solid #3b94d9;
 	padding: 1em;
 }
 
