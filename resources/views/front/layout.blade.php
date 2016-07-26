@@ -33,6 +33,8 @@
                     <a class="logo" href="/">{!! trans('messages.logo') !!}</a>
                 </div>
                 <div class="col-md-9">
+                    <button class="push-menu menu-left">Toggle Left Menu</button>
+
                     @include('front.header.top-menu')
                     <div class="lang-switcher">
                         <a href="?locale=en"><img src="/front/images/eng.png" /></a>
@@ -42,6 +44,8 @@
             </div>
         </div>
     </div>
+
+    @include('front.header.side-menu')
 
     @yield('content')
 
@@ -69,6 +73,7 @@
     <script type="text/javascript" src="/vendor/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/vendor/lightgallery/dist/js/lightgallery-all.min.js"></script>
+    <script type="text/javascript" src="/front/side-menu.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             if($('#aniimated-thumbnials').length)
@@ -106,6 +111,8 @@
                 $(id).removeClass('hidden').addClass('visible');
 
             })
+
+            $('.push-menu').jPushMenu();
   
         })
     </script>
