@@ -88,7 +88,7 @@
                     zoom: false
                 }); 
 
-            $(".toggle-menu .button-link").click(function(){
+            $(".toggle-menu .button-link").hover(function(){
                 
                 _li = $(this).closest('li.mega-dropdown');
 

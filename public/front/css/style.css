@@ -443,8 +443,8 @@ ul.top-menu li a.article-link:hover
 
 .dropdown-menu .article .content
 {
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 10px !important;
+	padding-right: 10px !important;
 }
 .dropdown-menu .article img
 {
@@ -493,4 +493,67 @@ div.toggle-menu span
 	text-align: center;
 }
 
+
+
+
+/* Smartphones  ----------- */
+@media only screen and (max-width : 767px) {
+	html body 
+	{
+		font-size: 13px !important;
+	}
+	.header-container, .header-container.home
+	{
+		height: 70px;
+		position: relative;
+	}
+	.header-container a.logo
+	{
+		font-size: 20px;
+		width: 95px;
+		padding-top: 0px;
+	    display: block;
+	    padding-bottom: 24px;
+	}
+	.top-menu
+	{
+		display: none;
+	}
+	#myCarousel
+	{
+		display: none;
+	}
+	div.grid-row
+	{
+		height: auto !important;
+		overflow: visible;
+	}
+	div.hr
+	{
+		display: none;
+	}
+	.lang-switcher
+	{
+		display: none;
+	}
+	body div.header-title
+	{
+		height: 40px;
+	    margin-top: 30px;
+	    margin-bottom: 10px;
+	}
+	body .header-title h1 
+	{
+	    font-size: 28px;
+	}
+	body .grid-row-two-col.grid-row .grid-image img {
+    	height: auto;
+	}
+	body .button-link
+	{
+		margin-left: 3px;
+    	margin-right: 5px;
+	}
+	
+}
 

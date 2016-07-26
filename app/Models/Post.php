@@ -53,7 +53,7 @@ class Post extends Model implements HasMediaConversions
 
 
     /**
-     * Represnt the publish_date in different format
+     * Represent the publish_date in different format
      * 
      * @param type $value 
      * @return type
