@@ -13,7 +13,7 @@ class MediaCenterController extends Controller
 {
     public function index(PostType $postType)
     {
-    	$posts = $postType->posts()->take(8)->orderBy('publish_date', 'DESC')->get();
+    	$posts = $postType->posts()->take(8)->orderBy('publish_date', 'DESC')->paginate(8);
         $postSlugs = ['newspapers', 'interviews', 'galleries', 'videos'];
 
         $breadcrumb = [ trans('messages.mediaCenter'), trans('messages.'.$postType->slug)];

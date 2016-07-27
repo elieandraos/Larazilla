@@ -28,5 +28,7 @@
 		@else
 			@include('front.common.grid_four_columns', ['posts' => $posts])	
 		@endif
+
+		<div align=center> {!! $posts->links() !!} </div>
 	</div>
 @stop

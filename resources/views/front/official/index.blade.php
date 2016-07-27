@@ -25,5 +25,7 @@
 		</div>
 
 		@include('front.common.grid_two_columns', ['posts' => $articles])	
+
+		<div align=center> {!! $articles->links() !!} </div>
 	</div>
 @stop

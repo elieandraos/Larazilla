@@ -25,4 +25,9 @@
 			</div>
 		</div>	
 	@endforeach
+	<div align="center">
+		<a class="button-link active" href="/official/articles/category/latest-news" />
+			{!! trans('messages.more') !!}
+		</a>
+	</div>
 @endif

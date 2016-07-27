@@ -108,6 +108,17 @@ class Post extends Model implements HasMediaConversions
     }
 
 
+    function getCutExcerpt($length = 120, $direction = "down") 
+    {
+        $text = $this->excerpt;
+        while ( !in_array(mb_substr($text,$length,1,'UTF-8'),array(' ')) ) 
+        {
+           $direction == "down" ? $length-- : $length++;
+
+        }
+        return mb_substr($text,0,$length,'UTF-8');
+    }
+
     /**
      * Media Conversions
      * 

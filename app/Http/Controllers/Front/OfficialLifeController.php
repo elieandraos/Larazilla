@@ -17,7 +17,7 @@ class OfficialLifeController extends Controller
     {
     	$articles = $postType->posts()->whereHas('categories', function($q) use ($category){
     		 $q->where('slug', 'like', $category->slug);
-    	})->with('categories')->take(6)->orderBy('publish_date', 'DESC')->get();
+    	})->with('categories')->take(6)->orderBy('publish_date', 'DESC')->paginate(8);
 
     	$rootCategory = Category::where('slug', '=', 'official-life')->first();
     	$categories = $rootCategory->descendants()->defaultOrder()->get();

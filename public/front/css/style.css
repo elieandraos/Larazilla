@@ -398,18 +398,24 @@ div.contact-btn
 
  /* MEGAMENU STYLE
 -------------------------------------------------- */
-div.home .dropdown:hover .dropdown-menu {
+div .dropdown:hover .dropdown-menu {
 	display: block;
 }
 
 .navbar-nav>li>.dropdown-menu 
 {
   margin-top: 0px;
+  background-image: none;
+  background-color: #FFF;
+}
+
+div.home .navbar-nav>li>.dropdown-menu 
+{
+  margin-top: 0px;
   background-image: url('/front/images/bg-white-transparent.png');
   background-repeat: repeat;
   background-color: transparent;
 }
-
 .mega-dropdown {
   position: static !important;
   width: auto;
@@ -468,6 +474,7 @@ ul.top-menu li a.article-link:hover
 	font-size: 12px;
 	color: #333;
 	font-family: DinarLight;
+	padding-left: 12px;
 }
 .navbar-nav>li>.dropdown-menu li a.button-link,
 .navbar-nav>li>.dropdown-menu li .button-menu a.button-link

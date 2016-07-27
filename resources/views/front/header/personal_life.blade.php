@@ -23,7 +23,7 @@
 						</div>
 						<div class="col-md-6 content">
 							<h4>{!! $post->title !!}</h4>
-							<p>{!! trim(substr($post->excerpt, 0, 195))."..." !!} <p>
+							<p>{!! $post->getCutExcerpt()."..." !!}<p>
 						</div>
 						</a>
 				</div>
