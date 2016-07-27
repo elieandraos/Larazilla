@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Front;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactRequest;
 
 use App\Models\Post;
 use App\Models\PostType;
 use App\Models\Category;
+
+use Mail;
 
 class HomeController extends Controller
 {
@@ -43,6 +46,27 @@ class HomeController extends Controller
     public function contact()
     {
         return view('front.home.contact');
+    }
+
+    public function submitContact(ContactRequest $request)
+    {
+        $input = $request->all();
+        
+        $data = [
+            'full_name' => $input['full_name'],
+            'email' => $input['email'],
+            'body' => $input['message']
+        ];
+
+
+        Mail::send('emails.contact', $data, function ($message) use ($data) 
+        {
+            $message->from($data['email']);
+            //$message->to('contact@tammamsalam.com');
+            $message->to('elieandraos31@gmail.com');
+        });
+
+        return redirect( route('home'));
     }
 
 

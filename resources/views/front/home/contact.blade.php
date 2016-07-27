@@ -6,22 +6,34 @@
 		<!-- Block Title -->
 		@include('front.common.block-title', ['title' => trans('messages.contactUs')])
 
+		{!! Form::open(['route' => ['home.contact.submit']]) !!}
+
 		<div class="row">
 			<div class="col-md-4 contact-group">
-				<label for="full_name">{!! trans('messages.fullName') !!}</label>
-				<input type="text" id="full_name" name="full_name" class="txt" />
 
-				<label for="email">{!! trans('messages.email') !!}</label>
-				<input type="text" id="email" name="email" class="txt"/>
+				<div class="@if ($errors->has('full_name')) frm-error @endif" >
+					<label for="full_name">{!! trans('messages.fullName') !!}</label>
+					{!! Form::text('full_name', old('full_name'), ['class' => 'txt']) !!}
+				</div>
 
+				<div class="@if ($errors->has('email')) frm-error @endif" >
+					<label for="email">{!! trans('messages.email') !!}</label>
+					{!! Form::text('email', old('email'), ['class' => 'txt']) !!}
+				</div>
 			</div>
+
 			<div class="col-md-5 contact-group">
-				<label for="message">{!! trans('messages.message') !!}</label>
-				<textarea id="message" name="message" class="txt"></textarea>
+				<div class="@if ($errors->has('message')) frm-error @endif" >
+					<label for="message">{!! trans('messages.message') !!}</label>
+					{!! Form::textarea('message', old('message'), ['class' => 'txt']) !!}
+				</div>
 			</div>
+
 			<div class="col-md-3 contact-btn">
-				<a class="button-link active" href="#">{!! trans('messages.submit') !!}</a> 
+				<input type="submit" class="button-link active" value="{!! trans('messages.submit') !!}"> 
 			</div>
 		</div>
+
+		{!! Form::close() !!}
 	</div>
 @stop

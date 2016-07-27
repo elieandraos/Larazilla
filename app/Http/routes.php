@@ -16,6 +16,7 @@ Route::auth();
 Route::group(['prefix' => '', 'middleware' => [], 'namespace' => 'Front' ], function () {
   Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
   Route::get('/contact', [ 'uses' => 'HomeController@contact', 'as' => 'home.contact']);
+  Route::post('/contact/submit', [ 'uses' => 'HomeController@submitContact', 'as' => 'home.contact.submit']);
 
   Route::get('/personal/{postTypeSlug}/', ['uses' => 'PersonalLifeController@index', 'as' => 'personal']);
   Route::get('/personal/{postTypeSlug}/post/{postSlug}', ['uses' => 'PersonalLifeController@show', 'as' => 'personal.show']);

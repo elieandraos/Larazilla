@@ -37,8 +37,8 @@
 
                     @include('front.header.top-menu')
                     <div class="lang-switcher">
-                        <a href="?locale=en"><img src="/front/images/eng.png" /></a>
-                        <a href="?locale=ar"><img src="/front/images/ar.png" /></a>
+                        <a href="?locale=en" style="color:##2C3e50" >{!! trans('messages.english') !!} </a>&nbsp;&nbsp;
+                        <a href="?locale=ar" style="color:##2C3e50" >{!! trans('messages.arabic') !!} </a>
                     </div>
                 </div>
             </div>

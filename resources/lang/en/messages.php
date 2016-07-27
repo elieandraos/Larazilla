@@ -20,7 +20,9 @@ return [
 	'message'	=> 'Message',
 	'submit'	=> 'Submit',
 	'timeline-events' => 'Timeline',
-	'albums'  => 'Photo Albums'
+	'albums'  => 'Photo Albums',
+	'english' => 'English',
+	'arabic' => 'Arabic'
 ];
 
 ?>

@@ -41,6 +41,10 @@ a.btn-slider,a.btn-slider:hover,a.btn-slider:active
 {
 	display: none;
 }
+.contact-group .frm-error label 
+{
+	color: red;
+}
 /**************
 *	TOP MENU  * 
 ***************/
