@@ -108,15 +108,18 @@ class Post extends Model implements HasMediaConversions
     }
 
 
-    function getCutExcerpt($length = 120, $direction = "down") 
+    function getCutExcerpt($limit=200, $break=" ", $pad="...") 
     {
-        $text = $this->excerpt;
-        while ( !in_array(mb_substr($text,$length,1,'UTF-8'),array(' ')) ) 
-        {
-           $direction == "down" ? $length-- : $length++;
+        $string = $this->excerpt;
+       // return with no change if string is shorter than $limit
+      if(strlen($string) <= $limit) return $string;
 
-        }
-        return mb_substr($text,0,$length,'UTF-8');
+      $string = substr($string, 0, $limit);
+      if(false !== ($breakpoint = strrpos($string, $break))) {
+        $string = substr($string, 0, $breakpoint);
+      }
+
+      return $string . $pad;
     }
 
     /**

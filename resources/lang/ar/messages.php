@@ -22,7 +22,8 @@ return [
 	'timeline-events' => 'السيرة الذاتية',
 	'albums' =>  'معرض الصور',
 	'english' => 'إنجليزي',
-	'arabic' => 'عربي'
+	'arabic' => 'عربي',
+	'followUs' => 'تواصل معنا'
 ];
 
 ?>

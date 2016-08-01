@@ -37,8 +37,8 @@
 
                     @include('front.header.top-menu')
                     <div class="lang-switcher">
-                        <a href="?locale=en" style="color:##2C3e50" >{!! trans('messages.english') !!} </a>&nbsp;&nbsp;
-                        <a href="?locale=ar" style="color:##2C3e50" >{!! trans('messages.arabic') !!} </a>
+                        <a href="?locale=en" style="color:#2C3e50" >{!! trans('messages.english') !!} </a>&nbsp;&nbsp;
+                        <a href="?locale=ar" style="color:#2C3e50" >{!! trans('messages.arabic') !!} </a>
                     </div>
                 </div>
             </div>
@@ -58,7 +58,7 @@
                     @include('front.footer.sitemap')
                 </div>
                 <div class="col-md-4">
-                    <h3 class="title"> {!! trans('messages.contactUs') !!}</h3>
+                    <h3 class="title"> {!! trans('messages.followUs') !!}</h3>
                     @include('front.footer.social')
                 </div>
             </div>

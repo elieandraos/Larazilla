@@ -35,7 +35,7 @@
 						@endif
 
 						<h5>{!! $post->title !!}</h5>
-						<div class="excerpt">{!! $post->getCutExcerpt(220)."..." !!}</div>
+						<div class="excerpt">{!! $post->getCutExcerpt(280) !!}</div>
 						</a>
 					</div>
 

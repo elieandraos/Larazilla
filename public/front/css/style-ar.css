@@ -130,6 +130,7 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
     padding-right: 0;
     font-family: 'TheSans';
     font-size: 12px;
+    padding-top: 5px;
 }
 .grid-row-four-col.grid-row .info-stripe p
 {

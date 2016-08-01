@@ -10,7 +10,7 @@
 		<div class="col-md-12">
 			<div class="post-content">
 				<div class="row">
-					<div class="col-md-7" style="position:relative">
+					<div class="col-md-6" style="position:relative">
 						@if($post->getMetaValue('youtube_url'))
 							<div id="video-gallery">
 								<a href="{!! $post->getMetaValue('youtube_url') !!}" >
@@ -23,7 +23,7 @@
 
 						@endif
 					</div>
-					<div class="col-md-5 post-body">
+					<div class="col-md-6 post-body">
 						<h5>{!! $post->title !!}</h5>
 						<div class="full-text">{!! $post->body !!}</div>
 

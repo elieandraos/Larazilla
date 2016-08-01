@@ -22,7 +22,8 @@ return [
 	'timeline-events' => 'Timeline',
 	'albums'  => 'Photo Albums',
 	'english' => 'English',
-	'arabic' => 'Arabic'
+	'arabic' => 'Arabic',
+	'followUs' => 'Follow Us'
 ];
 
 ?>
