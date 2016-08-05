@@ -20,7 +20,6 @@
 							</div>
 						@else
 							<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'featured') !!}" />
-
 						@endif
 					</div>
 					<div class="col-md-6 post-body">

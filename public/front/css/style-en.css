@@ -65,6 +65,7 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
 .carousel-indicators {
     left: 20px;
     top: 50%; 
+    margin-left: 0;
 
 }
 .carousel-indicators li 

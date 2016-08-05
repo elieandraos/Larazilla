@@ -2,7 +2,7 @@
 
 return [
 	//header
-	'logo' => 'تمام سلام',
+	'logo' => 'تمّام سلام',
 	'personalLife' => 'الحياة الشخصية',
 	'officialLife' => 'الحياة الرسمية',
 	'mediaCenter' => 'المركز الإعلامي',

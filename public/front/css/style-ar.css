@@ -66,7 +66,6 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
     top: 50%;
     margin: 0;
     width: 10%;   
-
 }
 .carousel-indicators li 
 {
@@ -141,7 +140,8 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
 /******************
 *   POST CONTENT  * 
 *******************/
-div.breadcrumbs
+div.breadcrumbs,
+div.breadcrumbs a
 {
     color: #bebebe;
     font-family: 'TheSans';

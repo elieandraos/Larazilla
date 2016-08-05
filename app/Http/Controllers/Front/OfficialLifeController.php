@@ -23,13 +23,18 @@ class OfficialLifeController extends Controller
     	$categories = $rootCategory->descendants()->defaultOrder()->get();
         $breadcrumb = [ trans('messages.officialLife'), $category->title];
 
+         $breadcrumb_links = [ 
+            route('official.category', [$postType->slug, 'latest-news'])
+        ];
+
     	return view('front.official.index', [
             'articles' => $articles, 
             'title' => trans('messages.officialLife'),
             'categories'	=> $categories,
             'current_category' => $category,
             'postTypeSlug' => $postType->slug,
-            'breadcrumb' => $breadcrumb
+            'breadcrumb' => $breadcrumb,
+            'breadcrumb_links' => $breadcrumb_links
         ]);
     }
 
@@ -37,10 +42,15 @@ class OfficialLifeController extends Controller
     public function show(PostType $postType, Category $category, Post $post)
     {
         $breadcrumb = [ trans('messages.officialLife'), $category->title, $post->title];
+        $breadcrumb_links = [ 
+            route('official.category', [$postType->slug, $category->slug]),  
+            route('official.category', [$postType->slug, $category->slug]) 
+            ];
 
         return view('front.official.show', [
             'post' => $post,
-            'breadcrumb' => $breadcrumb
+            'breadcrumb' => $breadcrumb,
+            'breadcrumb_links' => $breadcrumb_links
         ]);
     }
 }

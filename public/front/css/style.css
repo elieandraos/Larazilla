@@ -314,6 +314,11 @@ div.breadcrumbs .active
 	display: inline-block;
 	margin-bottom: 10px;
 }
+.gallery-thumb img
+{
+	width: 120px;
+	height: 80px;
+}
 .video-overlay
 {
 	bottom: 0;
