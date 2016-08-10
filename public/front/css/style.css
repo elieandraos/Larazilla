@@ -125,7 +125,7 @@ div.carousel-gradient
 	width: 100%;
 	height: 100%;
 	position: absolute;
-	z-index: 50;
+	z-index: 1;
 	top: 0;
 	left: 0;
 	background-image: url('/front/images/gradiant-banner.png');
