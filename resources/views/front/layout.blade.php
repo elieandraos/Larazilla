@@ -73,15 +73,22 @@
     <script type="text/javascript" src="/front/waypoint.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            if($('#aniimated-thumbnials').length)
-                $('#aniimated-thumbnials').lightGallery({
-                    thumbnail:false,
-                    animateThumb: false,
-                    showThumbByDefault: false,
-                    download: false,
-                    counter: false,
-                    zoom: false
-                }); 
+            // if($('#aniimated-thumbnials').length)
+            //     $('#aniimated-thumbnials').lightGallery({
+            //         thumbnail:false,
+            //         animateThumb: false,
+            //         showThumbByDefault: false,
+            //         download: false,
+            //         counter: false,
+            //         zoom: false
+            //     }); 
+
+
+            $("#aniimated-thumbnials a.gallery-thumb").click(function(){
+                _src = $(this).attr('href');
+                $(".post-body").find('img:first').attr('src', _src);
+                return false;
+            })
 
             if($("#video-gallery").length)
                 $('#video-gallery').lightGallery({
