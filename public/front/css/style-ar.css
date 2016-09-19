@@ -66,6 +66,7 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
     top: 50%;
     margin: 0;
     width: 10%;   
+
 }
 .carousel-indicators li 
 {
@@ -129,7 +130,6 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
     padding-right: 0;
     font-family: 'TheSans';
     font-size: 12px;
-    padding-top: 5px;
 }
 .grid-row-four-col.grid-row .info-stripe p
 {
@@ -140,8 +140,7 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
 /******************
 *   POST CONTENT  * 
 *******************/
-div.breadcrumbs,
-div.breadcrumbs a
+div.breadcrumbs
 {
     color: #bebebe;
     font-family: 'TheSans';
@@ -150,6 +149,7 @@ div.breadcrumbs a
 .post-content .post-body
 {
     padding-left: 40px;
+    padding-right: 40px;
 }
 .post-content h5
 {

@@ -33,12 +33,17 @@ class HomeController extends Controller
     		 $q->where('slug', 'like', $category->slug);
     	})->with('categories')->take(6)->orderBy('publish_date', 'DESC')->get();
         
+        //most read posts 
+        $most_read = Post::where('views', '>', 0)->orderBy('views')->take(4)->get();
+
         return view('front.home.index', [
             'slides' => $slides, 
             'categoryTitle' => $category->title,
             'articles' => $articles,
             'current_category' => $category,
-            'postType' => $articles_post_type
+            'postType' => $articles_post_type,
+            'most_read' => $most_read,
+            'route' => 'offical.category.show'
         ]);
     }
 

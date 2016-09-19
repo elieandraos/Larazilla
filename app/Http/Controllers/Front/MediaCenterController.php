@@ -17,17 +17,13 @@ class MediaCenterController extends Controller
         $postSlugs = ['newspapers', 'interviews', 'galleries', 'videos'];
 
         $breadcrumb = [ trans('messages.mediaCenter'), trans('messages.'.$postType->slug)];
-        $breadcrumb_links = [ 
-            route('mediacenter', [$postType->slug])
-        ];
 
     	return view('front.mediacenter.index', [
             'posts' => $posts, 
             'title' => trans('messages.mediaCenter'),
             'postTypeSlug' => $postType->slug,
             'postSlugs' => $postSlugs,
-            'breadcrumb' => $breadcrumb,
-            'breadcrumb_links' => $breadcrumb_links
+            'breadcrumb' => $breadcrumb
         ]);
     }
 
@@ -35,16 +31,16 @@ class MediaCenterController extends Controller
     public function show(PostType $postType, Post $post)
     {
         $breadcrumb = [ trans('messages.mediaCenter'), trans('messages.'.$postType->slug), $post->title];
-
-        $breadcrumb_links = [ 
-            route('mediacenter', [$postType->slug]),
-            route('mediacenter', [$postType->slug])
-        ];
+        $post->incrementView();
+        $related = Post::where('post_type_id', '=', $postType->id)->take(4)->get();
+        $most_read = Post::where('views', '>', 0)->orderBy('views')->take(4)->get();
 
         return view('front.mediacenter.show', [
             'post' => $post,
             'breadcrumb' => $breadcrumb,
-            'breadcrumb_links' => $breadcrumb_links
+            'most_read' => $most_read,
+            'postType' => $postType,
+            'related' => $related
         ]);
     }
 }

@@ -23,7 +23,8 @@ return [
 	'albums'  => 'Photo Albums',
 	'english' => 'English',
 	'arabic' => 'Arabic',
-	'followUs' => 'Follow Us'
+	'mostRead' => 'Most Read',
+	'related' => 'Related'
 ];
 
 ?>

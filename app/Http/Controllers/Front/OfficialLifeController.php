@@ -23,18 +23,13 @@ class OfficialLifeController extends Controller
     	$categories = $rootCategory->descendants()->defaultOrder()->get();
         $breadcrumb = [ trans('messages.officialLife'), $category->title];
 
-         $breadcrumb_links = [ 
-            route('official.category', [$postType->slug, 'latest-news'])
-        ];
-
     	return view('front.official.index', [
             'articles' => $articles, 
             'title' => trans('messages.officialLife'),
             'categories'	=> $categories,
             'current_category' => $category,
             'postTypeSlug' => $postType->slug,
-            'breadcrumb' => $breadcrumb,
-            'breadcrumb_links' => $breadcrumb_links
+            'breadcrumb' => $breadcrumb
         ]);
     }
 
@@ -42,15 +37,22 @@ class OfficialLifeController extends Controller
     public function show(PostType $postType, Category $category, Post $post)
     {
         $breadcrumb = [ trans('messages.officialLife'), $category->title, $post->title];
-        $breadcrumb_links = [ 
-            route('official.category', [$postType->slug, $category->slug]),  
-            route('official.category', [$postType->slug, $category->slug]) 
-            ];
+        $post->incrementView();
+        
+        //most read posts 
+        $most_read = Post::where('views', '>', 0)->orderBy('views')->take(4)->get();
+        $related = Post::whereHas('categories', function($query) use ($category) {
+            $query->where('category_id', '=', $category->id);
+        })->take(4)->get();
 
         return view('front.official.show', [
             'post' => $post,
             'breadcrumb' => $breadcrumb,
-            'breadcrumb_links' => $breadcrumb_links
+            'most_read' => $most_read,
+            'postType' => $postType,
+            'current_category' => $category,
+            'related' => $related,
+            'route' => 'official.category.show'
         ]);
     }
 }

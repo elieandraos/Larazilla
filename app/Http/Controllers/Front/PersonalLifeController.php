@@ -20,9 +20,6 @@ class PersonalLifeController extends Controller
         $postSlugs = ['timeline-events', 'albums'];
 
         $breadcrumb = [ trans('messages.personalLife'), trans('messages.albums')];
-        $breadcrumb_links = [ 
-            route('personal', [$postType->slug])
-        ];
 
         if($postType->slug == "timeline-events")
             return view('front.personal.timeline', [
@@ -31,8 +28,7 @@ class PersonalLifeController extends Controller
                 'postSlugs' => $postSlugs,
                 'postTypeSlug' => $postType->slug,
                 'title' => trans('messages.personalLife'),
-                'breadcrumb' => $breadcrumb,
-                'breadcrumb_links' => $breadcrumb_links
+                'breadcrumb' => $breadcrumb
             ]);
         else
             return view('front.personal.index', [
@@ -41,8 +37,7 @@ class PersonalLifeController extends Controller
                 'postSlugs' => $postSlugs,
                 'postTypeSlug' => $postType->slug,
                 'title' => trans('messages.personalLife'),
-                'breadcrumb' => $breadcrumb,
-                'breadcrumb_links' => $breadcrumb_links
+                'breadcrumb' => $breadcrumb
             ]);
         	
     }
@@ -51,15 +46,16 @@ class PersonalLifeController extends Controller
     public function show(PostType $postType, Post $post)
     {
         $breadcrumb = [ trans('messages.personalLife'), trans('messages.'.$postType->slug), $post->title];
-        $breadcrumb_links = [ 
-            route('personal', [$postType->slug]),
-            route('personal', [$postType->slug])
-        ];
+        $post->incrementView();
+        $related = Post::where('post_type_id', '=', $postType->id)->take(4)->get();
+        $most_read = Post::where('views', '>', 0)->orderBy('views')->take(4)->get();
 
         return view('front.mediacenter.show', [
             'post' => $post,
             'breadcrumb' => $breadcrumb,
-            'breadcrumb_links' => $breadcrumb_links
+            'most_read' => $most_read,
+            'postType' => $postType,
+            'related' => $related
         ]);
     }
 }

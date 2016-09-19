@@ -108,18 +108,23 @@ class Post extends Model implements HasMediaConversions
     }
 
 
-    function getCutExcerpt($limit=200, $break=" ", $pad="...") 
+    function getCutExcerpt($length = 120) 
     {
-        $string = $this->excerpt;
-       // return with no change if string is shorter than $limit
-      if(strlen($string) <= $limit) return $string;
+        $input = $this->excerpt;
+        if (strlen($input) <= $length) 
+            return $input;
+        
+        //find last space within length
+        $last_space = strrpos(substr($input, 0, $length), ' ');
+        $trimmed_text = substr($input, 0, $last_space);
+      
+       return $trimmed_text;
+    }
 
-      $string = substr($string, 0, $limit);
-      if(false !== ($breakpoint = strrpos($string, $break))) {
-        $string = substr($string, 0, $breakpoint);
-      }
-
-      return $string . $pad;
+    public function incrementView()
+    {
+        $this->views = ($this->views + 1);
+        $this->save();
     }
 
     /**

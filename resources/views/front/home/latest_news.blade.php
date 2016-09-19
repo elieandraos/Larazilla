@@ -17,7 +17,7 @@
 								<span class="date">		
 									{!! LocalizedCarbon::instance(Carbon\Carbon::parse($article->publish_date))->formatLocalized('%d %f %Y') !!}
 								</span>
-								<div class="excerpt">{!! $article->getCutExcerpt(400) !!}</div>
+								<div class="excerpt">{!! $article->excerpt !!}</div>
 							</a>
 						</div>	
 					</div>

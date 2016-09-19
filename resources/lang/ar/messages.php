@@ -2,7 +2,7 @@
 
 return [
 	//header
-	'logo' => 'تمّام سلام',
+	'logo' => 'تمام سلام',
 	'personalLife' => 'الحياة الشخصية',
 	'officialLife' => 'الحياة الرسمية',
 	'mediaCenter' => 'المركز الإعلامي',
@@ -23,7 +23,8 @@ return [
 	'albums' =>  'معرض الصور',
 	'english' => 'إنجليزي',
 	'arabic' => 'عربي',
-	'followUs' => 'تواصل معنا'
+	'mostRead' => 'الأكثر قراءة',
+	'related' => 'ذات صلى '
 ];
 
 ?>
