@@ -25,7 +25,11 @@
 			<div class="col-md-12">
 				<ul class="timeline">
 					@foreach($posts as $key => $post)
-				        <li class="@if($key % 2 == 1) timeline-inverted @endif">
+				        <li 
+				        	class="@if($key % 2 == 1) timeline-inverted @endif os-animation" 
+				        	data-os-animation="@if($key % 2 == 1)animate-left @else animate-right @endif" 
+				        	data-os-animation-delay="0s"
+				        >
 							<div class="timeline-badge">{!! $post->getMetaValue('year') !!}</div>
 							<div class="timeline-panel">
 								<table>

@@ -70,6 +70,7 @@
     <script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/vendor/lightgallery/dist/js/lightgallery-all.min.js"></script>
     <script type="text/javascript" src="/front/side-menu.js"></script>
+    <script type="text/javascript" src="/front/waypoint.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             if($('#aniimated-thumbnials').length)
@@ -109,8 +110,35 @@
             })
 
             $('.push-menu').jPushMenu();
-  
+            
         })
+    </script>
+    <script>
+        onScrollInit( $('.os-animation') );
+
+        function onScrollInit( items, trigger ) {
+          items.each( function() {
+            var osElement = $(this),
+                osAnimationClass = osElement.attr('data-os-animation'),
+                osAnimationDelay = osElement.attr('data-os-animation-delay');
+              
+                osElement.css({
+                  '-webkit-animation-delay':  osAnimationDelay,
+                  '-moz-animation-delay':     osAnimationDelay,
+                  'animation-delay':          osAnimationDelay
+                });
+
+                var osTrigger = ( trigger ) ? trigger : osElement;
+                
+                osTrigger.waypoint(function() {
+                  osElement.addClass('animated').addClass(osAnimationClass);
+                  },{
+                      triggerOnce: true,
+                      offset: '90%'
+                });
+          });
+        }
+
     </script>
 </body>
 </body>
