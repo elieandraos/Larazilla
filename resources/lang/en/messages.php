@@ -22,9 +22,10 @@ return [
 	'timeline-events' => 'Timeline',
 	'albums'  => 'Photo Albums',
 	'english' => 'English',
-	'arabic' => 'Arabic',
+	'arabic' => 'عربي',
 	'mostRead' => 'Most Read',
-	'related' => 'Related'
+	'related' => 'Related',
+	'followUs' => 'Follow Us'
 ];
 
 ?>
