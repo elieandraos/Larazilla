@@ -22,7 +22,7 @@ class PersonalLifeController extends Controller
         $breadcrumb = [ trans('messages.personalLife'), trans('messages.albums')];
 
         if($postType->slug == "timeline-events")
-            return view('front.personal.timeline', [
+            return view('front.personal.timeline-horizontal', [
                 'posts' => $posts, 
                 'postType' => $postType,
                 'postSlugs' => $postSlugs,

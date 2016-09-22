@@ -9,7 +9,8 @@
     <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/lightgallery/dist/css/lightgallery.min.css" />
     <link rel="stylesheet" type="text/css" href="/front/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/front/css/timeline.css">
+  {{--   <link rel="stylesheet" type="text/css" href="/front/css/timeline.css"> --}}
+    <link rel="stylesheet" type="text/css" href="/front/css/timeline-horizontal.css">
 
     @if(Lang::getLocale() == "en")
         <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -70,6 +71,7 @@
     <script type="text/javascript" src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/vendor/lightgallery/dist/js/lightgallery-all.min.js"></script>
     <script type="text/javascript" src="/front/side-menu.js"></script>
+    <script type="text/javascript" src="/front/timeline-horizontal.js"></script>
     <script type="text/javascript" src="/front/waypoint.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
