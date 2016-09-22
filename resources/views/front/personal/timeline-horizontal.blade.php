@@ -35,6 +35,8 @@
 									<div class="col-md-6">
 										<h4 class="timeline-title">{!! $post->title !!}</h4>
 										<p class="timeline-body">{!! $post->excerpt !!}</p>
+										<br/>
+										<a href="{!! route('personal.show', [$postType->slug, $post->slug]) !!}" class="button-link active readmore" style="margin-left: 0;margin-right: 0">{!! trans('messages.more') !!}</a>
 									</div>
 								</li>
 								@endforeach
