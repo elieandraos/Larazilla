@@ -30,7 +30,7 @@
 			</div>
 
 			<div class="col-md-3 contact-btn">
-				<input type="submit" class="button-link active" value="{!! trans('messages.submit') !!}"> 
+				<input type="submit" class="button-link active" value="{!! trans('messages.submit') !!}" style="font-family: 'TheSans';"> 
 			</div>
 		</div>
 

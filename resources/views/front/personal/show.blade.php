@@ -19,8 +19,7 @@
 								</a>
 							</div>
 						@else
-							<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'featured') !!}" />
-
+							<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}" />
 						@endif
 
 						<h5>{!! $post->title !!}</h5>
