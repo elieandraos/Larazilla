@@ -60,7 +60,8 @@ a.logo
 	background-repeat: repeat;
 	position: relative;
 	width: 100%;
-	background-color: transparent;
+	/*background-color: transparent;*/
+	background-color: #aeaeae;
 }
 .header-container.home
 {
@@ -412,7 +413,9 @@ div .dropdown:hover .dropdown-menu {
 {
   margin-top: 0px;
   background-image: none;
-  background-color: #FFF;
+  /*background-color: #FFF;*/
+	background-image: url('/front/images/bg-white-transparent.png');
+	background-color: #aeaeae;
 }
 
 div.home .navbar-nav>li>.dropdown-menu 

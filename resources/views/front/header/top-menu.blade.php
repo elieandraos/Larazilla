@@ -16,10 +16,13 @@
         </ul>
 
 	</li>
-	<li> 
+	<li class="dropdown mega-dropdown"> 
 		<a href="/mediacenter/newspapers" class="@if(Request::is('*mediacenter*')) active @endif"> 
 			{!! trans('messages.mediaCenter') !!} 
 		</a>
+		<ul class="dropdown-menu mega-dropdown-menu row">
+            @include('front.header.media_library')
+        </ul>
 	</li>	
 	<li>
 		 <a href="/contact" class="@if(Request::is('*contact*')) active @endif"> {!! trans('messages.contactUs') !!} </a>

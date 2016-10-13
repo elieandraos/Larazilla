@@ -16,6 +16,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->composeFooter();
         $this->composeMenuPersonal();
         $this->composeMenuOffical();
+        $this->composeMenuMediaLibrary();
     }
 
     /**
@@ -52,7 +53,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         view()->composer('front.header.personal_life', 'App\Acme\Composers\MenuComposer@personal');
     }
 
-         /**
+    /**
      * Mega Menu Personal Life section
      * Returns personal life articles
      * 
@@ -61,5 +62,10 @@ class ViewComposerServiceProvider extends ServiceProvider
     private function composeMenuOffical()
     {
         view()->composer('front.header.official_life', 'App\Acme\Composers\MenuComposer@official');
+    }
+
+    private function composeMenuMediaLibrary()
+    {
+         view()->composer('front.header.media_library', 'App\Acme\Composers\MenuComposer@medialibrary');
     }
 }

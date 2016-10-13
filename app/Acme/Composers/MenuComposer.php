@@ -35,4 +35,26 @@ class MenuComposer
 		
 		$view->with('posts', $posts)->with('categories', $categories)->with('postType', $postType);
 	}
+
+
+	public function medialibrary(View $view)
+	{
+		$postTypeNews = PostType::where('slug', '=', 'newspapers')->first();
+		$news = $postTypeNews->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
+
+		$postTypeInterviews = PostType::where('slug', '=', 'interviews')->first();
+		$interviews = $postTypeInterviews->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
+
+		$postTypeGalleries = PostType::where('slug', '=', 'galleries')->first();
+		$galleries = $postTypeGalleries->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
+
+		$postTypeVideos = PostType::where('slug', '=', 'videos')->first();
+		$videos = $postTypeVideos->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
+
+		$view
+			->with('news', $news)->with('postTypeNews', $postTypeNews)
+			->with('interviews', $interviews)->with('postTypeInterviews', $postTypeInterviews)
+			->with('galleries', $galleries)->with('postTypeGalleries', $postTypeGalleries)
+			->with('videos', $videos)->with('postTypeVideos', $postTypeVideos);
+	}
 }
