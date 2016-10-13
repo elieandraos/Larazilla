@@ -118,6 +118,10 @@
 
             })
 
+             $(".toggle-menu .button-link").click(function(){
+                window.location = $(this).attr('href');
+             });
+
             $('.push-menu').jPushMenu();
             
         })

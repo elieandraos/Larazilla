@@ -2,7 +2,7 @@
 	<div class="col-md-12">
 		<div class="toggle-menu">
 			@foreach($categories as $key => $category)
-				<span class='button-link @if($key == 0) active @endif' data-container="category-{!! $key !!}" />
+				<span class='button-link @if($key == 0) active @endif' data-container="category-{!! $key !!}" href="{!! route('official.category', [$postType->slug, $category->slug]) !!}" />
 					{!! $category->title !!}
 				</span>
 			@endforeach 

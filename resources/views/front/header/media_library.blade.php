@@ -3,7 +3,7 @@
 	<div class="col-md-12">
 		<div class="toggle-menu">
 			@foreach([ 'newspapers', 'interviews', 'galleries', 'videos' ] as $key => $slug)
-				<span class='button-link @if($key == 0) active @endif' data-container="{!! $slug !!}" />
+				<span class='button-link @if($key == 0) active @endif' data-container="{!! $slug !!}" href="{!! url('mediacenter/'.$slug) !!}" />
 					{!! trans('messages.'.$slug) !!}
 				</span>
 			@endforeach 
