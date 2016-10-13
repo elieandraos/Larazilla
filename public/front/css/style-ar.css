@@ -115,7 +115,7 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
 .info-stripe  span.date
 {
     padding-right: 10px;
-    font-family: 'TheSans';
+    font-family: 'DinarLight';
 }
 .info-stripe .more
 {
@@ -128,7 +128,7 @@ a.btn-normal,a.btn-normal:hover,a.btn-normal:active
 .grid-row-four-col.grid-row .info-stripe span.date
 {
     padding-right: 0;
-    font-family: 'TheSans';
+    font-family: 'DinarLight';
     font-size: 12px;
 }
 .grid-row-four-col.grid-row .info-stripe p
@@ -161,7 +161,17 @@ div.breadcrumbs
 {
     margin-left: 10px;
 }
-
+.post-content .post-body div 
+{
+    font-size: 17px;
+    line-height: 25px;
+    /* color: #000; */
+    letter-spacing: 1px;
+}
+.grid-details a .excerpt 
+{
+    letter-spacing: 1px;
+}
 /***********
  TIMELINE  *
  ***********/

@@ -165,11 +165,13 @@ div.header-title
     border: 1px solid #e6e6e6;
     height: 221px;
     overflow: hidden;
+    padding-top: 15px;
 }
 .grid-row .grid-image img
 {
 	width: 100%;
 	height: auto;
+	max-height: 192px;
 }
 .grid-details h5
 {
@@ -449,6 +451,7 @@ ul.top-menu li a.article-link
     padding-bottom: 0;
     padding-top: 0;
     border-bottom: none;
+    
 }
 ul.top-menu li a.article-link:hover
 {
@@ -463,7 +466,7 @@ ul.top-menu li a.article-link:hover
 .dropdown-menu .article img
 {
 	width: 160px !important;
-	height: auto;
+	height: 140px;
 	max-height: 140px !important;
 }
 
@@ -488,8 +491,10 @@ ul.top-menu li a.article-link:hover
     border: none;
     color: #FFF;
     text-align: center;
-    padding: 10px 5px;
-    margin-top: 45%;
+    padding: 10px 10px;
+    top: 50%;
+    margin-top: -20px;
+    position: absolute;
 }
 div.toggle-menu
 {

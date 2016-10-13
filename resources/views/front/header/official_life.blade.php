@@ -30,7 +30,7 @@
 		</li>
 	@endforeach
 
-	<li class="col-sm-2">
+	<li class="col-sm-2" style="height: 200px !important">
 		<a class="button-link active" href="{!! route('official.category', [$postType->slug, $category->slug]) !!}">
 			{!! trans('messages.more') !!}
 		</a>

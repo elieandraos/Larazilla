@@ -31,7 +31,7 @@
 		</li>
 	@endforeach
 
-	<li class="col-sm-2">
+	<li class="col-sm-2" style="height:140px;">
 		<a class="button-link active" href="{!! url('personal/timeline-events') !!}">{!! trans('messages.more') !!}</a>
 	</li>
 </div>
@@ -54,7 +54,7 @@
 		</li>
 	@endforeach
 
-	<li class="col-sm-2">
+	<li class="col-sm-2" style="height:200px;">
 		<a class="button-link active" href="{!! url('personal/albums') !!}">{!! trans('messages.more') !!}</a>
 	</li>
 </div>
