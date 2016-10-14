@@ -1,7 +1,7 @@
 body
 {
 	background-color: #F9F9F9;
-	color: #a1a1a1;
+	color: #555;
 	font-size: 15px;
 	line-height: 18px;
 }
@@ -181,7 +181,7 @@ div.header-title
 .grid-details a .excerpt 
 {
     margin-top: 15px;
-    color: #a1a1a1;
+    color: #555;
 }
 
 /****************************

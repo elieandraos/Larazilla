@@ -230,4 +230,10 @@ ul.footer-list.social li a img
     float: left;
 }
 
+.toggle-menu .button-link
+{
+    margin-left: 15px;
+    margin-right: 0px;
+}
+
 

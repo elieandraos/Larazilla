@@ -233,5 +233,10 @@ ul.footer-list.social li a img
 {
     float: right;
 }
+.toggle-menu .button-link
+{
+    margin-left: 0;
+    margin-right: 15px;
+}
 
 
