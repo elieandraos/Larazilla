@@ -60,7 +60,7 @@ class Post extends Model implements HasMediaConversions
      */
     public function getPublishDateAttribute($value)
     {
-        return Carbon::parse($value)->format('d F, Y');
+        return Carbon::parse($value)->format('j F, Y');
     }
 
     /**

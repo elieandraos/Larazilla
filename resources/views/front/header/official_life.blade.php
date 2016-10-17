@@ -21,7 +21,9 @@
 					<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}"  style="width:100% !important"/>
 					<div class="info-stripe">
 						<span class="date">		
-							{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
+							{!! Carbon\Carbon::parse($post->publish_date)->format('j') !!}
+							{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%f') !!}
+							{!! Carbon\Carbon::parse($post->publish_date)->format('Y') !!}
 						</span>
 						<p style="color:#FFF">{!! substr($post->title, 0, 70)."..." !!}</p>
 					</div>

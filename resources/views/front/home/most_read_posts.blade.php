@@ -25,7 +25,9 @@
 						
 								<h5>{!! $article->title !!}</h5>
 								<span class="date">		
-									{!! LocalizedCarbon::instance(Carbon\Carbon::parse($article->publish_date))->formatLocalized('%d %f %Y') !!}
+									{!! Carbon\Carbon::parse($article->publish_date)->format('j') !!}
+									{!! LocalizedCarbon::instance(Carbon\Carbon::parse($article->publish_date))->formatLocalized('%f') !!}
+									{!! Carbon\Carbon::parse($article->publish_date)->format('Y') !!}
 								</span>
 							</a>
 						</div>	

@@ -442,6 +442,7 @@ div.home .navbar-nav>li>.dropdown-menu
 .dropdown-menu .article 
 {
 	background-color: #FFF;
+	overflow: hidden;
 }
 
 ul.top-menu li a.article-link 
@@ -496,6 +497,7 @@ ul.top-menu li a.article-link:hover
     text-align: center;
     padding: 10px 10px;
     top: 50%;
+    right: 0;
     margin-top: -20px;
     position: absolute;
 }
@@ -540,10 +542,15 @@ h3.title
 
 
 /* Smartphones  ----------- */
-@media only screen and (max-width : 767px) {
+@media only screen and (max-width : 991px) {
 	html body 
 	{
 		font-size: 13px !important;
+	}
+	.grid-row-read .grid-details h5 {
+	    font-size: 14px;
+	    margin: 0;
+	    margin-top: 10px;
 	}
 	.header-container, .header-container.home
 	{
@@ -564,7 +571,19 @@ h3.title
 	}
 	#myCarousel
 	{
-		display: none;
+		/*display: none;*/
+	}
+	.carousel 
+	{
+	  height: 250px;
+	}
+	p.slide-title 
+	{
+		font-size: 20px !important;
+	}
+	.carousel .item 
+	{
+	  height: 100%;
 	}
 	div.grid-row
 	{
