@@ -47,6 +47,16 @@ ul.top-menu li a:hover, ul.top-menu li a.active,
 {
     margin-left: 10px;
 }
+.mega-dropdown .dropdown-menu-item .col-sm-4
+{
+    margin-right: 0;
+    padding-right: 0;
+}
+.navbar-nav>li>.dropdown-menu li a.button-link, .navbar-nav>li>.dropdown-menu li .button-menu a.button-link
+{
+    left: 0;
+    right: auto;
+}
 /**************
 *   SLIDER  * 
 ***************/
