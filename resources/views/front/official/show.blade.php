@@ -20,10 +20,10 @@
 						<h3 class="title">{!! trans('messages.mostRead') !!}</h3>
 						@include('front.home.most_read_posts')
 
-						<h3 class="title">{!! trans('messages.related') !!}</h3>
+						<h3 class="title relatedPosts">{!! trans('messages.related') !!}</h3>
 						@include('front.home.most_read_posts', ['most_read' => $related])
 
-						<h3 class="title">{!! trans('messages.tweets') !!}</h3>
+						<h3 class="title tweetPosts">{!! trans('messages.tweets') !!}</h3>
 						<a class="twitter-timeline" href="https://twitter.com/SalamTammam" data-tweet-limit=5 data-chrome="noheader">
 							{!! trans('messages.tweets') !!}
 						</a> 

@@ -147,7 +147,7 @@ class Post extends Model implements HasMediaConversions
                     foreach($conversions as $c)
                     {
                         $this->addMediaConversion($c['name'])
-                            ->setManipulations(['w' => $c['manipulations']['w'], 'h' => $c['manipulations']['h']])
+                            ->setManipulations(['w' => $c['manipulations']['w'], 'h' => $c['manipulations']['h'], 'fit' => 'crop'])
                             ->performOnCollections($c['collection']);
                     }
                }

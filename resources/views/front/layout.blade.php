@@ -9,11 +9,11 @@
     <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/vendor/lightgallery/dist/css/lightgallery.min.css" />
     <link rel="stylesheet" type="text/css" href="/front/css/style.css">
-  {{--   <link rel="stylesheet" type="text/css" href="/front/css/timeline.css"> --}}
+    {{--   <link rel="stylesheet" type="text/css" href="/front/css/timeline.css"> --}}
     <link rel="stylesheet" type="text/css" href="/front/css/timeline-horizontal.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 
     @if(Lang::getLocale() == "en")
-        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="/front/css/style-en.css">
     @else
         <link rel="stylesheet" type="text/css" href="/front/fonts/arabicfaces.css">
@@ -38,8 +38,8 @@
 
                     @include('front.header.top-menu')
                     <div class="lang-switcher">
-                        <a href="?locale=en" style="color:#2C3e50" >{!! trans('messages.english') !!} </a>&nbsp;&nbsp;
-                        <a href="?locale=ar" style="color:#2C3e50" >{!! trans('messages.arabic') !!} </a>
+                        <a href="?locale=en" style="color:#2C3e50;font-family: 'Lato';font-weight: bold" >{!! trans('messages.english') !!} </a>&nbsp;&nbsp;
+                        <a href="?locale=ar" style="color:#2C3e50;font-family: 'TheSans';font-weight: bold" >{!! trans('messages.arabic') !!} </a>
                     </div>
                 </div>
             </div>
