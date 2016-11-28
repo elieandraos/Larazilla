@@ -12,11 +12,11 @@
     {{--   <link rel="stylesheet" type="text/css" href="/front/css/timeline.css"> --}}
     <link rel="stylesheet" type="text/css" href="/front/css/timeline-horizontal.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" type="text/css" href="/front/fonts/arabicfaces.css">
+    
     @if(Lang::getLocale() == "en")
         <link rel="stylesheet" type="text/css" href="/front/css/style-en.css">
     @else
-        <link rel="stylesheet" type="text/css" href="/front/fonts/arabicfaces.css">
         <link rel="stylesheet" type="text/css" href="/vendor/bootstrap-rtl/dist/css/bootstrap-rtl.min.css">
         <link rel="stylesheet" type="text/css" href="/front/css/style-ar.css">
     @endif
