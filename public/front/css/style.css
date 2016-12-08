@@ -626,6 +626,15 @@ h3.title
     	margin-right: 5px;
     	font-size: 12px;
 	}
+	body div.button-menu {
+		height: auto;
+	}
+	body .button-menu .button-link
+	{
+		display: block;
+		float: none;
+		clear: both;
+	}
 	.push-menu
 	{
 	    position: absolute;
