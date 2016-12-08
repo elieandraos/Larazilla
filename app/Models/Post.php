@@ -117,7 +117,10 @@ class Post extends Model implements HasMediaConversions
         //find last space within length
         $last_space = strrpos(substr($input, 0, $length), ' ');
         $trimmed_text = substr($input, 0, $last_space);
-      
+        
+        if(strlen($trimmed_text) < strlen($input))
+            $trimmed_text   .= "...";
+
        return $trimmed_text;
     }
 

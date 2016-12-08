@@ -165,7 +165,7 @@ div.header-title
     margin-bottom: 30px;
     padding: 10px;
     border: 1px solid #e6e6e6;
-    height: 221px;
+    height: 212px;
     overflow: hidden;
     padding-top: 15px;
 }
@@ -624,6 +624,7 @@ h3.title
 	{
 		margin-left: 3px;
     	margin-right: 5px;
+    	font-size: 12px;
 	}
 	.push-menu
 	{
