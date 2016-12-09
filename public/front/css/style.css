@@ -227,7 +227,7 @@ div.header-title
 ****************************/
 .grid-row-four-col.grid-row .grid-image img
 {
-	height: 140px;
+	/** height: 140px; **/
 }
 
 .grid-row-four-col.grid-row .info-stripe
@@ -553,7 +553,7 @@ h3.title
 {
 	width: 100% !important;
 }
-	
+
 /* Smartphones  ----------- */
 @media only screen and (max-width : 991px) {
 	html body 
