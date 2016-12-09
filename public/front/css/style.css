@@ -173,7 +173,7 @@ div.header-title
 {
 	width: 100%;
 	height: auto;
-	max-height: 192px;
+	/** max-height: 192px; **/
 }
 .grid-details h5
 {
@@ -549,7 +549,11 @@ h3.title
 	margin-top: 50px !important;
 }
 
-
+.cd-horizontal-timeline .events-content li div.col-md-6 img
+{
+	width: 100% !important;
+}
+	
 /* Smartphones  ----------- */
 @media only screen and (max-width : 991px) {
 	html body 
