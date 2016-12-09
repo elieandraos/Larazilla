@@ -643,6 +643,23 @@ h3.title
 	    display: block;
 	    cursor: pointer;
 	}
+
+	.cd-horizontal-timeline .events-content
+	{
+		height: auto !important;
+	}
+	body .cd-horizontal-timeline .events-content li
+	{
+		height: auto !important;
+	}
+	.cd-horizontal-timeline .events-content li div.col-md-6
+	{
+		float: none !important ;
+	}
+	.cd-horizontal-timeline .events-content li div.col-md-6 img
+	{
+		width: 100% !important;
+	}
 	
 }
 

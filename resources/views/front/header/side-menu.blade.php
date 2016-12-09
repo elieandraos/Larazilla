@@ -8,6 +8,9 @@
 		{!! trans('messages.mediaCenter') !!} 
 	</a>
 	<a href="/contact" class="@if(Request::is('*contact*')) active @endif"> {!! trans('messages.contactUs') !!} </a>
+	<a href="?locale=en" style="font-family: 'Lato';font-weight: bold" >{!! trans('messages.english') !!} </a>
+    <a href="?locale=ar" style="font-family: 'TheSans';font-weight: bold" >{!! trans('messages.arabic') !!} </a>
+
 </nav>
 
 

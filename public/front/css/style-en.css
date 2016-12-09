@@ -247,3 +247,17 @@ ul.footer-list.social li a img
 }
 
 
+@media only screen and (max-width: 991px)
+{
+    body .header-container a.logo {
+        padding-left: 30px;
+        width: auto;
+        border: none;
+        margin-top: 20px;
+    }
+
+    .push-menu {
+        top: -64px;
+    }
+}
+
