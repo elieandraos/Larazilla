@@ -25,7 +25,7 @@ return [
 	'arabic' => 'عربي',
 	'mostRead' => 'الأكثر قراءة',
 	'related' => 'ذات صلى ',
-	'followUs' => 'تواصل معنا'
+	'followUs' => 'تواصل معنا',
 ];
 
 ?>

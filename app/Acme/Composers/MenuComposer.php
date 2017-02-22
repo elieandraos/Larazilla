@@ -42,9 +42,6 @@ class MenuComposer
 		$postTypeNews = PostType::where('slug', '=', 'newspapers')->first();
 		$news = $postTypeNews->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
 
-		$postTypeInterviews = PostType::where('slug', '=', 'interviews')->first();
-		$interviews = $postTypeInterviews->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
-
 		$postTypeGalleries = PostType::where('slug', '=', 'galleries')->first();
 		$galleries = $postTypeGalleries->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
 
@@ -53,7 +50,6 @@ class MenuComposer
 
 		$view
 			->with('news', $news)->with('postTypeNews', $postTypeNews)
-			->with('interviews', $interviews)->with('postTypeInterviews', $postTypeInterviews)
 			->with('galleries', $galleries)->with('postTypeGalleries', $postTypeGalleries)
 			->with('videos', $videos)->with('postTypeVideos', $postTypeVideos);
 	}

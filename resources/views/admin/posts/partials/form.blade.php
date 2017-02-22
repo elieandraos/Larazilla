@@ -19,7 +19,7 @@
 		  				<div class="input-field"> 
 							{!! Form::text($locale.'[title]', null, ['class' => 'validate', 'id' => $locale.'[title]']) !!}
 							{!! Form::label($locale.'[title]', 'Title') !!}
-							@if ($errors->has($locale.'.title')) <p class="form-error">{{ $errors->first($locale.'.title') }}</p> @endif
+							@if ($errors->has($locale.'.title')) <p class="form-error">The title is required.</p> @endif
 						</div>
 
 						<div class="@if(in_array( 'excerpt', $postType->settings()->get('hiddenFields'))) hidden @endif">

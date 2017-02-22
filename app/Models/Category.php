@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use \Dimsav\Translatable\Translatable;
-use Kalnoy\Nestedset\Node;
+use Kalnoy\Nestedset\NodeTrait;
 use Laracasts\Presenter\PresentableTrait;
 
-class Category extends Node
+class Category extends Model
 {
-    use Translatable, PresentableTrait;
+    use Translatable, PresentableTrait, NodeTrait;
     
     protected $table = "categories";
     protected $fillable = ['title', 'description', 'slug', 'category_id'];

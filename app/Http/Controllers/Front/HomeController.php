@@ -27,7 +27,7 @@ class HomeController extends Controller
     	$slides = $slider_post_type->posts;
 
     	//articles that has category: latest-news
-        $category = Category::where('slug', '=', 'latest-news')->first();
+        $category = Category::where('slug', '=', 'speeches-statements')->first();
     	$articles_post_type = PostType::where('slug', '=', 'articles')->with('posts')->first();
     	$articles = $articles_post_type->posts()->whereHas('categories', function($q) use ($category){
     		 $q->where('slug', 'like', $category->slug);

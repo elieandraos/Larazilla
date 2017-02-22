@@ -8,7 +8,7 @@
 
 	</li>
 	<li class="dropdown mega-dropdown"> 
-		<a href="/official/articles/category/latest-news" class="dropdown-toggle @if(Request::is('*official*')) active @endif" > 
+		<a href="/official/articles/category/speeches-statements" class="dropdown-toggle @if(Request::is('*official*')) active @endif" > 
 			{!! trans('messages.officialLife') !!} 
 		</a>
 		<ul class="dropdown-menu mega-dropdown-menu row">

@@ -50,7 +50,7 @@
 
                     <li>
                         <a href="/admin/posts/albums" class=" waves-effect waves-blue"> <i class="fa fa-camera-retro"></i> 
-                            Family Albums
+                            Gallery
                         </a>
                     </li>
 
@@ -69,12 +69,6 @@
                     <li>
                         <a href="/admin/posts/newspapers" class=" waves-effect waves-blue"> <i class="fa fa-bullhorn"></i> 
                             Newspapers
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="/admin/posts/interviews" class=" waves-effect waves-blue"> <i class="fa fa-microphone"></i> 
-                            Interviews
                         </a>
                     </li>
 
