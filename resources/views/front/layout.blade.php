@@ -37,10 +37,7 @@
                     <img class="push-menu menu-left" src="/front/images/burger.png" style="width: 64px" />
 
                     @include('front.header.top-menu')
-                    <div class="lang-switcher">
-                        <a href="?locale=en" style="color:#2C3e50;font-family: 'Lato';font-weight: bold" >{!! trans('messages.english') !!} </a>&nbsp;&nbsp;
-                        <a href="?locale=ar" style="color:#2C3e50;font-family: 'TheSans';font-weight: bold" >{!! trans('messages.arabic') !!} </a>
-                    </div>
+                    @include('front.header.lang_switcher')
                 </div>
             </div>
         </div>

@@ -11,10 +11,14 @@
 				<div class="row">
 					<div class="col-md-8 post-body">
 						<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'featured') !!}" />
-						<h5>{!! $post->title !!}</h5>
-						<div>{!! $post->body !!}</div>
-						<br/>
-						@include('front.mediacenter.gallery', ['post' => $post])
+						@if(!$post->title)
+							<p>Sorry, this article is not available in this language.</p>
+						@else
+							<h5>{!! $post->title !!}</h5>
+							<div>{!! $post->body !!}</div>
+							<br/>
+							@include('front.mediacenter.gallery', ['post' => $post])
+						@endif
 					</div>
 					<div class="col-md-4">
 						<h3 class="title">{!! trans('messages.mostRead') !!}</h3>

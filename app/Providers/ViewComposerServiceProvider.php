@@ -17,6 +17,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->composeMenuPersonal();
         $this->composeMenuOffical();
         $this->composeMenuMediaLibrary();
+        $this->composeLangSwitcher();
     }
 
     /**
@@ -67,5 +68,10 @@ class ViewComposerServiceProvider extends ServiceProvider
     private function composeMenuMediaLibrary()
     {
          view()->composer('front.header.media_library', 'App\Acme\Composers\MenuComposer@medialibrary');
+    }
+
+    private function composeLangSwitcher()
+    {
+        view()->composer('front.header.lang_switcher', 'App\Acme\Composers\MenuComposer@langswitcher');
     }
 }

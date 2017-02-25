@@ -4,6 +4,7 @@ namespace App\Acme\Composers;
 use App\Models\Post;
 use App\Models\Category;
 use App\Models\PostType;
+use App\Models\Settings;
 use Illuminate\Contracts\View\View;
 
 class MenuComposer
@@ -59,5 +60,12 @@ class MenuComposer
 			->with('news', $news)->with('postTypeNews', $postTypeNews)
 			->with('videos', $videos)->with('postTypeVideos', $postTypeVideos)
 			->with('galleries', $galleries)->with('postTypeGalleries', $postTypePersonalAlbums);
+	}
+
+	public function langswitcher(View $view)
+	{
+		$settings = Settings::first();
+		$view->with('settings', $settings);
+
 	}
 }

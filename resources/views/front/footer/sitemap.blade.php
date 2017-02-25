@@ -15,11 +15,6 @@
 
     <div class="col-md-3">
         <ul class="footer-list">
-            <li> 
-                <a href="/official/articles/category/latest-news" class="@if(Request::is('*official*')) active @endif"> 
-                    {!! trans('messages.officialLife') !!} 
-                </a>
-            </li>
             @foreach($categories as $category)
                 <li>
                     <a class='@if(Request::is("*official*articles*category*$category->slug")) active @endif'

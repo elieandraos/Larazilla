@@ -86,6 +86,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'namespace' => 'Adm
   Route::post('/categories/{categoryId}/delete', ['uses' => 'CategoryController@delete', 'as' => 'admin.categories.delete']);
   Route::post('/categories/sort', ['uses' => 'CategoryController@sort', 'as' => 'admin.categories.sort']);
 
+  //settings
+  Route::get('/settings', ['uses' => 'SettingsController@index', 'as' => 'admin.settings']);
+  Route::post('/settings/{settingsId}/update', ['uses' => 'SettingsController@update', 'as' => 'admin.settings.update']);
 
 });
 

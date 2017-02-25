@@ -22,11 +22,14 @@
 							<img src="{!! $post->getFirstMediaUrl( $post->getMetaValue('image') , 'grid') !!}" />
 						@endif
 
-						<h5>{!! $post->title !!}</h5>
-						<div class="full-text">{!! $post->body !!}</div>
+						@if(!$post->title)
+							<p>Sorry, this article is not available in this language.</p>
+						@else
+							<h5>{!! $post->title !!}</h5>
+							<div class="full-text">{!! $post->body !!}</div>
 
-						@include('front.mediacenter.gallery', ['post' => $post])
-
+							@include('front.mediacenter.gallery', ['post' => $post])
+						@endif
 					</div>
 					<div class="col-md-4">
 						<h3 class="title">{!! trans('messages.mostRead') !!}</h3>

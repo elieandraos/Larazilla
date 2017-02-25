@@ -14,6 +14,7 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('multilang')->default(0);
             $table->timestamps();
         });
     }

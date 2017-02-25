@@ -13,7 +13,7 @@ class FooterComposer
 		$rootCategory = Category::where('slug', '=', 'official-life')->first();
     	$categories = $rootCategory->descendants()->defaultOrder()->get();
 
-    	$postSlugs = ['newspapers', 'interviews', 'galleries', 'videos'];
+    	$postSlugs = ['newspapers', 'galleries', 'videos'];
 
 		$view->with('categories', $categories)->with('postSlugs', $postSlugs);
 	}

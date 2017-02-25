@@ -91,6 +91,12 @@
                             Categories
                         </a>
                     </li>
+
+                    <li>
+                        <a href="/admin/settings" class=" waves-effect waves-blue"> <i class="fa fa-wrench"></i> 
+                            Settings
+                        </a>
+                    </li>
                      
 
                 </ul>
