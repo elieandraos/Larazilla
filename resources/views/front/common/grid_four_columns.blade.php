@@ -18,7 +18,7 @@
 							<span class="date">		
 							{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
 							</span>
-							<p>{!! $post->title !!}</p>
+							<p>{!! substr($post->title, 0, 70)."..." !!}</p>
 						</div>
 					</div>
 

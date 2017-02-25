@@ -26,7 +26,7 @@ class SwitchLocale {
 	{
         //Always set locale to english for admin:
         if(strrpos($request->getRequestUri(),"/admin") === 0){
-            $this->localeSwitcher->switchLocale('en');
+            //$this->localeSwitcher->switchLocale('en');
             return $next($request);
         }
 

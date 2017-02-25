@@ -225,9 +225,13 @@ div.header-title
 /****************************
 *	GRID LISTING 4 COLUMNS  * 
 ****************************/
+.grid-row-four-col.grid-row
+{
+	height: auto !important;
+}
 .grid-row-four-col.grid-row .grid-image img
 {
-	/** height: 140px; **/
+	height: 140px;
 }
 
 .grid-row-four-col.grid-row .info-stripe

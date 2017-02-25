@@ -14,7 +14,7 @@ class MediaCenterController extends Controller
     public function index(PostType $postType)
     {
     	$posts = $postType->posts()->take(8)->orderBy('publish_date', 'DESC')->paginate(8);
-        $postSlugs = ['newspapers', 'interviews', 'galleries', 'videos'];
+        $postSlugs = ['newspapers', 'videos'];
 
         $breadcrumb = [ trans('messages.mediaCenter'), trans('messages.'.$postType->slug)];
 
@@ -27,6 +27,32 @@ class MediaCenterController extends Controller
         ]);
     }
 
+
+    public function galleries()
+    {
+        $postTypePersonalAlbums = PostType::where('slug', '=', 'albums')->first();
+        $postTypeOfficialArticles = PostType::where('slug', '=', 'articles')->first();
+    
+        $posts = Post::where('post_type_id', '=', $postTypePersonalAlbums->id)
+                        ->orWhere('post_type_id', '=', $postTypeOfficialArticles->id)
+                        ->whereHas('categories', function($q) {
+                             $q->where('slug', 'like', 'gallery');
+                        })
+                        ->orderBy('publish_date', 'DESC')
+                        ->paginate(8);
+
+
+        $postSlugs = ['newspapers', 'videos'];
+        $breadcrumb = [ trans('messages.mediaCenter'), trans('messages.albums')];
+
+        return view('front.mediacenter.index', [
+            'posts' => $posts, 
+            'title' => trans('messages.mediaCenter'),
+            'postTypeSlug' => $postTypePersonalAlbums->slug,
+            'postSlugs' => $postSlugs,
+            'breadcrumb' => $breadcrumb
+        ]);
+    }
 
     public function show(PostType $postType, Post $post)
     {

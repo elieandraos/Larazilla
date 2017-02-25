@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Acme\Composers;
-use Illuminate\Contracts\View\View;
-use App\Models\PostType;
+use App\Models\Post;
 use App\Models\Category;
+use App\Models\PostType;
+use Illuminate\Contracts\View\View;
 
 class MenuComposer
 {
@@ -42,15 +43,21 @@ class MenuComposer
 		$postTypeNews = PostType::where('slug', '=', 'newspapers')->first();
 		$news = $postTypeNews->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
 
-		$postTypeGalleries = PostType::where('slug', '=', 'galleries')->first();
-		$galleries = $postTypeGalleries->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
-
 		$postTypeVideos = PostType::where('slug', '=', 'videos')->first();
 		$videos = $postTypeVideos->posts()->orderBy('publish_date', 'ASC')->take(2)->get();
 
+		$postTypePersonalAlbums = PostType::where('slug', '=', 'albums')->first();
+        $postTypeOfficialArticles = PostType::where('slug', '=', 'articles')->first();
+        $galleries = Post::where('post_type_id', '=', $postTypePersonalAlbums->id)
+                        ->orWhere('post_type_id', '=', $postTypeOfficialArticles->id)
+                        ->whereHas('categories', function($q) {
+                             $q->where('slug', 'like', 'gallery');
+                        })
+                        ->take(2)->get();
+
 		$view
 			->with('news', $news)->with('postTypeNews', $postTypeNews)
-			->with('galleries', $galleries)->with('postTypeGalleries', $postTypeGalleries)
-			->with('videos', $videos)->with('postTypeVideos', $postTypeVideos);
+			->with('videos', $videos)->with('postTypeVideos', $postTypeVideos)
+			->with('galleries', $galleries)->with('postTypeGalleries', $postTypePersonalAlbums);
 	}
 }

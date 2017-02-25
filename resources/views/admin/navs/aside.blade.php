@@ -73,12 +73,6 @@
                     </li>
 
                     <li>
-                        <a href="/admin/posts/galleries" class=" waves-effect waves-blue"> <i class="fa fa-camera-retro"></i> 
-                            Galleries
-                        </a>
-                    </li>
-
-                    <li>
                         <a href="/admin/posts/videos" class=" waves-effect waves-blue"> <i class="fa fa fa-video-camera"></i> 
                             Videos
                         </a>

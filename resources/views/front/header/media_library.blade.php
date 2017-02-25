@@ -2,9 +2,13 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="toggle-menu">
-			@foreach([ 'newspapers', 'galleries', 'videos' ] as $key => $slug)
+			@foreach([ 'newspapers', 'videos', 'galleries' ] as $key => $slug)
 				<span class='button-link @if($key == 0) active @endif' data-container="{!! $slug !!}" href="{!! url('mediacenter/'.$slug) !!}" />
-					{!! trans('messages.'.$slug) !!}
+					@if($slug == 'galleries')
+						{!! trans('messages.albums') !!}
+					@else
+						{!! trans('messages.'.$slug) !!}
+					@endif
 				</span>
 			@endforeach 
 		</div>
@@ -64,10 +68,10 @@
 				</a>
 			</div>
 		</li>
-	@endforeach
+	@endforeach 
 
 	<li class="col-sm-2" style="height:200px;">
-		<a class="button-link active" href="{!! route('mediacenter', [$postTypeGalleries->slug]) !!}">{!! trans('messages.more') !!}</a>
+		<a class="button-link active" href="/mediacenter/galleries">{!! trans('messages.more') !!}</a>
 	</li>
 </div>
 
