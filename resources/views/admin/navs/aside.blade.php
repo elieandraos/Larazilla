@@ -64,6 +64,12 @@
                         </a>
                     </li>
 
+                    <li>
+                        <a href="/admin/posts/career" class=" waves-effect waves-blue"> <i class="fa fa-calendar-check-o"></i> 
+                            Timeline Events
+                        </a>
+                    </li>
+
                     <li class="label">Media Center</li>
                     
                     <li>

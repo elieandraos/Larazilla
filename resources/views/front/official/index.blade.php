@@ -17,6 +17,14 @@
 							{!! $category->title !!}
 						</a>
 					@endforeach
+
+					<a 
+						class='button-link @if(Request::is("*official*career*")) active @endif'
+						href="{!! route('official.career') !!}"
+						/>
+						{!! trans('messages.timeline-events') !!}
+					</a>
+					
 				</div>
 
 				@include('front.common.breadcrumb', ['breadcrumb' => $breadcrumb])

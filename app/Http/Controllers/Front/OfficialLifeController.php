@@ -55,4 +55,48 @@ class OfficialLifeController extends Controller
             'route' => 'official.category.show'
         ]);
     }
+
+
+    public function career()
+    {   
+        $postType = PostType::where('slug', '=', 'career')->first();
+        $posts = $postType->posts()->orderBy('publish_date', 'ASC')->get();
+
+        $postSlugs = ['timeline-events', 'albums'];
+
+        $rootCategory = Category::where('slug', '=', 'official-life')->first();
+        $categories = $rootCategory->descendants()->defaultOrder()->get();
+        $breadcrumb = [ trans('messages.personalLife'), trans('messages.timeline-events')];
+
+        return view('front.official.timeline-horizontal', [
+            'posts' => $posts,
+            'postType'  => $postType,
+            'categories'    => $categories,
+            'postTypeSlug' => 'articles',
+            'breadcrumb' => $breadcrumb,
+            'title' => trans('messages.officialLife'),
+        ]);
+    }  
+
+    public function careerShow(Post $post)
+    {
+        $breadcrumb = [ trans('messages.officialLife'), trans('messages.timeline-events'), $post->title];
+        $post->incrementView();
+        
+        //most read posts 
+        $most_read = Post::where('views', '>', 0)->orderBy('views')->take(4)->get();
+        $postType = PostType::where('slug', '=', 'career')->first();
+        $related = $postType->posts()->where('id', '!=', $post->id)->take(4)->get();
+        $category = Category::where('slug', '=', 'activities')->first();
+
+        return view('front.official.career-show', [
+            'post' => $post,
+            'breadcrumb' => $breadcrumb,
+            'most_read' => $most_read,
+            'postType' => $postType,
+            'related' => $related,
+            'current_category' => $category,
+            'route' => 'official.career.show'
+        ]);
+    } 
 }

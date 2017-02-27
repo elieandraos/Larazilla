@@ -23,6 +23,8 @@ Route::group(['prefix' => '', 'middleware' => [], 'namespace' => 'Front' ], func
 
   Route::get('/official/{postTypeSlug}/category/{categorySlug}', ['uses' => 'OfficialLifeController@index', 'as' => 'official.category']);
   Route::get('/official/{postTypeSlug}/category/{categorySlug}/post/{postSlug}', ['uses' => 'OfficialLifeController@show', 'as' => 'official.category.show']);
+  Route::get('/official/career', ['uses' => 'OfficialLifeController@career', 'as' => 'official.career']);
+  Route::get('/official/career/post/{postSlug}', ['uses' => 'OfficialLifeController@careerShow', 'as' => 'official.career.show']);
 
   Route::get('/mediacenter/galleries', ['uses' => 'MediaCenterController@galleries', 'as' => 'mediacenter.galleries']);
   Route::get('/mediacenter/{postTypeSlug}/', ['uses' => 'MediaCenterController@index', 'as' => 'mediacenter']);

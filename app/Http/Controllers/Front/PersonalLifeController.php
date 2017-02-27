@@ -15,7 +15,6 @@ class PersonalLifeController extends Controller
     
     public function index(PostType $postType)
     {
-    	
     	$posts = $postType->posts()->orderBy('publish_date', 'ASC')->get();
         $postSlugs = ['timeline-events', 'albums'];
 
