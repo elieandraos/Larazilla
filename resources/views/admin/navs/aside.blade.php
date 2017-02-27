@@ -103,6 +103,12 @@
                             Settings
                         </a>
                     </li>
+
+                    <li>
+                        <a href="/admin/posts/bio" class=" waves-effect waves-blue"> <i class="fa fa-user"></i> 
+                            Bio Page
+                        </a>
+                    </li>
                      
 
                 </ul>

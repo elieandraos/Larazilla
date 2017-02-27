@@ -14,6 +14,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->composeFooter();
+        $this->composeBio();
         $this->composeMenuPersonal();
         $this->composeMenuOffical();
         $this->composeMenuMediaLibrary();
@@ -40,6 +41,11 @@ class ViewComposerServiceProvider extends ServiceProvider
     private function composeFooter()
     {
         view()->composer('front.footer.sitemap', 'App\Acme\Composers\FooterComposer@compose');
+    }
+
+    public function composeBio()
+    {
+        view()->composer('front.footer.bio', 'App\Acme\Composers\FooterComposer@bio');
     }
 
 

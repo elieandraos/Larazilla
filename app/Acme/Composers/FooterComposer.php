@@ -12,9 +12,16 @@ class FooterComposer
 		
 		$rootCategory = Category::where('slug', '=', 'official-life')->first();
     	$categories = $rootCategory->descendants()->defaultOrder()->get();
-
     	$postSlugs = ['newspapers', 'galleries', 'videos'];
 
-		$view->with('categories', $categories)->with('postSlugs', $postSlugs);
+		$view->with('categories', $categories)
+				->with('postSlugs', $postSlugs);
+	}
+
+	public function bio(View $view)
+	{
+		$postType = PostType::where('slug', '=', 'bio')->first();
+    	$bio = $postType->posts()->first();
+  		$view->with('bio', $bio);
 	}
 }

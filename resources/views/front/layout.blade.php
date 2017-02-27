@@ -51,6 +51,12 @@
      <div class="container-fluid footer-container">
         <div class="container">
             <div class="row">
+                <div class="col-md-12">
+                    @include('front.footer.bio')
+                </div>
+            </div>
+
+            <div class="row">
                 <div class="col-md-8">
                     <h3 class="title"> {!! trans('messages.sitemap') !!}</h3>
                     @include('front.footer.sitemap')
