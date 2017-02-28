@@ -17,6 +17,7 @@ Route::group(['prefix' => '', 'middleware' => [], 'namespace' => 'Front' ], func
   Route::get('/', ['uses' => 'HomeController@index', 'as' => 'home']);
   Route::get('/contact', [ 'uses' => 'HomeController@contact', 'as' => 'home.contact']);
   Route::post('/contact/submit', [ 'uses' => 'HomeController@submitContact', 'as' => 'home.contact.submit']);
+  Route::post('/search', [ 'uses' => 'HomeController@search', 'as' => 'home.search']);
 
   Route::get('/personal/{postTypeSlug}/', ['uses' => 'PersonalLifeController@index', 'as' => 'personal']);
   Route::get('/personal/{postTypeSlug}/post/{postSlug}', ['uses' => 'PersonalLifeController@show', 'as' => 'personal.show']);

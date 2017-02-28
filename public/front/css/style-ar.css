@@ -40,12 +40,19 @@ ul.top-menu li a:hover, ul.top-menu li a.active,
 }
 .lang-switcher
 {
-    left: -20px;
+    float: left;
 }
-.lang-switcher img 
+.search-bar
 {
-    margin-right: 10px;
+    float: left;
+    text-align: left;
+    margin-left: 20px;
 }
+.search-bar #search:focus
+{
+    border-bottom: 1px solid #2C3e50;
+}
+
 
 .mega-dropdown .dropdown-menu-item .col-sm-4
 {

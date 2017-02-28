@@ -107,6 +107,26 @@ class Post extends Model implements HasMediaConversions
 
     }
 
+    public function getShowurlAttribute()
+    {
+        switch($this->postType->slug)  
+        {
+            case 'timeline-events':  case 'albums': 
+                return route('personal.show', [$this->postType->slug, $this->slug ]);
+                break;
+            case 'articles':
+                $category = $this->categories()->first();
+                return  route('official.category.show', [$this->postType->slug, $category->slug, $this->slug]);
+            case 'career':
+                return route('official.career.show', [$this->slug]);
+                break;
+            case 'newspapers': case 'videos':
+                 return  route('mediacenter.show', [$this->postType->slug, $this->slug]);
+                break;
+            default:
+                return url('/');
+        }
+    }
 
     function getCutExcerpt($length = 120) 
     {

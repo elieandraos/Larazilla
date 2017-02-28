@@ -25,7 +25,9 @@ return [
 	'arabic' => 'عربي',
 	'mostRead' => 'Most Read',
 	'related' => 'Related',
-	'followUs' => 'Follow Us'
+	'followUs' => 'Follow Us',
+	'download'	=> 'Download',
+	'search'	=> 'Search results'
 ];
 
 ?>

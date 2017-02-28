@@ -74,5 +74,24 @@ class HomeController extends Controller
         return redirect( route('home'));
     }
 
+    public function search(Request $request)
+    {
+        $search = trim($request->get('search'));
+  
+        $ids = [];
+        $postTypes = PostType::whereIn('slug', ['bio', 'sliders'])->get();
+        foreach($postTypes as $postType)
+            array_push($ids, $postType->id);
+        $posts = Post::whereNotIn('post_type_id', $ids)
+                        ->whereHas('translations', function ($query) use ($search){
+                            $query->where('locale', 'ar')
+                                     ->where('title', "LIKE", "%".$search."%")
+                                     ->orWhere('body', "LIKE", "%".$search."%");
+                        })
+                        ->paginate(8);
+                       
+        return view('front.home.search', ['posts' => $posts]);
+    }
+
 
 }

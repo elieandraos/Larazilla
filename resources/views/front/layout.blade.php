@@ -13,7 +13,8 @@
     <link rel="stylesheet" type="text/css" href="/front/css/timeline-horizontal.css">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/front/fonts/arabicfaces.css">
-    
+    <link rel="stylesheet" type="text/css" href="/vendor/font-awesome/css/font-awesome.min.css" />
+
     @if(Lang::getLocale() == "en")
         <link rel="stylesheet" type="text/css" href="/front/css/style-en.css">
     @else
@@ -30,14 +31,15 @@
     <div class="container-fluid header-container @if(Route::is('home')) home @endif">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <a class="logo" href="/">{!! trans('messages.logo') !!}</a>
                 </div>
-                <div class="col-md-9">
+                <div class="col-md-10">
                     <img class="push-menu menu-left" src="/front/images/burger.png" style="width: 64px" />
 
                     @include('front.header.top-menu')
                     @include('front.header.lang_switcher')
+                    @include('front.header.search_bar')
                 </div>
             </div>
         </div>
@@ -78,15 +80,9 @@
     <script type="text/javascript" src="/front/waypoint.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            // if($('#aniimated-thumbnials').length)
-            //     $('#aniimated-thumbnials').lightGallery({
-            //         thumbnail:false,
-            //         animateThumb: false,
-            //         showThumbByDefault: false,
-            //         download: false,
-            //         counter: false,
-            //         zoom: false
-            //     }); 
+            $(".search-bar i").click(function(){
+               $(".search-bar #search").focus(); 
+            })
 
 
             $("#aniimated-thumbnials a.gallery-thumb").click(function(){

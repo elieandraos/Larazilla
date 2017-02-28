@@ -92,13 +92,25 @@ ul.top-menu li
     width: 120px;
     height: 40px;
     top: 35px;
-    position: absolute;
-}
-.lang-switcher img 
-{
-	width: 40px;
+    position: relative;
 }
 
+.search-bar
+{
+	width: 120px;
+    height: 40px;
+    top: 37px;
+    position: relative;
+    color: #2C3e50;
+    cursor: pointer;
+}
+.search-bar #search
+{
+	background-color: transparent;
+	border: none;
+	width: 85%;
+	outline: none;
+}
 /**************
 *	CAROUSEL  * 
 ***************/
@@ -667,6 +679,34 @@ h3.title
 	.cd-horizontal-timeline .events-content li div.col-md-6 img
 	{
 		width: 100% !important;
+	}
+
+	.bio-content table td  
+	{
+		display: block;
+		width: 100%;
+	}
+	.bio-content .text
+	{
+		padding-bottom: 10px;
+	}
+	.bio-content .pdf
+	{
+		margin-top: -20px !important;
+		padding-bottom: 30px;
+		text-align: center;
+		width: 100% !important;
+	}
+
+	.bio-content .bio-image
+	{
+		width: 100% !important;
+		height: 200px;
+	} 
+	.bio-content .bio-image img
+	{
+		width: 100% !important;
+		height: 100% !important;
 	}
 	
 }
