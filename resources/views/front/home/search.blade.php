@@ -20,7 +20,6 @@
 										<span class="date pull-left flip">		
 										{!! LocalizedCarbon::instance(Carbon\Carbon::parse($post->publish_date))->formatLocalized('%d %f %Y') !!}
 										</span>
-										<a href="{!! $post->show_url !!}">{!! trans('messages.more') !!}</a>
 									</div>
 								</a>
 							</div>
@@ -37,7 +36,7 @@
 			@endforeach
 
 			{{-- <div align=center> {!! $posts->links() !!} </div> --}}
-			
+
 			</div>		
 		@endif
 	</div>
