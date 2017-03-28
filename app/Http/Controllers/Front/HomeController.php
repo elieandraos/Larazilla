@@ -67,8 +67,7 @@ class HomeController extends Controller
         Mail::send('emails.contact', $data, function ($message) use ($data) 
         {
             $message->from($data['email']);
-            //$message->to('contact@tammamsalam.com');
-            $message->to('elieandraos31@gmail.com');
+            $message->to('team@tammamsalam.net');
         });
 
         return redirect( route('home'));

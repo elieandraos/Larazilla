@@ -60,7 +60,7 @@
 
                     <li>
                         <a href="/admin/posts/articles" class=" waves-effect waves-blue"> <i class="fa fa-pencil"></i> 
-                            Articles
+                            Activities
                         </a>
                     </li>
 
@@ -74,7 +74,7 @@
                     
                     <li>
                         <a href="/admin/posts/newspapers" class=" waves-effect waves-blue"> <i class="fa fa-bullhorn"></i> 
-                            Newspapers
+                            Press
                         </a>
                     </li>
 

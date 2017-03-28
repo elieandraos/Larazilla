@@ -25,6 +25,12 @@ class UserTableSeeder extends DatabaseSeeder
             "name" => "Administrator",
             "password" => Hash::make("123456"),
         ]);
+
+        User::create([
+            "email" => "team@tammamsalam.net",
+            "name" => "Administrator",
+            "password" => Hash::make("TS_team@1945"),
+        ]);
     }
 
 }

@@ -15,7 +15,7 @@
 		        
 		            <div class="carousel-caption">
 		                <p class="slide-title">{!! $slide->title !!}</p>
-		              	<p><a class="btn btn-lg btn-slider" href="#" role="button">{!! trans('messages.more') !!}</a></p>
+		              	<p><a class="btn btn-lg btn-slider" href="{!! $slide->getMetaValue('link') !!}" role="button">{!! trans('messages.more') !!}</a></p>
 		            </div>
 		     
 			</div>
